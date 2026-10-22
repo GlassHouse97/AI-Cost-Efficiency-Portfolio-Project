@@ -1,9 +1,8 @@
-import { resolve, join } from "node:path";
+import { resolve, join, extname } from "node:path";
 import {
   readFile,
   readdir,
   mkdir,
-  cp,
   writeFile,
   stat,
 } from "node:fs/promises";
@@ -20,25 +19,30 @@ if (pkg.name !== "chris-delgado-portfolio")
 const source = resolve("dashboard");
 const destination = join(target, "public", "ai-cost-efficiency");
 await mkdir(destination, { recursive: true });
-await cp(source, destination, { recursive: true });
-async function hashes(dir, prefix = "") {
+// Match Git's text normalization so published hashes are portable across OSes.
+const textExtensions = new Set([".html", ".css", ".mjs", ".js", ".json", ".svg"]);
+async function copyAndHash(dir, prefix = "") {
   const out = {};
   for (const entry of (await readdir(dir)).sort()) {
     const p = join(dir, entry),
       key = prefix + entry;
-    if ((await stat(p)).isDirectory())
-      Object.assign(out, await hashes(p, key + "/"));
-    else
-      out[key] = createHash("sha256")
-        .update(await readFile(p))
-        .digest("hex");
+    if ((await stat(p)).isDirectory()) {
+      await mkdir(join(destination, key), { recursive: true });
+      Object.assign(out, await copyAndHash(p, key + "/"));
+    } else {
+      let bytes = await readFile(p);
+      if (textExtensions.has(extname(p)))
+        bytes = Buffer.from(bytes.toString("utf8").replace(/\r\n?/g, "\n"));
+      await writeFile(join(destination, key), bytes);
+      out[key] = createHash("sha256").update(bytes).digest("hex");
+    }
   }
   return out;
 }
 const manifest = {
   source_repository:
     "https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project",
-  files: await hashes(source),
+  files: await copyAndHash(source),
 };
 await writeFile(
   join(destination, "source-manifest.json"),
