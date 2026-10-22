@@ -1,4 +1,4 @@
-"""Independent source reconciliation. AUTHOR FILE: emits solution spoilers.
+"""Independent source reconciliation. Emits solution spoilers.
 
 Does not import the generator or read saved check totals as input. Decimal math
 keeps prompt costs exact; human time is summed from deduplicated tasks once.
@@ -67,9 +67,9 @@ def read_csv(path: Path) -> list[dict]:
 
 
 def load(root: Path = ROOT) -> dict:
-    folder = root / "learners/portfolio-project"
+    folder = root / "data/portfolio-project"
     payload = {name: read_csv(folder / f"{name}.csv") for name in ["work_log", "ai_usage", "model_pricing", "campaigns"]}
-    payload["quick"] = read_csv(root / "learners/quick-challenge/mru_quick_challenge.csv")
+    payload["quick"] = read_csv(root / "data/quick-challenge/mru_quick_challenge.csv")
     payload["demo"] = json.loads((root / "dashboard/demo-data.json").read_text(encoding="utf-8"))
     return payload
 
@@ -231,11 +231,13 @@ def serialized(results: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write-checks", action="store_true", help="Save independently calculated author/check_totals.json")
+    parser.add_argument("--write-checks", action="store_true", help="Save independently calculated SOLUTION/outputs/check_totals.json")
     args = parser.parse_args()
     results = validate_data(load())
     if args.write_checks:
-        (ROOT / "author/check_totals.json").write_text(serialized(results), encoding="utf-8")
+        output = ROOT / "SOLUTION/outputs/check_totals.json"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(serialized(results), encoding="utf-8")
     print(serialized(results))
 
 

@@ -41,7 +41,7 @@ const table = (headers, rows, caption = "") =>
 let model,
   selected = [];
 const filters = () => ({
-  campaign_id: $("campaign").value,
+  campaign_id: $("campaign").value === "focal" ? ["C001", "C002"] : $("campaign").value,
   department: $("department").value,
   product: $("product").value,
   model: $("model").value,
@@ -160,6 +160,8 @@ function render() {
       "Campaign",
       "Tasks",
       "Prompts",
+      "Input tokens",
+      "Output tokens",
       "AI spend",
       "Hours saved",
       "Net AI value",
@@ -169,6 +171,8 @@ function render() {
       cell(esc(r.label)),
       cell(number(r.tasks)),
       cell(number(r.prompts)),
+      cell(number(r.inputTokens)),
+      cell(number(r.outputTokens)),
       cell(money(r.cost)),
       cell(number(r.saved, 2), tone(r.saved)),
       cell(signed(r.value), tone(r.value)),
@@ -177,7 +181,7 @@ function render() {
     "Selected task scope; ROI is calculated from summed values.",
   );
   renderSensitivity();
-  const whole = wholeCampaigns(model, $("campaign").value);
+  const whole = wholeCampaigns(model, filters().campaign_id);
   $("profit-table").innerHTML = table(
     [
       "Campaign",
@@ -466,10 +470,10 @@ async function init() {
     model = prepare(await response.json());
     options(
       "campaign",
-      model.campaigns.map((c) => ({
+      [{ value: "focal", label: "Campaigns 1 + 2 (quick challenge)" }, ...model.campaigns.map((c) => ({
         value: c.campaign_id,
         label: c.campaign_name,
-      })),
+      }))],
     );
     options("department", DEPARTMENTS);
     options("product", [...new Set(model.tasks.map((t) => t.product))].sort());

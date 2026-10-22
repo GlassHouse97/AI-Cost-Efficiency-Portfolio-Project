@@ -86,10 +86,12 @@ export const sum = (rows, field) =>
   rows.reduce((total, r) => total + Number(r[field]), 0);
 export const ratio = (numerator, denominator) =>
   denominator === 0 ? null : numerator / denominator;
+const matches = (value, filter) =>
+  !filter || (Array.isArray(filter) ? filter.includes(value) : value === filter);
 export function selectTasks(tasks, filters = {}) {
   return tasks.filter((t) =>
     ["campaign_id", "department", "product", "model"].every(
-      (key) => !filters[key] || t[key] === filters[key],
+      (key) => matches(t[key], filters[key]),
     ),
   );
 }
@@ -138,7 +140,7 @@ export function groupSummary(tasks, key, baselineChange = 0) {
 export function wholeCampaigns(model, campaignId = "") {
   // Deliberately accepts only campaign identity: task/date filters cannot leak in.
   return model.campaigns
-    .filter((c) => !campaignId || c.campaign_id === campaignId)
+    .filter((c) => matches(c.campaign_id, campaignId))
     .map((c) => {
       const totals = summarize(
         model.tasks.filter((t) => t.campaign_id === c.campaign_id),

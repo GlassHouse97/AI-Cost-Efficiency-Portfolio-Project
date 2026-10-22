@@ -14,6 +14,13 @@ const data = JSON.parse(
   readFileSync(new URL("../dashboard/demo-data.json", import.meta.url), "utf8"),
 );
 const model = prepare(data);
+test("quick challenge cohort selects exactly the two focal campaigns", () => {
+  const filter = { campaign_id: ["C001", "C002"] };
+  const s = summarize(selectTasks(model.tasks, filter));
+  assert.deepEqual([s.tasks, s.cost, s.saved, s.value], [120, 1900, 30, -400]);
+  assert.deepEqual(wholeCampaigns(model, filter.campaign_id).map(c => c.campaign_id), ["C001", "C002"]);
+  assert.ok(selectTasks(model.tasks, { ...filter, department: "Content" }).every(t => t.department === "Content"));
+});
 test("focal campaign values are computed from token rates and task hours", () => {
   const c1 = summarize(selectTasks(model.tasks, { campaign_id: "C001" }));
   const c2 = summarize(selectTasks(model.tasks, { campaign_id: "C002" }));

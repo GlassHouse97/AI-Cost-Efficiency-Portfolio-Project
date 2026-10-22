@@ -714,6 +714,9 @@ summary {
   grid-template-columns: 1fr 260px;
   gap: 25px;
 }
+.sensitivity > div {
+  min-width: 0;
+}
 .sensitivity > div:last-child {
   grid-column: 1/-1;
 }

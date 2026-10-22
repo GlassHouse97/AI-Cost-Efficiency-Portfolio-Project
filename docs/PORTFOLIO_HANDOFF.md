@@ -1,46 +1,29 @@
-# Portfolio publication handoff
+# Portfolio connection handoff
 
-October 22, 2026. The owner requested that Cloudflare publication be handled in a separate portfolio project. Deployment work stopped at that request.
+The completed project is ready to be linked from the owner's separate portfolio website. The dashboard is hosted independently on Google Cloud Run; no Cloudflare deployment is required for this repository.
 
-## Ready in this repository
+## Links for the portfolio card
 
-- `dashboard/` contains the completed static application, source JSON, and both learner ZIPs. No API key, backend, or account is required to run it.
-- `release/mru-quick-challenge.zip` and `release/mru-portfolio-project.zip` are the standalone exercises. Both include offline HTML guides and exclude completed solutions.
-- `npm run dev` serves the dashboard at `http://127.0.0.1:4327/`.
-- `npm run build` prepares `dist/`. Copy that static output into the portfolio at `/ai-cost-efficiency/`, or use `node scripts/sync-portfolio.mjs "../Portfolio Website"` from this repository.
-- `docs/ANALYSIS.md` contains the completed case study; `docs/VALIDATION.md` records validation. All 18 automated tests and the GitHub validation workflow passed.
-
-## Portfolio integration already prepared
-
-The existing portfolio repository is `GlassHouse97/Chris-Delgado-Portfolio-Career-Website`. Its local checkout is the sibling folder `Portfolio Website`.
-
-Before publication was deferred, the integration was pushed in commit `1c09f507e5ac225bfc01709a56454a1e2dab6881`, with asset-manifest normalization in `e81f3cf333898b65f0a4dff1e80e938dd17097da`:
-
-- `src/pages/index.astro`: AI dashboard is the primary homepage action and first featured project; existing projects remain.
-- `src/pages/projects/ai-cost-efficiency.astro`: case study and both learner download links.
-- `src/layouts/ProjectLayout.astro`: optional primary dashboard link and narrow-screen table containment.
-- `public/ai-cost-efficiency/`: copied dashboard assets, downloads, and SHA-256 source manifest.
-
-The pushes triggered the pre-existing Cloudflare Workers Builds integration. The build for `e81f3cf` failed. At the last check, the existing homepage still served the previous site, and both new routes returned 404. **The new dashboard has not been verified as deployed.** The GitHub check links to Cloudflare's private build log; the available browser session requires Cloudflare sign-in to read that log.
-
-## Local deployment changes left unpushed
-
-The portfolio production branch had no Wrangler configuration. A supported static-assets configuration was prepared locally, but the owner deferred deployment before it was committed or pushed:
-
-- New `wrangler.jsonc`: existing Worker name `portfolio`, static assets from `dist/`, normal 404 handling.
-- `package.json` and `package-lock.json`: pinned Wrangler 4.152.0 and `deploy` / `deploy:check` scripts.
-- `.gitignore`: excludes local `.wrangler/` state.
-- `README.md`: documents the Worker deployment and new project routes.
-
-`npm run deploy:check` passed locally and found 42 built static files. This validates the proposed configuration; it does not establish the cause of the remote build failure or prove a successful deployment. Review the actual Cloudflare build log before completing publication.
-
-## Publication paths to verify later
-
-| Purpose | Intended path |
+| Purpose | Link |
 | --- | --- |
-| Main dashboard | `/ai-cost-efficiency/` |
-| Portfolio case study | `/projects/ai-cost-efficiency/` |
-| Deeper learner download | `/ai-cost-efficiency/downloads/mru-portfolio-project.zip` |
-| Quick learner download | `/ai-cost-efficiency/downloads/mru-quick-challenge.zip` |
+| Primary action: live dashboard | [Open dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) |
+| Source and project overview | [GitHub repository](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project) |
+| Completed case study | [Executive summary](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/EXECUTIVE_SUMMARY.md) |
+| Quick learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-quick-challenge.zip) |
+| Deeper learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-portfolio-project.zip) |
 
-When the separate portfolio project publishes successfully, verify the live filters, both download hashes, the homepage's featured link, and the production build status. Then update this repository's README from “ready for portfolio deployment” to the verified live dashboard link.
+**Suggested title:** AI Cost Efficiency & Workflow Value
+
+**Suggested description:** An interactive business case tracing AI token spending through staff effort, rework, and campaign profitability. Explore four synthetic campaigns, test baseline assumptions, and inspect a reproducible analysis with two standalone learner exercises.
+
+**Suggested image:** [Company overview](../SOLUTION/visualizations/01_company_overview.jpg). Additional evidence panels are in [SOLUTION/visualizations/](../SOLUTION/visualizations/), with their filter settings and capture provenance.
+
+Make the live dashboard the primary action and GitHub the supporting source link. Keep the learning exercises available from the repository and the dashboard's learner section. The README already explains the business problem, guiding questions, supported answers, and reproduction steps.
+
+## Existing portfolio work to review in the separate project
+
+Before the owner deferred Cloudflare publication, portfolio integration was pushed to `GlassHouse97/Chris-Delgado-Portfolio-Career-Website` in commits `1c09f507e5ac225bfc01709a56454a1e2dab6881` and `e81f3cf333898b65f0a4dff1e80e938dd17097da`. It included a homepage feature, case-study page, and copied static dashboard. The existing Cloudflare build failed at that time, and the new routes were not live. Local Wrangler configuration changes were left unpushed in that separate checkout.
+
+That is historical handoff information, not a current Cloudflare health check. Review those pending changes in the portfolio project, and update its primary dashboard action to the Cloud Run URL above. This repository's current release does not edit or deploy that website.
+
+The optional `scripts/sync-portfolio.mjs` helper can still copy static assets to a compatible checkout if self-hosting is deliberately chosen later. It is unnecessary when simply linking to Cloud Run and is not called by build, validation, or deployment.

@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!.dockerignore
+!.gcloudignore
+!dashboard/
+!dashboard/**
+!scripts/
+scripts/*
+!scripts/server.mjs

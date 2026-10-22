@@ -23,19 +23,19 @@ The independent worked example was recalculated: 20 Lite prompts, each containin
 - Both archives exclude author scripts, answer files, exact check totals, and the completed dashboard. The worked illustration is intentionally included in both learner guides.
 - Both offline HTML guides contain all four Markdown sections, one page-level heading, unique section anchors, local CSV links, and no scripts or external assets.
 - Browser inspection at a 1,265-pixel viewport confirmed readable headers, body text, formula tables, navigation, and CSV links. A bold-formatting issue around the prompt-aggregation warning was corrected and checked again; there was no horizontal page overflow.
-- The hosting copies are byte-identical to the release ZIPs. Running `python author/package.py --check` passes and recomputes the same archive bytes from source.
+- The hosting copies are byte-identical to the release ZIPs. Running `python scripts/package_learners.py --check` passes and recomputes the same archive bytes from source.
 
 ## Limits and follow-up
 
 The walkthrough did not operate Excel, create a learner workbook, time manual PivotTable/chart construction, or test the recommendation-writing task with a novice. The four-hour plan remains a design target. A future beginner pilot should record time by the six stated blocks and identify where independent learners need clarification. If core work exceeds four hours, simplify it rather than adding prerequisites. Optional BI, product, and rework charts remain optional.
 
-This author note stays outside the learner archives. Regenerate downloads with `python author/package.py` after editing learner Markdown, CSVs, licenses, or HTML styling, then use `python author/package.py --check` to verify the generated files are current.
+This author note stays outside the learner archives. Regenerate downloads with `python scripts/package_learners.py` after editing learner Markdown, CSVs, licenses, or HTML styling, then use `python scripts/package_learners.py --check` to verify the generated files are current.
 
 ## Portable archive verification
 
 A subsequent check found that Deflate-compressed archive bytes differed between the bundled Python 3.12.14 and system Python 3.14.6 runtimes. The package builder now uses uncompressed ZIP entries, fixed timestamps and file attributes, a sorted explicit allowlist, and UTF-8 text with LF line endings. This removes the archive's dependency on zlib version and checkout line-ending conventions.
 
-After regeneration, `author/package.py --check` passed under both runtimes with identical SHA-256 digests. A temporary copy with every source file changed to CRLF line endings also produced byte-identical archives. Archive metadata, uncompressed entries, and LF payloads were verified. This additional packaging check is separate from the 91-second learner-guide walkthrough above; Linux CI has not been claimed as run here.
+After regeneration, the packaging check (now `scripts/package_learners.py --check`) passed under both runtimes with identical SHA-256 digests. A temporary copy with every source file changed to CRLF line endings also produced byte-identical archives. Archive metadata, uncompressed entries, and LF payloads were verified. This additional packaging check is separate from the 91-second learner-guide walkthrough above; Linux CI has not been claimed as run here.
 
 | Package | Bytes | SHA-256 |
 | --- | --- | --- |

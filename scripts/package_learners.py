@@ -1,6 +1,6 @@
 """Build standalone learner downloads from an explicit, solution-free allowlist.
 
-Usage: python author/package.py [--check]
+Usage: python scripts/package_learners.py [--check]
 Only the standard library is required. Author code and completed-demo outputs
 are deliberately excluded from every archive. HTML guides are generated from
 the same Markdown shipped in each archive, without network dependencies.
@@ -144,14 +144,14 @@ main{min-width:0}section{background:var(--paper);border:1px solid var(--edge);bo
 """
 
 
-def html_guide(folder: Path, package: dict) -> bytes:
+def html_guide(folder: Path, package: dict, csv_prefix: str = "") -> bytes:
     navigation = "".join(f'<a href="#{anchor}">{label}</a>' for _, anchor, label in SECTIONS)
     sections = []
     for filename, anchor, _ in SECTIONS:
         source = (folder / filename).read_text(encoding="utf-8")
         sections.append(f'<section id="{anchor}">\n{render_markdown(source)}\n</section>')
     csv_links = "".join(
-        f'<a href="{filename}" download>{filename}</a>'
+        f'<a href="{csv_prefix}{filename}" download>{filename}</a>'
         for filename in package["files"] if filename.endswith(".csv")
     )
     document = f'''<!doctype html>
@@ -186,7 +186,7 @@ def archive_bytes(folder: Path, package: dict, guide: bytes) -> bytes:
     """Only explicitly named learner files and both licenses can enter the ZIP."""
     payloads: dict[str, bytes] = {}
     for filename in package["files"]:
-        path = folder / filename
+        path = (ROOT / "data" / folder.name / filename) if filename.endswith(".csv") else folder / filename
         if path.suffix == ".csv":
             validate_raw_schema(path)
         payloads[filename] = guide if filename == "START_HERE.html" else canonical_text(path)
@@ -221,7 +221,7 @@ def main() -> int:
         guide = html_guide(folder, package)
         archive = archive_bytes(folder, package, guide)
         outputs = {
-            folder / "START_HERE.html": guide,
+            folder / "START_HERE.html": html_guide(folder, package, csv_prefix=f"../../data/{slug}/"),
             ROOT / "release" / f"mru-{slug}.zip": archive,
             ROOT / "dashboard" / "downloads" / f"mru-{slug}.zip": archive,
         }

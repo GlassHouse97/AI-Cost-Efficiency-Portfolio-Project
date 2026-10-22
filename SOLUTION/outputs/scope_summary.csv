@@ -1,0 +1,3 @@
+scope,tasks,input_tokens,output_tokens,input_cost_usd,output_cost_usd,ai_cost_usd,prompt_count,baseline_hours,actual_hours,hours_saved,net_ai_value_usd,rework_hours,correction_prompts,ai_roi_pct,cost_per_prompt_usd,rework_share_pct,template_tasks,changed_brief_tasks,positive_net_value_tasks,negative_net_value_tasks
+all_four_campaigns,240,89000000,24500000,1640.000000,1540.000000,3180.000000,3360,920.000000,800.000000,120.000000,2820.000000,132.040000,882,88.679245,0.946429,16.505000,154,57,141,99
+focal_campaigns_1_2,120,54000000,15000000,960.000000,940.000000,1900.000000,1800,440.000000,410.000000,30.000000,-400.000000,98.560000,550,-21.052632,1.055556,24.039024,72,37,62,58

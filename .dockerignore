@@ -1,0 +1,7 @@
+**
+!Dockerfile
+!dashboard/
+!dashboard/**
+!scripts/
+scripts/*
+!scripts/server.mjs

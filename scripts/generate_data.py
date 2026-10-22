@@ -1,4 +1,4 @@
-"""Rebuild the fictional MRU source data. AUTHOR FILE: contains solution spoilers.
+"""Rebuild the fictional MRU source data. Contains solution spoilers.
 
 Python 3.10+, standard library only. Run from any working directory.
 Integer tokens are generated first. Charges are always tokens times stated rates.
@@ -176,11 +176,11 @@ def main() -> None:
     duplicate_indices = [17, 86]
     quick += [dict(quick[index]) for index in duplicate_indices]
     raw_work += [dict(raw_work[index]) for index in duplicate_indices]
-    write_csv(ROOT / "learners/quick-challenge/mru_quick_challenge.csv", quick, QUICK_FIELDS)
-    write_csv(ROOT / "learners/portfolio-project/work_log.csv", raw_work, WORK_FIELDS)
-    write_csv(ROOT / "learners/portfolio-project/ai_usage.csv", data["ai_usage"], USAGE_FIELDS)
-    write_csv(ROOT / "learners/portfolio-project/model_pricing.csv", PRICES, list(PRICES[0]))
-    write_csv(ROOT / "learners/portfolio-project/campaigns.csv", data["campaigns"], list(data["campaigns"][0]))
+    write_csv(ROOT / "data/quick-challenge/mru_quick_challenge.csv", quick, QUICK_FIELDS)
+    write_csv(ROOT / "data/portfolio-project/work_log.csv", raw_work, WORK_FIELDS)
+    write_csv(ROOT / "data/portfolio-project/ai_usage.csv", data["ai_usage"], USAGE_FIELDS)
+    write_csv(ROOT / "data/portfolio-project/model_pricing.csv", PRICES, list(PRICES[0]))
+    write_csv(ROOT / "data/portfolio-project/campaigns.csv", data["campaigns"], list(data["campaigns"][0]))
     demo = ROOT / "dashboard/demo-data.json"
     demo.parent.mkdir(parents=True, exist_ok=True)
     demo.write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")
