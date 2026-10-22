@@ -2,9 +2,11 @@
 
 **Does the value of time saved justify the AI bill?** An interactive analytics portfolio project by Chris Delgado, with two standalone learner tracks.
 
-### [Open the live dashboard →](https://portfolio.chrisdelgado.workers.dev/ai-cost-efficiency/)
+### Completed dashboard — ready for portfolio deployment
 
-[Portfolio case study](https://portfolio.chrisdelgado.workers.dev/projects/ai-cost-efficiency/) · [Findings and methodology](docs/ANALYSIS.md) · [Download the full learner project](release/mru-portfolio-project.zip?raw=true) · [Download the four-hour challenge](release/mru-quick-challenge.zip?raw=true)
+[Run the dashboard locally](#run-locally) · [Portfolio handoff](docs/PORTFOLIO_HANDOFF.md) · [Findings and methodology](docs/ANALYSIS.md) · [Download the full learner project](release/mru-portfolio-project.zip?raw=true) · [Download the four-hour challenge](release/mru-quick-challenge.zip?raw=true)
+
+The code and both exercises are published here. Cloudflare publication is being handled separately by the owner; the new dashboard is not live on the portfolio yet.
 
 The dashboard is the completed demonstration. **It contains answers.** Marketing-R-Us, ChatABC, all employees, token prices, and business results are fictional. No real company data, live AI service, account, API key, or billing credentials are used.
 
@@ -14,7 +16,7 @@ The dashboard is the completed demonstration. **It contains answers.** Marketing
 
 | Track | Audience and effort | What you get | Start here |
 | --- | --- | --- | --- |
-| **Completed portfolio dashboard** | Explore the finished analysis | Company overview, campaign comparison, workflow investigation, sensitivity analysis, and audit export | [Live dashboard](https://portfolio.chrisdelgado.workers.dev/ai-cost-efficiency/) |
+| **Completed portfolio dashboard** | Explore the finished analysis | Company overview, campaign comparison, workflow investigation, sensitivity analysis, and audit export | [Run locally](#run-locally) · [Dashboard source](dashboard/) |
 | **Portfolio learner project** | Intermediate · about 12–16 hours | Four source CSVs, a brief, column guide, formulas, worked illustration, and submission checklist | [Download ZIP](release/mru-portfolio-project.zip?raw=true) · [Read the brief](learners/portfolio-project/README.md) |
 | **Quick Challenge** | Beginner / early intermediate · four-hour target | One task CSV and complete Excel-friendly guidance; no joins or programming required | [Download ZIP](release/mru-quick-challenge.zip?raw=true) · [Read the brief](learners/quick-challenge/README.md) |
 

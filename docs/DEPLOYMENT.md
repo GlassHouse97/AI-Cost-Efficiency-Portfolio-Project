@@ -1,6 +1,6 @@
 # Deployment and maintenance
 
-The public dashboard lives at `https://portfolio.chrisdelgado.workers.dev/ai-cost-efficiency/`. Its case-study entry is `/projects/ai-cost-efficiency/`, and the portfolio homepage features this project first.
+The intended public dashboard URL is `https://portfolio.chrisdelgado.workers.dev/ai-cost-efficiency/`. Its prepared case-study entry is `/projects/ai-cost-efficiency/`, and the prepared portfolio homepage features this project first. Cloudflare publication is deferred to the owner's separate portfolio project; see the [current handoff](PORTFOLIO_HANDOFF.md).
 
 The source of the dashboard is this repository. The deployment owner is the existing [Chris-Delgado-Portfolio-Career-Website](https://github.com/GlassHouse97/Chris-Delgado-Portfolio-Career-Website) Astro repository. Its Cloudflare Workers Builds connection builds the production branch. No new hosting account, Site registration, Worker, secret, or API credential is required.
 
