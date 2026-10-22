@@ -1,0 +1,123 @@
+work_item_id,completion_date,campaign,department,employee,product,model,task_type,prompt_count,input_tokens,output_tokens,input_rate_usd_per_million,output_rate_usd_per_million,baseline_hours,actual_hours,rework_hours,issue_tag
+W0001,2026-09-10,Campaign 1,Content,Avery Morgan,CopyStudio,Pro,Write ad copy,12,258261,113210,40,100,4.57,4.75,0.65,Data problem
+W0002,2026-09-21,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Draft email sequence,11,539899,94901,10,30,4.11,4.62,0.33,Unclear prompt
+W0003,2026-09-30,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Plan visual narrative,12,294521,128067,10,30,2.76,2.95,0.39,Brief changed
+W0004,2026-09-15,Campaign 1,Creative,Taylor Brooks,InsightDesk,Pro,Develop concept brief,9,157768,70853,40,100,3.13,4.19,0.31,None
+W0005,2026-09-24,Campaign 1,  marketing operations ,Casey Rivera,DataFlow,Lite,Clean audience data,16,772081,111113,10,30,4.36,4.53,0.65,Unclear prompt
+W0006,2026-09-09,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Lite,Prepare launch checklist,10,561089,114566,10,30,4.89,5.43,0.44,Unclear prompt
+W0007,2026-09-18,Campaign 1,Analytics,Quinn Parker,InsightDesk,Lite,Analyze campaign results,15,671183,156442,10,30,4.32,5.21,0.22,Data problem
+W0008,2026-09-29,Campaign 1,Analytics,Jamie Patel,InsightDesk,Lite,Summarize audience insights,9,458384,93614,10,30,4.64,6.01,0.25,Data problem
+W0009,2026-09-14,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Edit landing page,9,435279,85546,10,30,4.69,2.45,0.11,None
+W0010,2026-09-23,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Write ad copy,9,483839,92033,10,30,4.0,2.18,0.14,None
+W0011,2026-09-08,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Review creative variants,10,323449,84287,10,30,3.2,1.43,0.05,None
+W0012,2026-09-17,Campaign 1,Creative,Taylor Brooks,CampaignChat,Pro,Plan visual narrative,10,178366,101926,40,100,3.84,1.54,0.02,None
+W0013,2026-09-28,Campaign 1,Marketing Operations,Casey Rivera,DataFlow,Lite,Build campaign plan,11,273171,50676,10,30,4.23,1.35,0.2,Brief changed
+W0014,2026-09-11,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Lite,Clean audience data,7,297094,78626,10,30,3.61,1.95,0.35,Data problem
+W0015,2026-09-22,Campaign 1,Analytics,Quinn Parker,InsightDesk,Pro,Check measurement plan,8,174851,63453,40,100,4.21,2.15,0.09,None
+W0016,2026-09-04,Campaign 1,Analytics,Jamie Patel,InsightDesk,Pro,Analyze campaign results,11,186617,106767,40,100,3.91,2.04,0.26,Brief changed
+W0017,2026-09-16,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Draft email sequence,12,547176,95814,10,30,2.77,1.21,0.02,None
+W0018,2026-09-25,Campaign 1,  content ,Jordan Ellis,CopyStudio,Lite,Edit landing page,13,680501,102212,10,30,5.26,2.96,0.45,Unclear prompt
+W0019,2026-09-10,Campaign 1,Creative,Riley Chen,CampaignChat,Pro,Develop concept brief,8,146897,44737,40,100,3.0,1.51,0.08,None
+W0020,2026-09-21,Campaign 1,Creative,Taylor Brooks,CampaignChat,Lite,Review creative variants,8,340278,49462,10,30,2.78,1.52,0.06,None
+W0021,2026-09-30,Campaign 1,Marketing Operations,Casey Rivera,DataFlow,Lite,Prepare launch checklist,8,434783,69747,10,30,2.9,1.42,0.12,None
+W0022,2026-09-15,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Lite,Build campaign plan,12,659372,120788,10,30,3.22,1.57,0.07,None
+W0023,2026-09-24,Campaign 1,Analytics,Quinn Parker,InsightDesk,Pro,Summarize audience insights,8,174462,59744,40,100,5.14,2.29,0.05,Unclear prompt
+W0024,2026-09-09,Campaign 1,Analytics,Jamie Patel,CampaignChat,Lite,Check measurement plan,12,374816,107305,10,30,3.52,1.92,0.15,None
+W0025,2026-09-18,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Write ad copy,9,295324,103406,10,30,4.92,2.74,0.07,Brief changed
+W0026,2026-09-29,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Draft email sequence,12,509456,73501,10,30,3.8,1.57,0.03,None
+W0027,2026-09-14,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Plan visual narrative,9,474129,52429,10,30,4.7,2.76,0.14,None
+W0028,2026-09-23,Campaign 1,Creative,Taylor Brooks,CampaignChat,Lite,Develop concept brief,10,230814,106368,10,30,5.24,2.88,0.06,None
+W0029,2026-09-08,Campaign 1,Marketing Operations,Casey Rivera,CopyStudio,Lite,Clean audience data,9,433133,90151,10,30,3.78,1.83,0.14,Unclear prompt
+W0030,2026-09-17,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Lite,Prepare launch checklist,7,332653,62817,10,30,4.56,2.18,0.22,None
+W0031,2026-09-28,Campaign 1,Analytics,Quinn Parker,InsightDesk,Lite,Analyze campaign results,8,447950,43142,10,30,4.75,2.46,0.23,Unclear prompt
+W0032,2026-09-11,Campaign 1,Analytics,Jamie Patel,InsightDesk,Lite,Summarize audience insights,11,255955,108179,10,30,2.95,1.7,0.05,None
+W0033,2026-09-22,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Edit landing page,10,263264,105355,10,30,3.66,1.57,0.24,Data problem
+W0034,2026-09-04,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Write ad copy,10,497355,97642,10,30,4.06,1.46,0.06,None
+W0035,2026-09-16,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Review creative variants,7,220774,39464,10,30,4.68,1.65,0.11,Data problem
+W0036,2026-09-25,Campaign 1,Creative,Taylor Brooks,CampaignChat,Lite,Plan visual narrative,11,559461,94747,10,30,5.0,2.28,0.1,Data problem
+W0037,2026-09-10,Campaign 1,  marketing operations ,Casey Rivera,DataFlow,Lite,Build campaign plan,11,472175,123639,10,30,3.62,1.65,0.24,Brief changed
+W0038,2026-09-21,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Pro,Clean audience data,10,104495,106942,40,100,3.42,1.77,0.12,None
+W0039,2026-09-30,Campaign 1,Analytics,Quinn Parker,InsightDesk,Lite,Check measurement plan,9,510223,48659,10,30,3.13,1.05,0.07,None
+W0040,2026-09-15,Campaign 1,Analytics,Jamie Patel,InsightDesk,Lite,Analyze campaign results,9,269052,73144,10,30,2.88,1.65,0.24,Brief changed
+W0041,2026-09-24,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Draft email sequence,10,552806,72740,10,30,3.67,2.08,0.13,None
+W0042,2026-09-09,Campaign 1,Content,Jordan Ellis,CampaignChat,Lite,Edit landing page,10,224899,68721,10,30,4.17,2.46,0.32,Brief changed
+W0043,2026-09-18,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Develop concept brief,10,383868,58416,10,30,3.94,1.79,0.15,None
+W0044,2026-09-29,Campaign 1,Creative,Taylor Brooks,CampaignChat,Pro,Review creative variants,11,235395,79156,40,100,4.33,2.1,0.05,None
+W0045,2026-09-14,Campaign 1,Marketing Operations,Casey Rivera,DataFlow,Lite,Prepare launch checklist,9,339096,56301,10,30,4.64,2.35,0.32,Brief changed
+W0046,2026-09-23,Campaign 1,Marketing Operations,Morgan Reed,CampaignChat,Lite,Build campaign plan,10,536072,82842,10,30,4.96,2.3,0.03,None
+W0047,2026-09-08,Campaign 1,Analytics,Quinn Parker,InsightDesk,Lite,Summarize audience insights,11,286730,107270,10,30,2.76,1.65,0.15,None
+W0048,2026-09-17,Campaign 1,Analytics,Jamie Patel,InsightDesk,Lite,Check measurement plan,9,449397,69916,10,30,2.71,1.12,0.1,Brief changed
+W0049,2026-09-28,Campaign 1,Content,Avery Morgan,CopyStudio,Lite,Write ad copy,11,398534,49911,10,30,5.06,2.59,0.08,None
+W0050,2026-09-11,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Draft email sequence,10,529934,83164,10,30,5.22,2.8,0.05,None
+W0051,2026-09-22,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Plan visual narrative,8,241384,77739,10,30,3.64,2.09,0.17,None
+W0052,2026-09-04,Campaign 1,Creative,Taylor Brooks,CampaignChat,Pro,Develop concept brief,8,87719,62305,40,100,4.61,2.09,0.12,None
+W0053,2026-09-16,Campaign 1,Marketing Operations,Casey Rivera,DataFlow,Pro,Clean audience data,8,179488,93599,40,100,2.7,1.48,0.09,None
+W0054,2026-09-25,Campaign 1,Marketing Operations,Morgan Reed,DataFlow,Lite,Prepare launch checklist,12,641992,56373,10,30,5.04,2.81,0.26,Unclear prompt
+W0055,2026-09-10,Campaign 1,Analytics,Quinn Parker,InsightDesk,Pro,Analyze campaign results,10,115681,97308,40,100,4.68,1.64,0.11,None
+W0056,2026-09-21,Campaign 1,Analytics,Jamie Patel,InsightDesk,Lite,Summarize audience insights,10,380867,90740,10,30,3.05,1.46,0.18,Data problem
+W0057,2026-09-30,Campaign 1,Content,Avery Morgan,DataFlow,Lite,Edit landing page,11,271142,51315,10,30,4.97,2.97,0.09,None
+W0058,2026-09-15,Campaign 1,Content,Jordan Ellis,CopyStudio,Lite,Write ad copy,8,229722,46429,10,30,3.99,2.13,0.42,Data problem
+W0059,2026-09-24,Campaign 1,Creative,Riley Chen,CampaignChat,Lite,Review creative variants,12,368076,60369,10,30,4.03,2.0,0.25,Unclear prompt
+W0060,2026-09-09,Campaign 1,Creative,Taylor Brooks,CampaignChat,Lite,Plan visual narrative,10,246848,109912,10,30,3.62,1.71,0.09,Brief changed
+W0061,2026-09-15,Campaign 2,Content,Jordan Ellis,CopyStudio,Lite,Write ad copy,12,506853,82438,10,30,4.09,2.7,0.46,None
+W0062,2026-09-24,Campaign 2,  creative ,Riley Chen,CampaignChat,Pro,Review creative variants,16,216307,112052,40,100,2.82,1.72,0.69,Brief changed
+W0063,2026-09-09,Campaign 2,Creative,Taylor Brooks,CampaignChat,Lite,Plan visual narrative,16,681801,121329,10,30,2.43,1.49,0.2,None
+W0064,2026-09-18,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Lite,Build campaign plan,16,543371,88841,10,30,2.53,1.18,0.27,None
+W0065,2026-09-29,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Pro,Clean audience data,14,318993,196673,40,100,2.84,1.47,0.67,Brief changed
+W0066,2026-09-14,Campaign 2,Analytics,Quinn Parker,DataFlow,Pro,Check measurement plan,11,294158,115484,40,100,2.83,1.87,0.42,Brief changed
+W0067,2026-09-23,Campaign 2,Analytics,Jamie Patel,InsightDesk,Pro,Analyze campaign results,16,448703,217814,40,100,4.38,2.43,0.78,Data problem
+W0068,2026-09-08,Campaign 2,Content,Avery Morgan,CopyStudio,Pro,Draft email sequence,14,168930,115490,40,100,3.08,1.93,0.43,None
+W0069,2026-09-17,Campaign 2,Content,Jordan Ellis,CopyStudio,Pro,Edit landing page,15,197601,118615,40,100,3.45,1.43,0.68,Brief changed
+W0070,2026-09-28,Campaign 2,Creative,Riley Chen,CampaignChat,Pro,Develop concept brief,11,133133,80884,40,100,3.35,1.73,0.71,Brief changed
+W0071,2026-09-11,Campaign 2,Creative,Taylor Brooks,CampaignChat,Lite,Review creative variants,20,674195,181933,10,30,2.28,2.68,0.36,None
+W0072,2026-09-22,Campaign 2,Marketing Operations,Casey Rivera,CopyStudio,Lite,Prepare launch checklist,29,808449,117056,10,30,2.99,4.03,1.43,Unclear prompt
+W0073,2026-09-04,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Lite,Build campaign plan,23,1003562,128037,10,30,3.1,5.22,1.35,Data problem
+W0074,2026-09-16,Campaign 2,Analytics,Quinn Parker,InsightDesk,Pro,Summarize audience insights,18,503772,125364,40,100,3.75,6.7,2.48,Unclear prompt
+W0075,2026-09-25,Campaign 2,Analytics,Jamie Patel,InsightDesk,Lite,Check measurement plan,21,431332,104650,10,30,3.56,4.09,1.32,Brief changed
+W0076,2026-09-10,Campaign 2,Content,Avery Morgan,CopyStudio,Lite,Write ad copy,15,480572,141865,10,30,2.36,4.11,1.49,Brief changed
+W0077,2026-09-21,Campaign 2,Content,Jordan Ellis,CampaignChat,Lite,Draft email sequence,20,745686,115368,10,30,3.9,7.34,2.32,Brief changed
+W0078,2026-09-30,Campaign 2,Creative,Riley Chen,CampaignChat,Lite,Plan visual narrative,20,583031,127379,10,30,3.17,4.49,1.05,Unclear prompt
+W0079,2026-09-15,Campaign 2,Creative,Taylor Brooks,CampaignChat,Pro,Develop concept brief,27,335611,292135,40,100,4.43,6.82,3.24,Unclear prompt
+W0080,2026-09-24,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Pro,Clean audience data,26,703736,332836,40,100,3.35,4.58,1.28,Unclear prompt
+W0081,2026-09-09,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Pro,Prepare launch checklist,20,471879,227069,40,100,4.11,5.75,2.22,Data problem
+W0082,2026-09-18,Campaign 2,Analytics,Quinn Parker,InsightDesk,Pro,Analyze campaign results,17,470317,153135,40,100,4.44,6.94,3.0,Data problem
+W0083,2026-09-29,Campaign 2,Analytics,Jamie Patel,InsightDesk,Lite,Summarize audience insights,21,643979,118711,10,30,3.87,6.66,3.04,Brief changed
+W0084,2026-09-14,Campaign 2,Content,Avery Morgan,CopyStudio,Lite,Edit landing page,24,668726,182013,10,30,4.43,6.43,1.42,None
+W0085,2026-09-23,Campaign 2,Content,Jordan Ellis,CopyStudio,Pro,Write ad copy,18,388503,124702,40,100,2.32,4.27,1.11,Brief changed
+W0086,2026-09-08,Campaign 2,Creative,Riley Chen,CampaignChat,Pro,Review creative variants,20,552607,169553,40,100,2.33,2.73,1.07,Unclear prompt
+W0087,2026-09-17,Campaign 2,  creative ,Taylor Brooks,CampaignChat,Pro,Plan visual narrative,21,429570,246288,40,100,3.71,5.93,0.76,None
+W0088,2026-09-28,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Lite,Build campaign plan,27,789163,110858,10,30,3.08,3.79,0.82,Brief changed
+W0089,2026-09-11,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Lite,Clean audience data,23,469010,118818,10,30,3.89,5.24,1.76,Brief changed
+W0090,2026-09-22,Campaign 2,Analytics,Quinn Parker,InsightDesk,Pro,Check measurement plan,18,277889,207693,40,100,4.07,7.66,2.66,Data problem
+W0091,2026-09-04,Campaign 2,Analytics,Jamie Patel,CopyStudio,Lite,Analyze campaign results,27,1113358,236361,10,30,4.18,6.3,2.97,Data problem
+W0092,2026-09-16,Campaign 2,Content,Avery Morgan,CopyStudio,Lite,Draft email sequence,27,898728,243656,10,30,3.2,3.75,1.35,Brief changed
+W0093,2026-09-25,Campaign 2,Content,Jordan Ellis,CampaignChat,Lite,Edit landing page,22,511564,160193,10,30,3.73,5.46,1.21,Data problem
+W0094,2026-09-10,Campaign 2,Creative,Riley Chen,CopyStudio,Lite,Develop concept brief,26,1018467,167942,10,30,3.92,5.12,1.06,Data problem
+W0095,2026-09-21,Campaign 2,Creative,Taylor Brooks,CampaignChat,Pro,Review creative variants,15,380397,112318,40,100,4.43,6.05,2.0,Data problem
+W0096,2026-09-30,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Pro,Prepare launch checklist,14,232715,90158,40,100,2.87,4.05,1.86,Unclear prompt
+W0097,2026-09-15,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Pro,Build campaign plan,23,615432,188923,40,100,2.91,5.32,2.14,Brief changed
+W0098,2026-09-24,Campaign 2,Analytics,Quinn Parker,InsightDesk,Pro,Summarize audience insights,25,596256,190552,40,100,4.12,6.05,0.83,None
+W0099,2026-09-09,Campaign 2,Analytics,Jamie Patel,InsightDesk,Lite,Check measurement plan,17,652510,64368,10,30,2.47,3.95,1.48,Brief changed
+W0100,2026-09-18,Campaign 2,Content,Avery Morgan,CopyStudio,Pro,Write ad copy,23,444034,251276,40,100,4.07,7.71,2.55,Brief changed
+W0101,2026-09-29,Campaign 2,Content,Jordan Ellis,CopyStudio,Pro,Draft email sequence,23,606251,304185,40,100,3.81,6.97,1.43,Data problem
+W0102,2026-09-14,Campaign 2,Creative,Riley Chen,DataFlow,Lite,Plan visual narrative,18,701614,125701,10,30,2.43,3.25,1.48,Data problem
+W0103,2026-09-23,Campaign 2,Creative,Taylor Brooks,CampaignChat,Pro,Develop concept brief,22,374138,262168,40,100,3.62,4.13,1.36,Brief changed
+W0104,2026-09-08,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Lite,Clean audience data,19,576576,83840,10,30,2.86,3.43,0.81,Unclear prompt
+W0105,2026-09-17,Campaign 2,Marketing Operations,Morgan Reed,CopyStudio,Lite,Prepare launch checklist,23,570536,127572,10,30,3.8,6.17,2.54,Brief changed
+W0106,2026-09-28,Campaign 2,Analytics,Quinn Parker,InsightDesk,Lite,Analyze campaign results,16,593589,138645,10,30,2.4,3.35,1.34,Brief changed
+W0107,2026-09-11,Campaign 2,Analytics,Jamie Patel,CampaignChat,Lite,Summarize audience insights,16,612904,103885,10,30,3.51,5.32,1.44,Unclear prompt
+W0108,2026-09-22,Campaign 2,Content,Avery Morgan,CopyStudio,Lite,Edit landing page,15,594805,110427,10,30,2.29,4.45,1.94,Brief changed
+W0109,2026-09-04,Campaign 2,Content,Jordan Ellis,CopyStudio,Pro,Write ad copy,19,523735,148777,40,100,2.66,4.6,1.9,Unclear prompt
+W0110,2026-09-16,Campaign 2,  creative ,Riley Chen,CampaignChat,Lite,Review creative variants,21,547961,161336,10,30,2.81,3.85,1.55,Brief changed
+W0111,2026-09-25,Campaign 2,Creative,Taylor Brooks,CampaignChat,Lite,Plan visual narrative,25,953118,144608,10,30,2.98,3.51,0.95,Brief changed
+W0112,2026-09-10,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Lite,Build campaign plan,25,795470,213965,10,30,4.36,5.69,1.57,Brief changed
+W0113,2026-09-21,Campaign 2,Marketing Operations,Morgan Reed,DataFlow,Pro,Clean audience data,19,365125,179806,40,100,2.52,3.3,1.49,Data problem
+W0114,2026-09-30,Campaign 2,Analytics,Quinn Parker,InsightDesk,Pro,Check measurement plan,23,266151,252797,40,100,2.82,3.69,1.77,Brief changed
+W0115,2026-09-15,Campaign 2,Analytics,Jamie Patel,InsightDesk,Pro,Analyze campaign results,18,277493,186005,40,100,3.38,4.5,1.64,Brief changed
+W0116,2026-09-24,Campaign 2,Content,Avery Morgan,CopyStudio,Pro,Draft email sequence,27,422573,263824,40,100,2.61,3.61,0.89,Brief changed
+W0117,2026-09-09,Campaign 2,Content,Jordan Ellis,CopyStudio,Lite,Edit landing page,17,535782,65111,10,30,4.29,7.91,3.28,Brief changed
+W0118,2026-09-18,Campaign 2,Creative,Riley Chen,CampaignChat,Lite,Develop concept brief,15,293288,113094,10,30,2.3,2.79,0.39,None
+W0119,2026-09-29,Campaign 2,Creative,Taylor Brooks,CampaignChat,Pro,Review creative variants,24,487622,347989,40,100,3.51,4.64,1.07,None
+W0120,2026-09-14,Campaign 2,Marketing Operations,Casey Rivera,DataFlow,Pro,Prepare launch checklist,27,496369,385435,40,100,4.2,7.67,2.04,Data problem
+W0018,2026-09-25,Campaign 1,  content ,Jordan Ellis,CopyStudio,Lite,Edit landing page,13,680501,102212,10,30,5.26,2.96,0.45,Unclear prompt
+W0087,2026-09-17,Campaign 2,  creative ,Taylor Brooks,CampaignChat,Pro,Plan visual narrative,21,429570,246288,40,100,3.71,5.93,0.76,None

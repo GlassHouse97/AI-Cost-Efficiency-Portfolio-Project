@@ -1,0 +1,149 @@
+{
+  "seed": 20261022,
+  "period": "2026-09",
+  "status": "PASS",
+  "clean_tasks": 240,
+  "raw_work_rows": 242,
+  "raw_quick_rows": 122,
+  "usage_rows": 3360,
+  "campaigns": {
+    "C001": {
+      "tasks": 60,
+      "prompt_count": 600,
+      "input_tokens": 22000000,
+      "output_tokens": 5000000,
+      "input_cost_usd": "280.000000",
+      "output_cost_usd": "220.000000",
+      "ai_cost_usd": "500.000000",
+      "baseline_hours": "240.000000",
+      "actual_hours": "140.000000",
+      "hours_saved": "100.000000",
+      "rework_hours": "10.740000",
+      "time_value_usd": "5000.000000",
+      "net_ai_value_usd": "4500.000000",
+      "ai_roi_pct": "900.000000",
+      "average_cost_per_prompt_usd": "0.833333",
+      "campaign_revenue_usd": "25000.000000",
+      "other_campaign_cost_usd": "10000.000000",
+      "campaign_result_usd": "7500.000000",
+      "correction_prompts": 68,
+      "template_tasks": 53,
+      "baseline_minus_20_net_value_usd": "2100.000000",
+      "baseline_plus_20_net_value_usd": "6900.000000",
+      "positive_net_value_tasks": 52,
+      "negative_net_value_tasks": 8
+    },
+    "C002": {
+      "tasks": 60,
+      "prompt_count": 1200,
+      "input_tokens": 32000000,
+      "output_tokens": 10000000,
+      "input_cost_usd": "680.000000",
+      "output_cost_usd": "720.000000",
+      "ai_cost_usd": "1400.000000",
+      "baseline_hours": "200.000000",
+      "actual_hours": "270.000000",
+      "hours_saved": "-70.000000",
+      "rework_hours": "87.820000",
+      "time_value_usd": "-3500.000000",
+      "net_ai_value_usd": "-4900.000000",
+      "ai_roi_pct": "-350.000000",
+      "average_cost_per_prompt_usd": "1.166667",
+      "campaign_revenue_usd": "20000.000000",
+      "other_campaign_cost_usd": "7500.000000",
+      "campaign_result_usd": "-2400.000000",
+      "correction_prompts": 482,
+      "template_tasks": 19,
+      "baseline_minus_20_net_value_usd": "-6900.000000",
+      "baseline_plus_20_net_value_usd": "-2900.000000",
+      "positive_net_value_tasks": 10,
+      "negative_net_value_tasks": 50
+    },
+    "C003": {
+      "tasks": 60,
+      "prompt_count": 720,
+      "input_tokens": 18000000,
+      "output_tokens": 4500000,
+      "input_cost_usd": "300.000000",
+      "output_cost_usd": "240.000000",
+      "ai_cost_usd": "540.000000",
+      "baseline_hours": "220.000000",
+      "actual_hours": "172.000000",
+      "hours_saved": "48.000000",
+      "rework_hours": "14.940000",
+      "time_value_usd": "2400.000000",
+      "net_ai_value_usd": "1860.000000",
+      "ai_roi_pct": "344.444444",
+      "average_cost_per_prompt_usd": "0.750000",
+      "campaign_revenue_usd": "23000.000000",
+      "other_campaign_cost_usd": "9500.000000",
+      "campaign_result_usd": "4360.000000",
+      "correction_prompts": 152,
+      "template_tasks": 42,
+      "baseline_minus_20_net_value_usd": "-340.000000",
+      "baseline_plus_20_net_value_usd": "4060.000000",
+      "positive_net_value_tasks": 44,
+      "negative_net_value_tasks": 16
+    },
+    "C004": {
+      "tasks": 60,
+      "prompt_count": 840,
+      "input_tokens": 17000000,
+      "output_tokens": 5000000,
+      "input_cost_usd": "380.000000",
+      "output_cost_usd": "360.000000",
+      "ai_cost_usd": "740.000000",
+      "baseline_hours": "260.000000",
+      "actual_hours": "218.000000",
+      "hours_saved": "42.000000",
+      "rework_hours": "18.540000",
+      "time_value_usd": "2100.000000",
+      "net_ai_value_usd": "1360.000000",
+      "ai_roi_pct": "183.783784",
+      "average_cost_per_prompt_usd": "0.880952",
+      "campaign_revenue_usd": "27000.000000",
+      "other_campaign_cost_usd": "12000.000000",
+      "campaign_result_usd": "3360.000000",
+      "correction_prompts": 180,
+      "template_tasks": 40,
+      "baseline_minus_20_net_value_usd": "-1240.000000",
+      "baseline_plus_20_net_value_usd": "3960.000000",
+      "positive_net_value_tasks": 35,
+      "negative_net_value_tasks": 25
+    }
+  },
+  "model_tokens": {
+    "C001_Lite": {
+      "input_tokens": 20000000,
+      "output_tokens": 4000000
+    },
+    "C001_Pro": {
+      "input_tokens": 2000000,
+      "output_tokens": 1000000
+    },
+    "C002_Lite": {
+      "input_tokens": 20000000,
+      "output_tokens": 4000000
+    },
+    "C002_Pro": {
+      "input_tokens": 12000000,
+      "output_tokens": 6000000
+    },
+    "C003_Lite": {
+      "input_tokens": 14000000,
+      "output_tokens": 3000000
+    },
+    "C003_Pro": {
+      "input_tokens": 4000000,
+      "output_tokens": 1500000
+    },
+    "C004_Lite": {
+      "input_tokens": 10000000,
+      "output_tokens": 2000000
+    },
+    "C004_Pro": {
+      "input_tokens": 7000000,
+      "output_tokens": 3000000
+    }
+  }
+}

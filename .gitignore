@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.qa/
+__pycache__/
+*.pyc
+*.log
+.env*
+!.env.example
+MRU_AI_ROI_Portfolio_Project_Requirements*.docx

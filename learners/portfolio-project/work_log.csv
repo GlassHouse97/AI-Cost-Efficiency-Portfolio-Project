@@ -1,0 +1,243 @@
+work_item_id,completion_date,campaign_id,department,employee,task_type,baseline_hours,actual_hours,rework_hours,issue_tag,brief_changed,prompt_template_used
+W0001,2026-09-10,C001,Content,Avery Morgan,Write ad copy,4.57,4.75,0.65,Data problem,No,Yes
+W0002,2026-09-21,C001,Content,Jordan Ellis,Draft email sequence,4.11,4.62,0.33,Unclear prompt,No,Yes
+W0003,2026-09-30,C001,Creative,Riley Chen,Plan visual narrative,2.76,2.95,0.39,Brief changed,Yes,Yes
+W0004,2026-09-15,C001,Creative,Taylor Brooks,Develop concept brief,3.13,4.19,0.31,None,No,Yes
+W0005,2026-09-24,C001,  marketing operations ,Casey Rivera,Clean audience data,4.36,4.53,0.65,Unclear prompt,No,Yes
+W0006,2026-09-09,C001,Marketing Operations,Morgan Reed,Prepare launch checklist,4.89,5.43,0.44,Unclear prompt,No,Yes
+W0007,2026-09-18,C001,Analytics,Quinn Parker,Analyze campaign results,4.32,5.21,0.22,Data problem,No,Yes
+W0008,2026-09-29,C001,Analytics,Jamie Patel,Summarize audience insights,4.64,6.01,0.25,Data problem,No,Yes
+W0009,2026-09-14,C001,Content,Avery Morgan,Edit landing page,4.69,2.45,0.11,None,No,Yes
+W0010,2026-09-23,C001,Content,Jordan Ellis,Write ad copy,4.0,2.18,0.14,None,No,Yes
+W0011,2026-09-08,C001,Creative,Riley Chen,Review creative variants,3.2,1.43,0.05,None,No,Yes
+W0012,2026-09-17,C001,Creative,Taylor Brooks,Plan visual narrative,3.84,1.54,0.02,None,No,Yes
+W0013,2026-09-28,C001,Marketing Operations,Casey Rivera,Build campaign plan,4.23,1.35,0.2,Brief changed,Yes,No
+W0014,2026-09-11,C001,Marketing Operations,Morgan Reed,Clean audience data,3.61,1.95,0.35,Data problem,No,Yes
+W0015,2026-09-22,C001,Analytics,Quinn Parker,Check measurement plan,4.21,2.15,0.09,None,No,Yes
+W0016,2026-09-04,C001,Analytics,Jamie Patel,Analyze campaign results,3.91,2.04,0.26,Brief changed,Yes,Yes
+W0017,2026-09-16,C001,Content,Avery Morgan,Draft email sequence,2.77,1.21,0.02,None,No,Yes
+W0018,2026-09-25,C001,  content ,Jordan Ellis,Edit landing page,5.26,2.96,0.45,Unclear prompt,No,Yes
+W0019,2026-09-10,C001,Creative,Riley Chen,Develop concept brief,3.0,1.51,0.08,None,No,No
+W0020,2026-09-21,C001,Creative,Taylor Brooks,Review creative variants,2.78,1.52,0.06,None,No,Yes
+W0021,2026-09-30,C001,Marketing Operations,Casey Rivera,Prepare launch checklist,2.9,1.42,0.12,None,No,No
+W0022,2026-09-15,C001,Marketing Operations,Morgan Reed,Build campaign plan,3.22,1.57,0.07,None,No,No
+W0023,2026-09-24,C001,Analytics,Quinn Parker,Summarize audience insights,5.14,2.29,0.05,Unclear prompt,No,Yes
+W0024,2026-09-09,C001,Analytics,Jamie Patel,Check measurement plan,3.52,1.92,0.15,None,No,Yes
+W0025,2026-09-18,C001,Content,Avery Morgan,Write ad copy,4.92,2.74,0.07,Brief changed,Yes,Yes
+W0026,2026-09-29,C001,Content,Jordan Ellis,Draft email sequence,3.8,1.57,0.03,None,No,Yes
+W0027,2026-09-14,C001,Creative,Riley Chen,Plan visual narrative,4.7,2.76,0.14,None,No,Yes
+W0028,2026-09-23,C001,Creative,Taylor Brooks,Develop concept brief,5.24,2.88,0.06,None,No,Yes
+W0029,2026-09-08,C001,Marketing Operations,Casey Rivera,Clean audience data,3.78,1.83,0.14,Unclear prompt,No,Yes
+W0030,2026-09-17,C001,Marketing Operations,Morgan Reed,Prepare launch checklist,4.56,2.18,0.22,None,No,Yes
+W0031,2026-09-28,C001,Analytics,Quinn Parker,Analyze campaign results,4.75,2.46,0.23,Unclear prompt,No,Yes
+W0032,2026-09-11,C001,Analytics,Jamie Patel,Summarize audience insights,2.95,1.7,0.05,None,No,Yes
+W0033,2026-09-22,C001,Content,Avery Morgan,Edit landing page,3.66,1.57,0.24,Data problem,No,Yes
+W0034,2026-09-04,C001,Content,Jordan Ellis,Write ad copy,4.06,1.46,0.06,None,No,Yes
+W0035,2026-09-16,C001,Creative,Riley Chen,Review creative variants,4.68,1.65,0.11,Data problem,No,Yes
+W0036,2026-09-25,C001,Creative,Taylor Brooks,Plan visual narrative,5.0,2.28,0.1,Data problem,No,Yes
+W0037,2026-09-10,C001,  marketing operations ,Casey Rivera,Build campaign plan,3.62,1.65,0.24,Brief changed,Yes,No
+W0038,2026-09-21,C001,Marketing Operations,Morgan Reed,Clean audience data,3.42,1.77,0.12,None,No,No
+W0039,2026-09-30,C001,Analytics,Quinn Parker,Check measurement plan,3.13,1.05,0.07,None,No,Yes
+W0040,2026-09-15,C001,Analytics,Jamie Patel,Analyze campaign results,2.88,1.65,0.24,Brief changed,Yes,Yes
+W0041,2026-09-24,C001,Content,Avery Morgan,Draft email sequence,3.67,2.08,0.13,None,No,Yes
+W0042,2026-09-09,C001,Content,Jordan Ellis,Edit landing page,4.17,2.46,0.32,Brief changed,Yes,Yes
+W0043,2026-09-18,C001,Creative,Riley Chen,Develop concept brief,3.94,1.79,0.15,None,No,Yes
+W0044,2026-09-29,C001,Creative,Taylor Brooks,Review creative variants,4.33,2.1,0.05,None,No,Yes
+W0045,2026-09-14,C001,Marketing Operations,Casey Rivera,Prepare launch checklist,4.64,2.35,0.32,Brief changed,Yes,Yes
+W0046,2026-09-23,C001,Marketing Operations,Morgan Reed,Build campaign plan,4.96,2.3,0.03,None,No,Yes
+W0047,2026-09-08,C001,Analytics,Quinn Parker,Summarize audience insights,2.76,1.65,0.15,None,No,Yes
+W0048,2026-09-17,C001,Analytics,Jamie Patel,Check measurement plan,2.71,1.12,0.1,Brief changed,Yes,Yes
+W0049,2026-09-28,C001,Content,Avery Morgan,Write ad copy,5.06,2.59,0.08,None,No,Yes
+W0050,2026-09-11,C001,Content,Jordan Ellis,Draft email sequence,5.22,2.8,0.05,None,No,Yes
+W0051,2026-09-22,C001,Creative,Riley Chen,Plan visual narrative,3.64,2.09,0.17,None,No,Yes
+W0052,2026-09-04,C001,Creative,Taylor Brooks,Develop concept brief,4.61,2.09,0.12,None,No,Yes
+W0053,2026-09-16,C001,Marketing Operations,Casey Rivera,Clean audience data,2.7,1.48,0.09,None,No,Yes
+W0054,2026-09-25,C001,Marketing Operations,Morgan Reed,Prepare launch checklist,5.04,2.81,0.26,Unclear prompt,No,No
+W0055,2026-09-10,C001,Analytics,Quinn Parker,Analyze campaign results,4.68,1.64,0.11,None,No,Yes
+W0056,2026-09-21,C001,Analytics,Jamie Patel,Summarize audience insights,3.05,1.46,0.18,Data problem,No,Yes
+W0057,2026-09-30,C001,Content,Avery Morgan,Edit landing page,4.97,2.97,0.09,None,No,Yes
+W0058,2026-09-15,C001,Content,Jordan Ellis,Write ad copy,3.99,2.13,0.42,Data problem,No,Yes
+W0059,2026-09-24,C001,Creative,Riley Chen,Review creative variants,4.03,2.0,0.25,Unclear prompt,No,Yes
+W0060,2026-09-09,C001,Creative,Taylor Brooks,Plan visual narrative,3.62,1.71,0.09,Brief changed,Yes,Yes
+W0061,2026-09-15,C002,Content,Jordan Ellis,Write ad copy,4.09,2.7,0.46,None,No,Yes
+W0062,2026-09-24,C002,  creative ,Riley Chen,Review creative variants,2.82,1.72,0.69,Brief changed,Yes,No
+W0063,2026-09-09,C002,Creative,Taylor Brooks,Plan visual narrative,2.43,1.49,0.2,None,No,Yes
+W0064,2026-09-18,C002,Marketing Operations,Casey Rivera,Build campaign plan,2.53,1.18,0.27,None,No,Yes
+W0065,2026-09-29,C002,Marketing Operations,Morgan Reed,Clean audience data,2.84,1.47,0.67,Brief changed,Yes,Yes
+W0066,2026-09-14,C002,Analytics,Quinn Parker,Check measurement plan,2.83,1.87,0.42,Brief changed,Yes,No
+W0067,2026-09-23,C002,Analytics,Jamie Patel,Analyze campaign results,4.38,2.43,0.78,Data problem,No,Yes
+W0068,2026-09-08,C002,Content,Avery Morgan,Draft email sequence,3.08,1.93,0.43,None,No,Yes
+W0069,2026-09-17,C002,Content,Jordan Ellis,Edit landing page,3.45,1.43,0.68,Brief changed,Yes,No
+W0070,2026-09-28,C002,Creative,Riley Chen,Develop concept brief,3.35,1.73,0.71,Brief changed,Yes,No
+W0071,2026-09-11,C002,Creative,Taylor Brooks,Review creative variants,2.28,2.68,0.36,None,No,No
+W0072,2026-09-22,C002,Marketing Operations,Casey Rivera,Prepare launch checklist,2.99,4.03,1.43,Unclear prompt,No,No
+W0073,2026-09-04,C002,Marketing Operations,Morgan Reed,Build campaign plan,3.1,5.22,1.35,Data problem,No,No
+W0074,2026-09-16,C002,Analytics,Quinn Parker,Summarize audience insights,3.75,6.7,2.48,Unclear prompt,No,No
+W0075,2026-09-25,C002,Analytics,Jamie Patel,Check measurement plan,3.56,4.09,1.32,Brief changed,Yes,Yes
+W0076,2026-09-10,C002,Content,Avery Morgan,Write ad copy,2.36,4.11,1.49,Brief changed,Yes,No
+W0077,2026-09-21,C002,Content,Jordan Ellis,Draft email sequence,3.9,7.34,2.32,Brief changed,Yes,Yes
+W0078,2026-09-30,C002,Creative,Riley Chen,Plan visual narrative,3.17,4.49,1.05,Unclear prompt,No,Yes
+W0079,2026-09-15,C002,Creative,Taylor Brooks,Develop concept brief,4.43,6.82,3.24,Unclear prompt,No,No
+W0080,2026-09-24,C002,Marketing Operations,Casey Rivera,Clean audience data,3.35,4.58,1.28,Unclear prompt,No,No
+W0081,2026-09-09,C002,Marketing Operations,Morgan Reed,Prepare launch checklist,4.11,5.75,2.22,Data problem,No,No
+W0082,2026-09-18,C002,Analytics,Quinn Parker,Analyze campaign results,4.44,6.94,3.0,Data problem,No,No
+W0083,2026-09-29,C002,Analytics,Jamie Patel,Summarize audience insights,3.87,6.66,3.04,Brief changed,Yes,No
+W0084,2026-09-14,C002,Content,Avery Morgan,Edit landing page,4.43,6.43,1.42,None,No,No
+W0085,2026-09-23,C002,Content,Jordan Ellis,Write ad copy,2.32,4.27,1.11,Brief changed,Yes,Yes
+W0086,2026-09-08,C002,Creative,Riley Chen,Review creative variants,2.33,2.73,1.07,Unclear prompt,No,No
+W0087,2026-09-17,C002,  creative ,Taylor Brooks,Plan visual narrative,3.71,5.93,0.76,None,No,Yes
+W0088,2026-09-28,C002,Marketing Operations,Casey Rivera,Build campaign plan,3.08,3.79,0.82,Brief changed,Yes,No
+W0089,2026-09-11,C002,Marketing Operations,Morgan Reed,Clean audience data,3.89,5.24,1.76,Brief changed,Yes,Yes
+W0090,2026-09-22,C002,Analytics,Quinn Parker,Check measurement plan,4.07,7.66,2.66,Data problem,No,Yes
+W0091,2026-09-04,C002,Analytics,Jamie Patel,Analyze campaign results,4.18,6.3,2.97,Data problem,No,No
+W0092,2026-09-16,C002,Content,Avery Morgan,Draft email sequence,3.2,3.75,1.35,Brief changed,Yes,No
+W0093,2026-09-25,C002,Content,Jordan Ellis,Edit landing page,3.73,5.46,1.21,Data problem,No,No
+W0094,2026-09-10,C002,Creative,Riley Chen,Develop concept brief,3.92,5.12,1.06,Data problem,No,Yes
+W0095,2026-09-21,C002,Creative,Taylor Brooks,Review creative variants,4.43,6.05,2.0,Data problem,No,No
+W0096,2026-09-30,C002,Marketing Operations,Casey Rivera,Prepare launch checklist,2.87,4.05,1.86,Unclear prompt,No,No
+W0097,2026-09-15,C002,Marketing Operations,Morgan Reed,Build campaign plan,2.91,5.32,2.14,Brief changed,Yes,No
+W0098,2026-09-24,C002,Analytics,Quinn Parker,Summarize audience insights,4.12,6.05,0.83,None,No,No
+W0099,2026-09-09,C002,Analytics,Jamie Patel,Check measurement plan,2.47,3.95,1.48,Brief changed,Yes,No
+W0100,2026-09-18,C002,Content,Avery Morgan,Write ad copy,4.07,7.71,2.55,Brief changed,Yes,No
+W0101,2026-09-29,C002,Content,Jordan Ellis,Draft email sequence,3.81,6.97,1.43,Data problem,No,Yes
+W0102,2026-09-14,C002,Creative,Riley Chen,Plan visual narrative,2.43,3.25,1.48,Data problem,No,No
+W0103,2026-09-23,C002,Creative,Taylor Brooks,Develop concept brief,3.62,4.13,1.36,Brief changed,Yes,No
+W0104,2026-09-08,C002,Marketing Operations,Casey Rivera,Clean audience data,2.86,3.43,0.81,Unclear prompt,No,Yes
+W0105,2026-09-17,C002,Marketing Operations,Morgan Reed,Prepare launch checklist,3.8,6.17,2.54,Brief changed,Yes,Yes
+W0106,2026-09-28,C002,Analytics,Quinn Parker,Analyze campaign results,2.4,3.35,1.34,Brief changed,Yes,No
+W0107,2026-09-11,C002,Analytics,Jamie Patel,Summarize audience insights,3.51,5.32,1.44,Unclear prompt,No,No
+W0108,2026-09-22,C002,Content,Avery Morgan,Edit landing page,2.29,4.45,1.94,Brief changed,Yes,No
+W0109,2026-09-04,C002,Content,Jordan Ellis,Write ad copy,2.66,4.6,1.9,Unclear prompt,No,No
+W0110,2026-09-16,C002,  creative ,Riley Chen,Review creative variants,2.81,3.85,1.55,Brief changed,Yes,Yes
+W0111,2026-09-25,C002,Creative,Taylor Brooks,Plan visual narrative,2.98,3.51,0.95,Brief changed,Yes,No
+W0112,2026-09-10,C002,Marketing Operations,Casey Rivera,Build campaign plan,4.36,5.69,1.57,Brief changed,Yes,No
+W0113,2026-09-21,C002,Marketing Operations,Morgan Reed,Clean audience data,2.52,3.3,1.49,Data problem,No,No
+W0114,2026-09-30,C002,Analytics,Quinn Parker,Check measurement plan,2.82,3.69,1.77,Brief changed,Yes,No
+W0115,2026-09-15,C002,Analytics,Jamie Patel,Analyze campaign results,3.38,4.5,1.64,Brief changed,Yes,No
+W0116,2026-09-24,C002,Content,Avery Morgan,Draft email sequence,2.61,3.61,0.89,Brief changed,Yes,No
+W0117,2026-09-09,C002,Content,Jordan Ellis,Edit landing page,4.29,7.91,3.28,Brief changed,Yes,No
+W0118,2026-09-18,C002,Creative,Riley Chen,Develop concept brief,2.3,2.79,0.39,None,No,Yes
+W0119,2026-09-29,C002,Creative,Taylor Brooks,Review creative variants,3.51,4.64,1.07,None,No,No
+W0120,2026-09-14,C002,Marketing Operations,Casey Rivera,Prepare launch checklist,4.2,7.67,2.04,Data problem,No,No
+W0121,2026-09-18,C003,Creative,Riley Chen,Develop concept brief,4.51,3.49,0.66,Unclear prompt,No,No
+W0122,2026-09-29,C003,Creative,Taylor Brooks,Review creative variants,2.7,2.76,0.13,Unclear prompt,No,Yes
+W0123,2026-09-14,C003,Marketing Operations,Casey Rivera,Prepare launch checklist,2.91,2.02,0.31,Data problem,No,Yes
+W0124,2026-09-23,C003,Marketing Operations,Morgan Reed,Build campaign plan,3.8,1.83,0.34,Brief changed,Yes,No
+W0125,2026-09-08,C003,Analytics,Quinn Parker,Summarize audience insights,4.08,2.69,0.24,None,No,Yes
+W0126,2026-09-17,C003,Analytics,Jamie Patel,Check measurement plan,3.15,1.73,0.15,None,No,Yes
+W0127,2026-09-28,C003,Content,Avery Morgan,Write ad copy,2.54,1.7,0.02,None,No,Yes
+W0128,2026-09-11,C003,Content,Jordan Ellis,Draft email sequence,4.68,2.68,0.28,Unclear prompt,No,No
+W0129,2026-09-22,C003,Creative,Riley Chen,Plan visual narrative,2.68,3.05,0.51,Unclear prompt,No,Yes
+W0130,2026-09-04,C003,Creative,Taylor Brooks,Develop concept brief,3.64,3.09,0.05,None,No,Yes
+W0131,2026-09-16,C003,Marketing Operations,Casey Rivera,Clean audience data,4.35,3.6,0.13,None,No,Yes
+W0132,2026-09-25,C003,Marketing Operations,Morgan Reed,Prepare launch checklist,3.63,4.36,0.84,Brief changed,Yes,Yes
+W0133,2026-09-10,C003,  analytics ,Quinn Parker,Analyze campaign results,4.28,3.61,0.13,None,No,Yes
+W0134,2026-09-21,C003,Analytics,Jamie Patel,Summarize audience insights,2.83,2.34,0.18,Data problem,No,Yes
+W0135,2026-09-30,C003,Content,Avery Morgan,Edit landing page,3.82,4.39,0.06,None,No,Yes
+W0136,2026-09-15,C003,Content,Jordan Ellis,Write ad copy,4.66,4.7,0.3,Data problem,No,Yes
+W0137,2026-09-24,C003,Creative,Riley Chen,Review creative variants,3.43,2.88,0.21,Unclear prompt,No,Yes
+W0138,2026-09-09,C003,Creative,Taylor Brooks,Plan visual narrative,3.51,2.29,0.09,None,No,Yes
+W0139,2026-09-18,C003,Marketing Operations,Casey Rivera,Build campaign plan,3.63,3.31,0.26,None,No,No
+W0140,2026-09-29,C003,Marketing Operations,Morgan Reed,Clean audience data,4.7,5.08,0.73,Brief changed,Yes,No
+W0141,2026-09-14,C003,Analytics,Quinn Parker,Check measurement plan,2.41,1.79,0.33,Data problem,No,Yes
+W0142,2026-09-23,C003,Analytics,Jamie Patel,Analyze campaign results,3.05,2.82,0.23,None,No,Yes
+W0143,2026-09-08,C003,Content,Avery Morgan,Draft email sequence,3.58,2.08,0.18,None,No,Yes
+W0144,2026-09-17,C003,Content,Jordan Ellis,Edit landing page,3.74,2.78,0.21,Brief changed,Yes,Yes
+W0145,2026-09-28,C003,Creative,Riley Chen,Develop concept brief,3.51,2.04,0.18,Brief changed,Yes,Yes
+W0146,2026-09-11,C003,Creative,Taylor Brooks,Review creative variants,3.52,2.95,0.42,Brief changed,Yes,No
+W0147,2026-09-22,C003,Marketing Operations,Casey Rivera,Prepare launch checklist,3.34,1.57,0.15,None,No,No
+W0148,2026-09-04,C003,Marketing Operations,Morgan Reed,Build campaign plan,3.63,2.78,0.38,Brief changed,Yes,Yes
+W0149,2026-09-16,C003,Analytics,Quinn Parker,Summarize audience insights,4.59,2.25,0.05,None,No,Yes
+W0150,2026-09-25,C003,Analytics,Jamie Patel,Check measurement plan,4.34,2.14,0.13,Unclear prompt,No,Yes
+W0151,2026-09-10,C003,Content,Avery Morgan,Write ad copy,4.5,4.8,0.06,None,No,Yes
+W0152,2026-09-21,C003,Content,Jordan Ellis,Draft email sequence,2.85,2.72,0.25,Data problem,No,Yes
+W0153,2026-09-30,C003,Creative,Riley Chen,Plan visual narrative,3.75,4.12,0.8,Data problem,No,Yes
+W0154,2026-09-15,C003,Creative,Taylor Brooks,Develop concept brief,4.71,4.41,0.05,None,No,Yes
+W0155,2026-09-24,C003,Marketing Operations,Casey Rivera,Clean audience data,4.0,2.24,0.05,Unclear prompt,No,No
+W0156,2026-09-09,C003,Marketing Operations,Morgan Reed,Prepare launch checklist,2.44,1.41,0.04,None,No,No
+W0157,2026-09-18,C003,Analytics,Quinn Parker,Analyze campaign results,2.87,2.38,0.09,None,No,No
+W0158,2026-09-29,C003,Analytics,Jamie Patel,Summarize audience insights,4.72,5.52,0.43,Data problem,No,No
+W0159,2026-09-14,C003,Content,Avery Morgan,Edit landing page,4.05,2.4,0.04,None,No,Yes
+W0160,2026-09-23,C003,Content,Jordan Ellis,Write ad copy,2.86,2.17,0.1,None,No,Yes
+W0161,2026-09-08,C003,Creative,Riley Chen,Review creative variants,2.45,2.03,0.16,Data problem,No,Yes
+W0162,2026-09-17,C003,Creative,Taylor Brooks,Plan visual narrative,3.72,3.56,0.33,Brief changed,Yes,No
+W0163,2026-09-28,C003,Marketing Operations,Casey Rivera,Build campaign plan,2.47,2.82,0.03,None,No,Yes
+W0164,2026-09-11,C003,Marketing Operations,Morgan Reed,Clean audience data,4.2,2.34,0.19,None,No,Yes
+W0165,2026-09-22,C003,Analytics,Quinn Parker,Check measurement plan,3.83,2.14,0.42,Unclear prompt,No,Yes
+W0166,2026-09-04,C003,Analytics,Jamie Patel,Analyze campaign results,4.2,4.38,0.31,None,No,No
+W0167,2026-09-16,C003,Content,Avery Morgan,Draft email sequence,3.1,3.06,0.49,Brief changed,Yes,Yes
+W0168,2026-09-25,C003,Content,Jordan Ellis,Edit landing page,4.53,2.01,0.15,None,No,No
+W0169,2026-09-10,C003,Creative,Riley Chen,Develop concept brief,4.48,4.67,0.78,Unclear prompt,No,Yes
+W0170,2026-09-21,C003,Creative,Taylor Brooks,Review creative variants,4.56,2.23,0.31,Data problem,No,No
+W0171,2026-09-30,C003,Marketing Operations,Casey Rivera,Prepare launch checklist,3.9,2.28,0.15,None,No,Yes
+W0172,2026-09-15,C003,Marketing Operations,Morgan Reed,Build campaign plan,4.08,4.23,0.52,Unclear prompt,No,No
+W0173,2026-09-24,C003,Analytics,Quinn Parker,Summarize audience insights,4.43,2.05,0.14,None,No,Yes
+W0174,2026-09-09,C003,Analytics,Jamie Patel,Check measurement plan,4.55,3.51,0.14,None,No,Yes
+W0175,2026-09-18,C003,Content,Avery Morgan,Write ad copy,2.52,2.61,0.13,Data problem,No,Yes
+W0176,2026-09-29,C003,Content,Jordan Ellis,Draft email sequence,2.49,1.56,0.1,None,No,Yes
+W0177,2026-09-14,C003,Creative,Riley Chen,Plan visual narrative,2.52,1.44,0.14,None,No,No
+W0178,2026-09-23,C003,Creative,Taylor Brooks,Develop concept brief,4.33,2.84,0.4,Brief changed,Yes,Yes
+W0179,2026-09-08,C003,Marketing Operations,Casey Rivera,Clean audience data,3.55,3.08,0.15,None,No,Yes
+W0180,2026-09-17,C003,  marketing operations ,Morgan Reed,Prepare launch checklist,4.1,2.19,0.11,None,No,No
+W0181,2026-09-23,C004,Creative,Taylor Brooks,Develop concept brief,5.11,3.54,0.15,None,No,Yes
+W0182,2026-09-08,C004,Marketing Operations,Casey Rivera,Clean audience data,4.53,4.46,0.05,None,No,Yes
+W0183,2026-09-17,C004,Marketing Operations,Morgan Reed,Prepare launch checklist,3.82,4.23,0.6,Brief changed,Yes,Yes
+W0184,2026-09-28,C004,Analytics,Quinn Parker,Analyze campaign results,5.02,5.91,0.12,Brief changed,Yes,No
+W0185,2026-09-11,C004,Analytics,Jamie Patel,Summarize audience insights,4.88,2.35,0.12,None,No,Yes
+W0186,2026-09-22,C004,Content,Avery Morgan,Edit landing page,5.84,4.0,0.05,None,No,Yes
+W0187,2026-09-04,C004,Content,Jordan Ellis,Write ad copy,4.55,4.56,0.58,Data problem,No,Yes
+W0188,2026-09-16,C004,Creative,Riley Chen,Review creative variants,5.87,5.58,0.39,None,No,Yes
+W0189,2026-09-25,C004,Creative,Taylor Brooks,Plan visual narrative,3.39,2.77,0.18,None,No,Yes
+W0190,2026-09-10,C004,Marketing Operations,Casey Rivera,Build campaign plan,4.86,4.6,0.21,None,No,No
+W0191,2026-09-21,C004,Marketing Operations,Morgan Reed,Clean audience data,4.7,5.01,0.86,Data problem,No,No
+W0192,2026-09-30,C004,Analytics,Quinn Parker,Check measurement plan,3.96,3.43,0.33,None,No,Yes
+W0193,2026-09-15,C004,Analytics,Jamie Patel,Analyze campaign results,4.24,4.37,0.24,None,No,Yes
+W0194,2026-09-24,C004,Content,Avery Morgan,Draft email sequence,3.72,3.04,0.15,None,No,Yes
+W0195,2026-09-09,C004,Content,Jordan Ellis,Edit landing page,3.74,3.39,0.3,None,No,No
+W0196,2026-09-18,C004,Creative,Riley Chen,Develop concept brief,3.32,1.54,0.15,None,No,Yes
+W0197,2026-09-29,C004,Creative,Taylor Brooks,Review creative variants,3.87,2.91,0.38,Brief changed,Yes,Yes
+W0198,2026-09-14,C004,Marketing Operations,Casey Rivera,Prepare launch checklist,2.93,1.82,0.14,Unclear prompt,No,Yes
+W0199,2026-09-23,C004,Marketing Operations,Morgan Reed,Build campaign plan,4.41,4.69,0.32,Data problem,No,Yes
+W0200,2026-09-08,C004,Analytics,Quinn Parker,Summarize audience insights,4.94,5.12,0.95,Unclear prompt,No,Yes
+W0201,2026-09-17,C004,Analytics,Jamie Patel,Check measurement plan,5.29,2.76,0.25,None,No,Yes
+W0202,2026-09-28,C004,Content,Avery Morgan,Write ad copy,4.27,3.27,0.07,Brief changed,Yes,Yes
+W0203,2026-09-11,C004,Content,Jordan Ellis,Draft email sequence,5.12,4.62,0.05,None,No,Yes
+W0204,2026-09-22,C004,  creative ,Riley Chen,Plan visual narrative,3.66,4.46,0.1,Unclear prompt,No,No
+W0205,2026-09-04,C004,Creative,Taylor Brooks,Develop concept brief,3.82,4.28,0.3,None,No,No
+W0206,2026-09-16,C004,Marketing Operations,Casey Rivera,Clean audience data,3.98,1.85,0.16,None,No,Yes
+W0207,2026-09-25,C004,Marketing Operations,Morgan Reed,Prepare launch checklist,4.08,3.94,0.31,None,No,Yes
+W0208,2026-09-10,C004,Analytics,Quinn Parker,Analyze campaign results,4.1,3.91,0.62,Unclear prompt,No,Yes
+W0209,2026-09-21,C004,Analytics,Jamie Patel,Summarize audience insights,4.07,3.32,0.13,None,No,No
+W0210,2026-09-30,C004,Content,Avery Morgan,Edit landing page,3.44,2.46,0.08,None,No,Yes
+W0211,2026-09-15,C004,Content,Jordan Ellis,Write ad copy,5.71,3.89,0.31,None,No,No
+W0212,2026-09-24,C004,Creative,Riley Chen,Review creative variants,3.8,4.51,0.68,Data problem,No,Yes
+W0213,2026-09-09,C004,Creative,Taylor Brooks,Plan visual narrative,4.57,2.02,0.15,None,No,Yes
+W0214,2026-09-18,C004,Marketing Operations,Casey Rivera,Build campaign plan,4.09,1.98,0.17,Brief changed,Yes,Yes
+W0215,2026-09-29,C004,Marketing Operations,Morgan Reed,Clean audience data,3.58,2.22,0.15,None,No,No
+W0216,2026-09-14,C004,Analytics,Quinn Parker,Check measurement plan,3.67,3.91,0.52,Data problem,No,Yes
+W0217,2026-09-23,C004,Analytics,Jamie Patel,Analyze campaign results,5.62,6.66,0.69,Unclear prompt,No,No
+W0218,2026-09-08,C004,Content,Avery Morgan,Draft email sequence,4.41,3.63,0.3,None,No,Yes
+W0219,2026-09-17,C004,Content,Jordan Ellis,Edit landing page,3.28,1.88,0.06,None,No,Yes
+W0220,2026-09-28,C004,Creative,Riley Chen,Develop concept brief,4.75,2.17,0.25,Unclear prompt,No,No
+W0221,2026-09-11,C004,Creative,Taylor Brooks,Review creative variants,2.96,3.0,0.58,Brief changed,Yes,No
+W0222,2026-09-22,C004,Marketing Operations,Casey Rivera,Prepare launch checklist,5.64,6.75,1.31,Unclear prompt,No,No
+W0223,2026-09-04,C004,Marketing Operations,Morgan Reed,Build campaign plan,4.41,2.72,0.1,None,No,Yes
+W0224,2026-09-16,C004,Analytics,Quinn Parker,Summarize audience insights,5.94,6.72,0.66,Unclear prompt,No,No
+W0225,2026-09-25,C004,Analytics,Jamie Patel,Check measurement plan,4.99,2.46,0.14,None,No,Yes
+W0226,2026-09-10,C004,Content,Avery Morgan,Write ad copy,3.79,3.84,0.29,Unclear prompt,No,No
+W0227,2026-09-21,C004,Content,Jordan Ellis,Draft email sequence,5.1,5.74,0.31,Unclear prompt,No,Yes
+W0228,2026-09-30,C004,Creative,Riley Chen,Plan visual narrative,4.81,3.8,0.29,None,No,Yes
+W0229,2026-09-15,C004,  creative ,Taylor Brooks,Develop concept brief,2.93,3.37,0.5,Unclear prompt,No,Yes
+W0230,2026-09-24,C004,Marketing Operations,Casey Rivera,Clean audience data,3.89,2.55,0.31,Brief changed,Yes,No
+W0231,2026-09-09,C004,Marketing Operations,Morgan Reed,Prepare launch checklist,5.43,3.32,0.24,None,No,No
+W0232,2026-09-18,C004,Analytics,Quinn Parker,Analyze campaign results,2.86,2.51,0.07,None,No,Yes
+W0233,2026-09-29,C004,Analytics,Jamie Patel,Summarize audience insights,3.26,1.79,0.15,None,No,No
+W0234,2026-09-14,C004,Content,Avery Morgan,Edit landing page,3.41,3.71,0.47,Data problem,No,Yes
+W0235,2026-09-23,C004,Content,Jordan Ellis,Write ad copy,3.84,2.46,0.43,Brief changed,Yes,Yes
+W0236,2026-09-08,C004,Creative,Riley Chen,Review creative variants,3.52,2.37,0.32,Brief changed,Yes,No
+W0237,2026-09-17,C004,Creative,Taylor Brooks,Plan visual narrative,4.43,2.97,0.2,Brief changed,Yes,Yes
+W0238,2026-09-28,C004,Marketing Operations,Casey Rivera,Build campaign plan,4.94,5.28,0.06,None,No,No
+W0239,2026-09-11,C004,Marketing Operations,Morgan Reed,Clean audience data,5.06,4.01,0.31,None,No,Yes
+W0240,2026-09-22,C004,Analytics,Quinn Parker,Check measurement plan,5.78,3.57,0.18,None,No,Yes
+W0018,2026-09-25,C001,  content ,Jordan Ellis,Edit landing page,5.26,2.96,0.45,Unclear prompt,No,Yes
+W0087,2026-09-17,C002,  creative ,Taylor Brooks,Plan visual narrative,3.71,5.93,0.76,None,No,Yes
