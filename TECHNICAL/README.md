@@ -43,7 +43,7 @@ python TECHNICAL/scripts/package_learners.py --check
 npm --prefix TECHNICAL run build
 ```
 
-The analysis command rebuilds eight evidence CSVs under `SOLUTION/outputs/`. The build writes `TECHNICAL/dist/`. CI also checks that regenerated evidence matches the committed tables. Running tests or building the dashboard does not deploy anything.
+The analysis command rebuilds eight evidence CSVs under `SOLUTION/TRACKS/portfolio-project/outputs/`. The build writes `TECHNICAL/dist/`. CI also checks that regenerated evidence matches the committed tables. Running tests or building the dashboard does not deploy anything.
 
 For the full source-generation sequence, workbook authoring, and package contents, see the [script guide](scripts/README.md) and [data pipeline](docs/DATA_PIPELINE.md). The Python scripts and direct Node server/build scripts locate inputs relative to their own files; `npm --prefix TECHNICAL` selects this folder's package from the repository root. Inside this folder, ordinary `npm test`, `npm run dev`, and `npm run build` also work.
 

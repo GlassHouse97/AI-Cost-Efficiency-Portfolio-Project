@@ -4,7 +4,7 @@
 
 ## Explore the Dashboard
 
-**[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** · [Read the executive summary](SOLUTION/EXECUTIVE_SUMMARY.md)
+**[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** · [Read the executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md)
 
 Explore AI spending, human effort, campaign results, and rework. Filter the analysis, test baseline assumptions, and inspect the evidence behind each finding.
 
@@ -20,10 +20,19 @@ The analysis separates estimated **net AI value** from **whole-campaign profit o
 | --- | --- |
 | **[QUESTIONS](QUESTIONS/README.md)** | The business questions, analysis guidelines, and two learner tracks |
 | **[DATA](DATA/README.md)** | Complete exercise downloads, Excel workbooks, CSV files, and a data guide |
-| **[SOLUTION](SOLUTION/README.md)** | The executive summary, six detailed answers, dashboard images, and supporting results |
+| **[SOLUTION](SOLUTION/README.md)** | Two completed tracks: a self-contained Excel answer and the deeper dashboard case study |
 
-- **Portfolio review:** Read this overview → [QUESTIONS](QUESTIONS/README.md) for the assignment → [live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) for the evidence → [executive summary](SOLUTION/EXECUTIVE_SUMMARY.md) and [six detailed answers](SOLUTION/README.md#detailed-answers) for the conclusions. In the dashboard, follow **Company overview → Campaign comparison → Workflow investigation**.
+- **Portfolio review:** Read this overview → [QUESTIONS](QUESTIONS/README.md) for the assignment → [live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) for the evidence → [executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md) and [six detailed answers](SOLUTION/TRACKS/portfolio-project/README.md#detailed-answers) for the conclusions. In the dashboard, follow **Company overview → Campaign comparison → Workflow investigation**.
 - **Learner route:** Choose a track in [QUESTIONS](QUESTIONS/README.md), download its complete [DATA package](DATA/README.md), and open **START_HERE.html**. Complete your analysis before opening **SOLUTION**.
+
+## View a Completed Solution
+
+| Track | Finished answer |
+| --- | --- |
+| **[Quick Challenge](SOLUTION/TRACKS/quick-challenge/README.md)** | **[Download the solved Excel workbook](SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx?raw=true)** — six answers, compact charts, grouped summaries, formulas, and original data in one file |
+| **[Portfolio Project](SOLUTION/TRACKS/portfolio-project/README.md)** | **[Explore the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** and read the deeper analysis with supporting images |
+
+The solved Excel file contains answers and is separate from the answer-free learner download. Download it and open it in Excel; GitHub does not display its worksheets. All three reader areas use the same layout: **`DATA/TRACKS/` → `QUESTIONS/TRACKS/` → `SOLUTION/TRACKS/`**, with `quick-challenge` and `portfolio-project` inside each.
 
 ## Three Key Findings
 
@@ -31,7 +40,7 @@ The analysis separates estimated **net AI value** from **whole-campaign profit o
 - **Human effort explains most of the focal gap.** Of the $9,400 difference between Campaigns 1 and 2, $8,500 comes from estimated time value and $900 from higher AI fees.
 - **Campaign 2 has substantially more rework.** It records 87.82 rework hours and 482 correction prompts, compared with Campaign 1's 10.74 hours and 68 corrections. These patterns identify questions to investigate, not proven causes.
 
-![Campaign comparison showing AI spend, time saved, and net AI value](SOLUTION/visualizations/02_campaign_comparison.jpg)
+![Campaign comparison showing AI spend, time saved, and net AI value](SOLUTION/TRACKS/portfolio-project/visualizations/02_campaign_comparison.jpg)
 
 *Actual dashboard view: Campaigns 1 and 2, all departments, products, and models; original baseline estimates. These 120 tasks have combined net AI value of −$400. The all-company +$2,820 includes Campaigns 3 and 4.*
 
@@ -39,8 +48,8 @@ The analysis separates estimated **net AI value** from **whole-campaign profit o
 
 | Track | Scope and planning target | Complete download |
 | --- | --- | --- |
-| **[Quick Challenge](QUESTIONS/tracks/quick-challenge/README.md)** | 120 tasks; beginner / early intermediate; about four hours; Excel or basic BI | **[Download Quick Challenge ZIP](DATA/downloads/mru-quick-challenge.zip?raw=true)** |
-| **[Portfolio Project](QUESTIONS/tracks/portfolio-project/README.md)** | 240 tasks and prompt-level data; intermediate; about 12–16 hours; Excel, SQL, BI, or code | **[Download Portfolio Project ZIP](DATA/downloads/mru-portfolio-project.zip?raw=true)** |
+| **[Quick Challenge](QUESTIONS/TRACKS/quick-challenge/README.md)** | 120 tasks; beginner / early intermediate; about four hours; Excel or basic BI | **[Download Quick Challenge ZIP](DATA/TRACKS/quick-challenge/mru-quick-challenge.zip?raw=true)** |
+| **[Portfolio Project](QUESTIONS/TRACKS/portfolio-project/README.md)** | 240 tasks and prompt-level data; intermediate; about 12–16 hours; Excel, SQL, BI, or code | **[Download Portfolio Project ZIP](DATA/TRACKS/portfolio-project/mru-portfolio-project.zip?raw=true)** |
 
 Each ZIP includes its **Excel workbook, all CSV source files, and complete instructions**. Unzip it and open **START_HERE.html**. The exercises contain raw inputs and guidance, without completed answers.
 

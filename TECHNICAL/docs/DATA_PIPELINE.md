@@ -1,6 +1,6 @@
 # Data pipeline and reproducibility
 
-This repository contains a deterministic teaching dataset, an independent reconciliation step, a browser dashboard, and two offline learner packages. The canonical raw CSVs live in [`DATA/`](../../DATA/README.md). The generated demo source contains cleaned records; the learner sources retain the small cleaning exercise.
+This repository contains a deterministic teaching dataset, an independent reconciliation step, a browser dashboard, and two offline learner packages, and a separate worked Quick Challenge Excel solution. The canonical raw CSVs live in [`DATA/`](../../DATA/README.md). The generated demo source contains cleaned records; the learner sources retain the small cleaning exercise.
 
 ## Flow
 
@@ -11,12 +11,14 @@ flowchart TD
     B --> D[Clean TECHNICAL/dashboard/demo-data.json]
     C --> E[TECHNICAL/scripts/validate_data.py]
     D --> E
-    E --> F[SOLUTION/outputs/check_totals.json]
+    E --> F[SOLUTION/TRACKS/portfolio-project/outputs/check_totals.json]
     C --> L[TECHNICAL/scripts/analyze_case_study.py]
-    L --> M[SOLUTION/outputs/ evidence CSVs]
+    L --> M[SOLUTION/TRACKS/portfolio-project/outputs/ evidence CSVs]
     C --> G[TECHNICAL/scripts/package_learners.py]
     H[Learner Markdown and licenses] --> G
-    G --> I[DATA/downloads/ ZIPs and TECHNICAL/dashboard/downloads/ copies]
+    G --> I[DATA/TRACKS/ learner ZIPs and TECHNICAL/dashboard/downloads/ copies]
+    C --> N[TECHNICAL/workbook-tools/build-quick-solution.mjs]
+    N --> O[SOLUTION/TRACKS/quick-challenge/ completed Excel workbook]
     D --> J[Browser metrics and dashboard]
     I --> J
     J --> K[npm --prefix TECHNICAL run build: TECHNICAL/dist/]
@@ -37,7 +39,7 @@ python TECHNICAL/scripts/package_learners.py --check
 npm --prefix TECHNICAL run build
 ```
 
-The Python scripts resolve files relative to their own location, so they can also be invoked using an absolute path from another directory. Run the npm commands shown here from the repository root. Generation replaces the five canonical CSVs and `TECHNICAL/dashboard/demo-data.json`; analysis replaces the eight evidence CSVs; packaging replaces generated HTML and both archive copies under `DATA/downloads/` and `TECHNICAL/dashboard/downloads/`. Keep exploratory analysis in separate files.
+The Python scripts resolve files relative to their own location, so they can also be invoked using an absolute path from another directory. Run the npm commands shown here from the repository root. Generation replaces the five canonical CSVs and `TECHNICAL/dashboard/demo-data.json`; analysis replaces the eight evidence CSVs; packaging replaces generated HTML and both archive copies under `DATA/TRACKS/<track>/` and `TECHNICAL/dashboard/downloads/`. Keep exploratory analysis in separate files.
 
 The committed raw-data Excel workbooks are alternate learner inputs for the same CSV records. If those records change, rebuild the workbooks with the optional [workbook authoring helper](../workbook-tools/README.md) before packaging. Its separate authoring runtime is not needed for the dashboard or standard-library workbook parity checks.
 
@@ -61,19 +63,19 @@ The generator emits 240 clean tasks, 3,360 prompts, two model prices, and four c
 - Quick/deeper-track agreement and record-level parity between cleaned CSV sources and the dashboard source.
 - Focal scenario controls, task-level exceptions, and baseline sensitivity.
 
-`--write-checks` saves six-decimal monetary controls to [`SOLUTION/outputs/check_totals.json`](../../SOLUTION/outputs/check_totals.json). Normal validation prints the calculated result without changing that file. Scenario details and answer values are in [`SOLUTION/CALIBRATION.md`](../../SOLUTION/CALIBRATION.md).
+`--write-checks` saves six-decimal monetary controls to [`SOLUTION/TRACKS/portfolio-project/outputs/check_totals.json`](../../SOLUTION/TRACKS/portfolio-project/outputs/check_totals.json). Normal validation prints the calculated result without changing that file. Scenario details and answer values are in [`SOLUTION/TRACKS/portfolio-project/CALIBRATION.md`](../../SOLUTION/TRACKS/portfolio-project/CALIBRATION.md).
 
 The Python regression tests deliberately corrupt duplicate rows, prices, tokens, foreign keys, rework values, and demo records to establish that those errors are rejected. Dashboard tests separately exercise metric calculations and filter scope.
 
-After validation, [`analyze_case_study.py`](../scripts/analyze_case_study.py) independently prices the canonical CSV records with `Decimal` and writes eight compact evidence tables under `SOLUTION/outputs/`: scope, campaign, department, issue, model, product, workflow, and sensitivity summaries. These support the completed case-study answers and retain their scope labels. They are excluded from learner packages.
+After validation, [`analyze_case_study.py`](../scripts/analyze_case_study.py) independently prices the canonical CSV records with `Decimal` and writes eight compact evidence tables under `SOLUTION/TRACKS/portfolio-project/outputs/`: scope, campaign, department, issue, model, product, workflow, and sensitivity summaries. These support the completed case-study answers and retain their scope labels. They are excluded from learner packages.
 
 ## 3. Package the learner tracks
 
-[`package_learners.py`](../scripts/package_learners.py) reads each track's canonical CSVs from `DATA/` and its four Markdown guides from `QUESTIONS/tracks/`. An explicit filename and schema allowlist keeps completed analyses, scripts, tests, and calculated answer columns out of the archives.
+[`package_learners.py`](../scripts/package_learners.py) reads each track's canonical CSVs from `DATA/TRACKS/` and its four Markdown guides from `QUESTIONS/TRACKS/`. An explicit filename and schema allowlist keeps completed analyses, scripts, tests, and calculated answer columns out of the archives.
 
-Both ZIPs have a flat layout: an Excel workbook containing the raw data, CSV file(s), four Markdown guides, `START_HERE.html`, `LICENSE`, and `DATA_LICENSE`. The workbook retains the source rows and cleaning exercise without calculated answers. The HTML works offline and is generated from the shipped Markdown. The repository HTML links to `../../../DATA/<track>/`; the packaged HTML links to data files beside itself. Both resolve without duplicating editable source CSVs. The archive's `DATA_LICENSE` is sourced from the repository's `DATA/LICENSE`.
+Both ZIPs have a flat layout: an Excel workbook containing the raw data, CSV file(s), four Markdown guides, `START_HERE.html`, `LICENSE`, and `DATA_LICENSE`. The workbook retains the source rows and cleaning exercise without calculated answers. The HTML works offline and is generated from the shipped Markdown. The repository HTML links to `../../../DATA/TRACKS/<track>/`; the packaged HTML links to data files beside itself. Both resolve without duplicating editable source CSVs. The archive's `DATA_LICENSE` is sourced from the repository's `DATA/LICENSE`.
 
-The packager normalizes text to UTF-8/LF, fixes ZIP timestamps and permissions, sorts entries, and stores entries without compression to avoid zlib-dependent bytes. Excel files enter the archive as the exact checked-in binary snapshots; the parity test independently checks every cell against its CSV source and requires numeric/date fields to have native Excel types. Given those input snapshots, packaging is deterministic. Regenerating a workbook can change its internal metadata bytes without changing its source values. The packager verifies the entry allowlist and CRC. The release archive and dashboard download copy are byte-identical. `--check` recomputes all outputs and fails if any are stale or missing.
+The packager normalizes text to UTF-8/LF, fixes ZIP timestamps and permissions, sorts entries, and stores entries without compression to avoid zlib-dependent bytes. Excel files enter the archive as the exact checked-in binary snapshots; the parity test independently checks every cell against its CSV source and requires numeric/date fields to have native Excel types. Given those input snapshots, packaging is deterministic. Regenerating a workbook can change its internal metadata bytes without changing its source values. The packager verifies the entry allowlist and CRC. The release archive in `DATA/TRACKS/<track>/` and dashboard download copy are byte-identical. The completed Quick Challenge workbook lives in `SOLUTION/TRACKS/quick-challenge/` and is excluded from these archives. `--check` recomputes all outputs and fails if any are stale or missing.
 
 ## 4. Build and present the dashboard
 

@@ -16,15 +16,15 @@ python -m unittest discover -s TECHNICAL/tests -p "test_data.py" -v
 
 The seed is `20261022`. The reporting period is the completed month September 2026. Generation uses integer hundredths for task hours and integer tokens; largest-remainder apportionment preserves totals. Token allocations vary across tasks and prompts. Costs are never generated as independent campaign charges. They are calculated from integer input/output tokens and the two fixed rate pairs: Lite 10/30 and Pro 40/100 USD per million tokens.
 
-[`TECHNICAL/scripts/validate_data.py`](../TECHNICAL/scripts/validate_data.py) does not import the generator or read saved check totals. It independently reads the canonical CSVs in `DATA/`, removes exact repeated task IDs, standardizes department labels, prices prompts with `Decimal`, aggregates to task grain, and reconciles the clean dashboard source. [`outputs/check_totals.json`](outputs/check_totals.json) is its reproducible output. Stored monetary values use six decimal places; the dashboard rounds only for display.
+[`TECHNICAL/scripts/validate_data.py`](../../../TECHNICAL/scripts/validate_data.py) does not import the generator or read saved check totals. It independently reads the canonical CSVs in `DATA/`, removes exact repeated task IDs, standardizes department labels, prices prompts with `Decimal`, aggregates to task grain, and reconciles the clean dashboard source. [`outputs/check_totals.json`](outputs/check_totals.json) is its reproducible output. Stored monetary values use six decimal places; the dashboard rounds only for display.
 
 ## Source and dashboard contract
 
-- `DATA/quick-challenge/mru_quick_challenge.csv`: 122 raw records, 120 distinct focal tasks. Prompt counts and tokens are aggregated to task grain, with rates included for direct Excel formulas.
-- `DATA/portfolio-project/work_log.csv`: 242 raw records, 240 distinct tasks, 60 per campaign. The same two repeated focal tasks occur in both learner exports.
-- `DATA/portfolio-project/ai_usage.csv`: 3,360 distinct employee prompts with no repeated usage IDs. One `First attempt` per task, followed by `Followup` and `Correction` records.
-- `DATA/portfolio-project/model_pricing.csv`: exactly the two fixed model prices.
-- `DATA/portfolio-project/campaigns.csv`: four campaigns with one revenue and other-spending record each.
+- `DATA/TRACKS/quick-challenge/mru_quick_challenge.csv`: 122 raw records, 120 distinct focal tasks. Prompt counts and tokens are aggregated to task grain, with rates included for direct Excel formulas.
+- `DATA/TRACKS/portfolio-project/work_log.csv`: 242 raw records, 240 distinct tasks, 60 per campaign. The same two repeated focal tasks occur in both learner exports.
+- `DATA/TRACKS/portfolio-project/ai_usage.csv`: 3,360 distinct employee prompts with no repeated usage IDs. One `First attempt` per task, followed by `Followup` and `Correction` records.
+- `DATA/TRACKS/portfolio-project/model_pricing.csv`: exactly the two fixed model prices.
+- `DATA/TRACKS/portfolio-project/campaigns.csv`: four campaigns with one revenue and other-spending record each.
 - `TECHNICAL/dashboard/demo-data.json`: arrays named `work_log`, `ai_usage`, `model_pricing`, and `campaigns`, containing clean original-column source records. Numeric fields are JSON numbers, dates are ISO strings, and observation flags are the strings `Yes` and `No`. There are no precomputed dashboard costs or ROI fields.
 
 Every task has one fictional employee, department, product, and model. Employees remain in one department. Usage dates precede or equal task completion dates and fall on September workdays. Prompts span up to four workdays. The task completion date and prompt usage date answer different questions.

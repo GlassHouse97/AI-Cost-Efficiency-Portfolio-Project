@@ -186,7 +186,7 @@ def archive_bytes(folder: Path, package: dict, guide: bytes) -> bytes:
     """Only explicitly named learner files and both licenses can enter the ZIP."""
     payloads: dict[str, bytes] = {}
     for filename in package["files"]:
-        path = (ROOT / "DATA" / folder.name / filename) if filename.endswith((".csv", ".xlsx")) else folder / filename
+        path = (ROOT / "DATA" / "TRACKS" / folder.name / filename) if filename.endswith((".csv", ".xlsx")) else folder / filename
         if path.suffix == ".csv":
             validate_raw_schema(path)
         payloads[filename] = guide if filename == "START_HERE.html" else (
@@ -219,12 +219,12 @@ def main() -> int:
     args = parser.parse_args()
     stale = []
     for slug, package in PACKAGES.items():
-        folder = ROOT / "QUESTIONS" / "tracks" / slug
+        folder = ROOT / "QUESTIONS" / "TRACKS" / slug
         guide = html_guide(folder, package)
         archive = archive_bytes(folder, package, guide)
         outputs = {
-            folder / "START_HERE.html": html_guide(folder, package, csv_prefix=f"../../../DATA/{slug}/"),
-            ROOT / "DATA" / "downloads" / f"mru-{slug}.zip": archive,
+            folder / "START_HERE.html": html_guide(folder, package, csv_prefix=f"../../../DATA/TRACKS/{slug}/"),
+            ROOT / "DATA" / "TRACKS" / slug / f"mru-{slug}.zip": archive,
             ROOT / "TECHNICAL" / "dashboard" / "downloads" / f"mru-{slug}.zip": archive,
         }
         for target, content in outputs.items():

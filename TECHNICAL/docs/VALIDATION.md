@@ -2,6 +2,19 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Aligned tracks and Quick Challenge Excel solution — October 23
+
+- `DATA/TRACKS/`, `QUESTIONS/TRACKS/`, and `SOLUTION/TRACKS/` now use the same `quick-challenge` and `portfolio-project` subfolders. Each data track keeps its raw Excel workbook, CSV files, and complete learner ZIP together. Root navigation distinguishes the completed quick workbook from the deeper dashboard case study.
+- The completed quick workbook has four sheets: **Solution**, **Summaries**, **Clean**, and **Raw**. Raw retains all 122 original records. Clean contains 120 unique tasks after removing the exact repeated exports for `W0018` and `W0087` and normalizing department labels. Formula columns derive costs, hours saved, time value, and net AI value.
+- The Solution sheet answers all six Quick Challenge questions and contains two native editable charts. Campaign, department, and issue summaries use transparent `SUMIFS` and `COUNTIFS` formulas. The quick scope reconciles to $1,900 AI cost, 30 hours saved, and −$400 estimated net AI value; the deeper four-campaign scope remains +$2,820.
+- Authoring-engine recalculation checks changed the hourly value to $60 and verified Campaign 1 / Campaign 2 net values of $5,500 / −$5,600 and the updated rate label. Adding one actual hour to the final cleaned task changed Campaign 2 to −$4,950. Zeroing token rates returned N/A ROI. Every changed input was restored, then the saved $50/hour case and ratios were rechecked. The final error scan found no spreadsheet calculation errors.
+- Missing native-chart display caches in the authoring export were filled from the same workbook's saved worksheet values. The compatibility helper leaves formulas, source inputs, and all non-chart ZIP parts unchanged. Independent checks verify both charts' live cell references and all 12 cached points; only the two chart XML parts differ after the compatibility step, and all other ZIP parts are byte-identical. The charts remain editable.
+- All **27 regression tests** pass: 17 Python and 10 JavaScript. Five solution-workbook tests independently reconcile source and cleaned records, task formulas, campaign totals and ROI, department/issue results, and native chart references/caches. The workbook has no error cells, macros, external workbook links, or external data connections. Source validation, evidence-table regeneration, learner-package freshness, and static build also pass.
+- Eight rendered worksheet regions were inspected for layout and traceability. Validation uses the spreadsheet authoring engine and independent OOXML checks; a native Microsoft Excel application was not available for an application-level opening test.
+- Navigation checks passed for 293 Markdown links, 32 repository HTML links, 19 anchors, four canonical GitHub targets, and 17 local targets in the standalone ZIP guides. Local paths were checked against actual directory entries for exact case. The solved-workbook links point to SOLUTION; input-workbook links point to DATA.
+- Completed workbook: 56,978 bytes; SHA-256 `0a1977c1135006eca30354aab47aeebe1a9a1a582ca676d2efaa6161f10f072f`. The four-sheet structure, three frozen identifier columns, and six frozen header rows on Raw and Clean survive export.
+- The answer-free learner ZIP contents remain unchanged. They contain the raw input workbooks and guides, while the completed Excel answer is available only from the separate solution track.
+
 ## Calculation hints and reader guidance — October 23
 
 - Added short calculation explanations to all six headline metrics, whole-campaign result, full AI ROI, and workflow rework share. Headline examples use the active selection; spending and ratio examples disclose display rounding.
@@ -40,7 +53,7 @@ The local dashboard was inspected at desktop and 390-pixel phone widths. Checks 
 
 Selecting Campaign 2 and Lite changed task AI spending to $320 while whole-campaign AI spending remained $1,400 and campaign result remained -$2,400. Setting a September 10–15 prompt-date range for Campaign 1 narrowed the daily chart to $109.02 without changing its $500 full-task cost or $4,500 estimated net value.
 
-The six dashboard evidence screenshots were inspected against their captions and filters. They are actual browser captures; the [image record](../../SOLUTION/visualizations/README.md) documents their scope. All six original quick questions and six deeper questions are retained or mapped to completed answers. The repository's local documentation and image links resolve.
+The six dashboard evidence screenshots were inspected against their captions and filters. They are actual browser captures; the [image record](../../SOLUTION/TRACKS/portfolio-project/visualizations/README.md) documents their scope. All six original quick questions and six deeper questions are retained or mapped to completed answers. The repository's local documentation and image links resolve.
 
 ## Learner packages
 

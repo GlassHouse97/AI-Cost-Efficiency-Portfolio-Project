@@ -50,4 +50,4 @@ The recommendations combine [cost and model evidence](01_usage_and_costs.md), [s
 
 This is a synthetic, calibrated teaching case. Task difficulty, campaign mix, model choice, and estimated baselines can explain group differences. Staff time value is not realized cash savings, and observational patterns do not demonstrate causal impact.
 
-[Executive summary](EXECUTIVE_SUMMARY.md) · [Solution index](README.md) · [Project README](../README.md)
+[Executive summary](EXECUTIVE_SUMMARY.md) · [Solution index](README.md) · [Project README](../../../README.md)

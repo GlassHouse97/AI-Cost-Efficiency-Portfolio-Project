@@ -176,11 +176,11 @@ def main() -> None:
     duplicate_indices = [17, 86]
     quick += [dict(quick[index]) for index in duplicate_indices]
     raw_work += [dict(raw_work[index]) for index in duplicate_indices]
-    write_csv(ROOT / "DATA/quick-challenge/mru_quick_challenge.csv", quick, QUICK_FIELDS)
-    write_csv(ROOT / "DATA/portfolio-project/work_log.csv", raw_work, WORK_FIELDS)
-    write_csv(ROOT / "DATA/portfolio-project/ai_usage.csv", data["ai_usage"], USAGE_FIELDS)
-    write_csv(ROOT / "DATA/portfolio-project/model_pricing.csv", PRICES, list(PRICES[0]))
-    write_csv(ROOT / "DATA/portfolio-project/campaigns.csv", data["campaigns"], list(data["campaigns"][0]))
+    write_csv(ROOT / "DATA/TRACKS/quick-challenge/mru_quick_challenge.csv", quick, QUICK_FIELDS)
+    write_csv(ROOT / "DATA/TRACKS/portfolio-project/work_log.csv", raw_work, WORK_FIELDS)
+    write_csv(ROOT / "DATA/TRACKS/portfolio-project/ai_usage.csv", data["ai_usage"], USAGE_FIELDS)
+    write_csv(ROOT / "DATA/TRACKS/portfolio-project/model_pricing.csv", PRICES, list(PRICES[0]))
+    write_csv(ROOT / "DATA/TRACKS/portfolio-project/campaigns.csv", data["campaigns"], list(data["campaigns"][0]))
     demo = ROOT / "TECHNICAL/dashboard/demo-data.json"
     demo.parent.mkdir(parents=True, exist_ok=True)
     demo.write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")

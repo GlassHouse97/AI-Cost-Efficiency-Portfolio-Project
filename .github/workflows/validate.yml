@@ -19,7 +19,7 @@ jobs:
       - name: Verify committed case-study evidence tables
         run: |
           python TECHNICAL/scripts/analyze_case_study.py
-          git diff --exit-code -- 'SOLUTION/outputs/*.csv'
+          git diff --exit-code -- 'SOLUTION/TRACKS/portfolio-project/outputs/*.csv'
       - run: python -m unittest discover -s TECHNICAL/tests -p "test_*.py" -v
       - run: npm --prefix TECHNICAL test
       - run: python TECHNICAL/scripts/package_learners.py --check

@@ -21,12 +21,13 @@ test("production server serves the app and exact learner downloads without expos
   assert.equal(script.status, 200);
   assert.match(script.headers.get("content-type"), /javascript/);
   assert.equal((await script.text()).length, 0);
-  for (const name of ["mru-quick-challenge.zip", "mru-portfolio-project.zip"]) {
+  for (const slug of ["quick-challenge", "portfolio-project"]) {
+    const name = `mru-${slug}.zip`;
     const response = await fetch(`${base}/downloads/${name}`);
     assert.equal(response.status, 200);
     assert.equal(response.headers.get("content-type"), "application/zip");
     const hash = bytes => createHash("sha256").update(bytes).digest("hex");
-    assert.equal(hash(Buffer.from(await response.arrayBuffer())), hash(await readFile(new URL(`../../DATA/downloads/${name}`, import.meta.url))));
+    assert.equal(hash(Buffer.from(await response.arrayBuffer())), hash(await readFile(new URL(`../../DATA/TRACKS/${slug}/${name}`, import.meta.url))));
   }
   for (const path of ["/README.md", "/.env", "/%2e%2e%2fscripts/server.mjs", "/missing.html", "/%zz"]) {
     assert.equal((await fetch(base + path)).status, 404, path);

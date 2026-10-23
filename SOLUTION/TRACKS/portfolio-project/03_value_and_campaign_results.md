@@ -45,7 +45,7 @@ These campaign results use the supplied cost categories, including the $50/hour 
 
 `Net AI value = hours saved × $50 − AI cost`. `AI ROI = total net AI value / total AI cost × 100`. `Campaign result = revenue − other campaign spending − actual hours × $50 − AI cost`.
 
-The [campaign table](outputs/campaign_summary.csv) and [scope table](outputs/scope_summary.csv) retain full precision. The [validator](../TECHNICAL/scripts/validate_data.py) reconciles prompt costs and unique task hours independently; the [dashboard](../TECHNICAL/dashboard/metrics.mjs) restricts whole-campaign calculations to campaign selection. Revenue is counted once per campaign, and other spending excludes labor and AI charges.
+The [campaign table](outputs/campaign_summary.csv) and [scope table](outputs/scope_summary.csv) retain full precision. The [validator](../../../TECHNICAL/scripts/validate_data.py) reconciles prompt costs and unique task hours independently; the [dashboard](../../../TECHNICAL/dashboard/metrics.mjs) restricts whole-campaign calculations to campaign selection. Revenue is counted once per campaign, and other spending excludes labor and AI charges.
 
 **Business implication:** judge AI workflow efficiency and campaign commercial performance together, while keeping their formulas and scopes distinct.
 

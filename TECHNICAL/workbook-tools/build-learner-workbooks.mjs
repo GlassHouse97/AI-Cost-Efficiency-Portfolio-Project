@@ -60,7 +60,7 @@ for (const output of outputs) {
   const workbook = Workbook.create();
   const metadata = [];
   for (const [name, source, previewRanges] of output.sources) {
-    const csvPath = path.join(root, 'DATA', output.directory, source);
+    const csvPath = path.join(root, 'DATA', 'TRACKS', output.directory, source);
     const imported = await Workbook.fromCSV(await fs.readFile(csvPath, 'utf8'), { sheetName: name });
     const rows = imported.worksheets.getItemAt(0).getUsedRange().values;
     const headers = rows[0];
@@ -116,7 +116,7 @@ for (const output of outputs) {
     }
   }
   const exported = await SpreadsheetFile.exportXlsx(workbook);
-  const outputPath = path.join(root, 'DATA', output.directory, output.name);
+  const outputPath = path.join(root, 'DATA', 'TRACKS', output.directory, output.name);
   // The runtime emits an inspection sidecar on save. Keep it in ignored QA.
   const stagingPath = path.join(previewDir, output.name);
   await exported.save(stagingPath);

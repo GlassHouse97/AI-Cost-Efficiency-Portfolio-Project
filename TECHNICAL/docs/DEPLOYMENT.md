@@ -52,9 +52,9 @@ gcloud run deploy ai-cost-efficiency --source TECHNICAL --project chris-delgados
 gcloud run services describe ai-cost-efficiency --project chris-delgados-data-portfolio --region us-east1 --format="yaml(status.url,status.latestReadyRevisionName,status.traffic)"
 ```
 
-Confirm a ready revision receives 100% of traffic, then verify the public root, `/health`, scripts, dataset, and both learner downloads. Compare the downloaded ZIP SHA-256 values with `DATA/downloads/`. Open the public dashboard and check the all-company totals and the Campaigns 1 + 2 filter. A successful Git push alone does not establish a deployment.
+Confirm a ready revision receives 100% of traffic, then verify the public root, `/health`, scripts, dataset, and both learner downloads. Compare the downloaded ZIP SHA-256 values with `DATA/TRACKS/<track>/`. Open the public dashboard and check the all-company totals and the Campaigns 1 + 2 filter. A successful Git push alone does not establish a deployment.
 
-Run `python TECHNICAL/scripts/package_learners.py --check` to verify the current generated packages and print their SHA-256 values. On PowerShell, `Get-FileHash DATA/downloads/*.zip -Algorithm SHA256` reports the local archive hashes for comparison with downloaded copies. Hashes change when learner files change; use the current files rather than an earlier release's values.
+Run `python TECHNICAL/scripts/package_learners.py --check` to verify the current generated packages and print their SHA-256 values. On PowerShell, `Get-FileHash DATA/TRACKS/*/*.zip -Algorithm SHA256` reports the local archive hashes for comparison with downloaded copies. Hashes change when learner files change; use the current files rather than an earlier release's values.
 
 The release record is in [VALIDATION.md](VALIDATION.md). The service also has Google's equivalent hashed hostname; the readable project-number URL above is the portfolio link.
 

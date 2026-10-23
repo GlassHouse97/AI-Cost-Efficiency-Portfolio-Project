@@ -8,15 +8,16 @@ The completed project is ready to be linked from the owner's separate portfolio 
 | --- | --- |
 | Primary action: live dashboard | [Open dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) |
 | Source and project overview | [GitHub repository](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project) |
-| Completed case study | [Executive summary](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/EXECUTIVE_SUMMARY.md) |
+| Completed case study | [Executive summary](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md) |
 | Quick learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-quick-challenge.zip) |
+| Quick completed solution | [Excel solution guide](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/quick-challenge/README.md) |
 | Deeper learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-portfolio-project.zip) |
 
 **Suggested title:** AI Cost Efficiency & Workflow Value
 
-**Suggested description:** An interactive business case tracing AI token spending through staff effort, rework, and campaign profitability. Explore four synthetic campaigns, test baseline assumptions, and inspect a reproducible analysis with two standalone learner exercises.
+**Suggested description:** An interactive business case tracing AI token spending through staff effort, rework, and campaign profitability. Explore four synthetic campaigns, test baseline assumptions, and inspect a reproducible analysis with two standalone learner exercises and a self-contained worked Excel answer for the quick track.
 
-**Suggested image:** [Company overview](../../SOLUTION/visualizations/01_company_overview.jpg). Additional evidence panels are in [SOLUTION/visualizations/](../../SOLUTION/visualizations/), with their filter settings and capture provenance.
+**Suggested image:** [Company overview](../../SOLUTION/TRACKS/portfolio-project/visualizations/01_company_overview.jpg). Additional evidence panels are in [SOLUTION/TRACKS/portfolio-project/visualizations/](../../SOLUTION/TRACKS/portfolio-project/visualizations/), with their filter settings and capture provenance.
 
 Make the live dashboard the primary action and GitHub the supporting source link. Keep the learning exercises available from the repository and the dashboard's learner section. The README already explains the business problem, guiding questions, supported answers, and reproduction steps.
 

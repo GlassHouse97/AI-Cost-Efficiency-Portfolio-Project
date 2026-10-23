@@ -67,9 +67,9 @@ def read_csv(path: Path) -> list[dict]:
 
 
 def load(root: Path = ROOT) -> dict:
-    folder = root / "DATA/portfolio-project"
+    folder = root / "DATA/TRACKS/portfolio-project"
     payload = {name: read_csv(folder / f"{name}.csv") for name in ["work_log", "ai_usage", "model_pricing", "campaigns"]}
-    payload["quick"] = read_csv(root / "DATA/quick-challenge/mru_quick_challenge.csv")
+    payload["quick"] = read_csv(root / "DATA/TRACKS/quick-challenge/mru_quick_challenge.csv")
     payload["demo"] = json.loads((root / "TECHNICAL/dashboard/demo-data.json").read_text(encoding="utf-8"))
     return payload
 
@@ -231,11 +231,11 @@ def serialized(results: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write-checks", action="store_true", help="Save independently calculated SOLUTION/outputs/check_totals.json")
+    parser.add_argument("--write-checks", action="store_true", help="Save independently calculated SOLUTION/TRACKS/portfolio-project/outputs/check_totals.json")
     args = parser.parse_args()
     results = validate_data(load())
     if args.write_checks:
-        output = ROOT / "SOLUTION/outputs/check_totals.json"
+        output = ROOT / "SOLUTION/TRACKS/portfolio-project/outputs/check_totals.json"
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(serialized(results), encoding="utf-8")
     print(serialized(results))

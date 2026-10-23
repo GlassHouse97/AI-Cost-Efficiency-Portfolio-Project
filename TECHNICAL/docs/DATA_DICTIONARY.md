@@ -15,11 +15,11 @@ erDiagram
 
 | Source | Raw rows | Intended key | What one analytical row represents |
 | --- | ---: | --- | --- |
-| [work_log.csv](../../DATA/portfolio-project/work_log.csv) | 242 | `work_item_id` after exact deduplication | One of 240 completed tasks |
-| [ai_usage.csv](../../DATA/portfolio-project/ai_usage.csv) | 3,360 | `usage_id` | One employee prompt |
-| [model_pricing.csv](../../DATA/portfolio-project/model_pricing.csv) | 2 | `model` | One fictional model's fixed rates |
-| [campaigns.csv](../../DATA/portfolio-project/campaigns.csv) | 4 | `campaign_id` | One complete campaign |
-| [mru_quick_challenge.csv](../../DATA/quick-challenge/mru_quick_challenge.csv) | 122 | `work_item_id` after exact deduplication | One of 120 focal tasks, with prompts already aggregated |
+| [work_log.csv](../../DATA/TRACKS/portfolio-project/work_log.csv) | 242 | `work_item_id` after exact deduplication | One of 240 completed tasks |
+| [ai_usage.csv](../../DATA/TRACKS/portfolio-project/ai_usage.csv) | 3,360 | `usage_id` | One employee prompt |
+| [model_pricing.csv](../../DATA/TRACKS/portfolio-project/model_pricing.csv) | 2 | `model` | One fictional model's fixed rates |
+| [campaigns.csv](../../DATA/TRACKS/portfolio-project/campaigns.csv) | 4 | `campaign_id` | One complete campaign |
+| [mru_quick_challenge.csv](../../DATA/TRACKS/quick-challenge/mru_quick_challenge.csv) | 122 | `work_item_id` after exact deduplication | One of 120 focal tasks, with prompts already aggregated |
 
 ## Work log
 
@@ -116,4 +116,4 @@ These measures are calculated in the analysis; they are not supplied as learner 
 | Rework share | Sum of rework hours ÷ sum of actual hours × 100 |
 | Whole-campaign result | Revenue − other spending − (actual hours × $50) − AI cost |
 
-Aggregate underlying amounts before taking ratios. Preserve full precision until display and return N/A for a zero denominator. Net AI value estimates staff capacity value; it is not evidence of reduced payroll spending. For formulas and sensitivity instructions, use the [Portfolio Project formula guide](../../QUESTIONS/tracks/portfolio-project/FORMULAS.md).
+Aggregate underlying amounts before taking ratios. Preserve full precision until display and return N/A for a zero denominator. Net AI value estimates staff capacity value; it is not evidence of reduced payroll spending. For formulas and sensitivity instructions, use the [Portfolio Project formula guide](../../QUESTIONS/TRACKS/portfolio-project/FORMULAS.md).

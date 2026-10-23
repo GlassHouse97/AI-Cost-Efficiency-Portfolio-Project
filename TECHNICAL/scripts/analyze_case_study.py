@@ -10,8 +10,8 @@ from decimal import Decimal
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / "DATA" / "portfolio-project"
-OUTPUT = ROOT / "SOLUTION" / "outputs"
+SOURCE = ROOT / "DATA" / "TRACKS" / "portfolio-project"
+OUTPUT = ROOT / "SOLUTION" / "TRACKS" / "portfolio-project" / "outputs"
 D = Decimal
 ZERO = D(0)
 RATE = D(50)

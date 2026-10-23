@@ -86,7 +86,7 @@ class LearnerFileTests(unittest.TestCase):
     def test_excel_workbooks_match_every_raw_source_cell(self):
         for slug, mapping in TRACKS.items():
             with self.subTest(track=slug):
-                folder = ROOT / "DATA" / slug
+                folder = ROOT / "DATA" / "TRACKS" / slug
                 sheets, epoch = read_workbook(folder / f"mru-{slug}.xlsx")
                 self.assertEqual(set(sheets), set(mapping))
                 for sheet, filename in mapping.items():
@@ -115,13 +115,13 @@ class LearnerFileTests(unittest.TestCase):
             with self.subTest(track=slug):
                 workbook = f"mru-{slug}.xlsx"
                 source_names = set(mapping.values()) | {workbook}
-                release = ROOT / "DATA" / "downloads" / f"mru-{slug}.zip"
+                release = ROOT / "DATA" / "TRACKS" / slug / f"mru-{slug}.zip"
                 self.assertEqual(release.read_bytes(), (ROOT / "TECHNICAL" / "dashboard" / "downloads" / release.name).read_bytes())
                 with ZipFile(release) as archive:
                     self.assertEqual(set(archive.namelist()), source_names | GUIDES)
                     self.assertIsNone(archive.testzip())
                     for filename in source_names:
-                        source = ROOT / "DATA" / slug / filename
+                        source = ROOT / "DATA" / "TRACKS" / slug / filename
                         expected = source.read_bytes() if filename.endswith(".xlsx") else source.read_text(encoding="utf-8-sig").encode("utf-8")
                         self.assertEqual(archive.read(filename), expected)
 
