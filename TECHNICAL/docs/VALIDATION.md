@@ -2,6 +2,15 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Calculation hints and reader guidance — October 23
+
+- Added short calculation explanations to all six headline metrics, whole-campaign result, full AI ROI, and workflow rework share. Headline examples use the active selection; spending and ratio examples disclose display rounding.
+- Browser checks covered all six headline explanations, keyboard focus, Escape, repeated-click dismissal, filter/view changes, Campaign 2's negative value, an empty cohort's N/A ROI, and DataFlow's rounded cost components. At a 390-pixel phone viewport, the metric and table popups fit the screen without adding page overflow. No browser errors were observed.
+- All **22 regression tests** pass. Source validation, unchanged evidence-table regeneration, learner-package freshness, and static build also pass. The metric calculations and learner data are unchanged.
+- The root README now gives separate portfolio-review and learner routes. The technical overview explains HTML/CSS/JavaScript, the Node.js server, and the manual Cloud Build → Artifact Registry → Cloud Run deployment; Git pushes run validation only.
+- Cloud Run revision `ai-cost-efficiency-00005-8bv` is ready with 100% of traffic. Image digest: `sha256:63229de5f21231cb7662610cfb5d617f4c604b61bb49392fc93faa5ddb88f98c`.
+- The live health endpoint returned HTTP 200. All dashboard source assets, the dataset, and both learner ZIPs match the local release bytes. A live-browser check confirmed the new net-value explanation and no console errors.
+
 ## Reader-focused release checks — October 23
 
 - The root now presents `QUESTIONS/`, `DATA/`, `SOLUTION/`, and `TECHNICAL/`. Source, test, dependency, container, and deployment files moved into `TECHNICAL/`; GitHub workflow and repository-wide Git metadata remain at their required scope.

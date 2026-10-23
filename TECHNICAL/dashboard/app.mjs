@@ -6,7 +6,11 @@ import {
   wholeCampaigns,
   dailyUsage,
   DEPARTMENTS,
+  HOURLY_RATE,
 } from "./metrics.mjs";
+import { helpButton, enableMetricHelp } from "./metric-help.mjs";
+
+const closeMetricHelp = enableMetricHelp();
 
 const $ = (id) => document.getElementById(id);
 const money = (n) =>
@@ -36,6 +40,7 @@ const esc = (s) =>
       ],
   );
 const cell = (value, cls = "") => `<td class="${cls}">${value}</td>`;
+const explained = (label, description) => `${label} ${helpButton(label, description)}`;
 const table = (headers, rows, caption = "") =>
   `<div class="table-wrap" tabindex="0" role="region" aria-label="${esc(caption || "Analysis table")}"><table>${caption ? `<caption>${caption}</caption>` : ""}<thead><tr>${headers.map((h) => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.length ? rows.map((row) => `<tr>${row.join("")}</tr>`).join("") : `<tr><td colspan="${headers.length}" class="empty">No tasks match these filters. Try resetting the filters.</td></tr>`}</tbody></table></div>`;
 let model,
@@ -59,8 +64,8 @@ function options(id, values) {
       .join(""),
   );
 }
-function metric(label, value, note, cls = "") {
-  return `<div class="metric"><span class="metric-label">${label}</span><strong class="${cls}">${value}</strong><small>${note}</small></div>`;
+function metric(label, value, note, cls = "", explanation = "") {
+  return `<div class="metric"><span class="metric-label">${label}${explanation ? helpButton(label, explanation) : ""}</span><strong class="${cls}">${value}</strong><small>${note}</small></div>`;
 }
 function bars(rows, field, labelFormatter = money) {
   const max = Math.max(1, ...rows.map((r) => Math.abs(r[field])));
@@ -74,6 +79,7 @@ function bars(rows, field, labelFormatter = money) {
     : '<p class="empty">No tasks match these filters.</p>';
 }
 function setView(next) {
+  closeMetricHelp();
   for (const name of ["overview", "campaigns", "workflow"])
     $(`${name}-view`).hidden = name !== next;
   for (const button of document.querySelectorAll("[data-view]")) {
@@ -88,34 +94,43 @@ function setView(next) {
   }[next];
 }
 function render() {
+  closeMetricHelp();
   selected = selectTasks(model.tasks, filters());
   const s = summarize(selected);
   $("scope").textContent =
     `${number(s.tasks)} of ${model.tasks.length} tasks · ${number(s.prompts)} prompts · full task history`;
   $("metrics").innerHTML =
-    metric("AI spend", money(s.cost), "Derived from input + output tokens") +
+    metric("AI spend", money(s.cost), "Derived from input + output tokens", "",
+      `Sum every selected prompt's input and output charges at its model's price per million tokens.\n${money(s.inputCost)} input + ${money(s.outputCost)} output ≈ ${money(s.cost)}. Totals use unrounded charges.`) +
     metric(
       "Net AI value",
       signed(s.value),
       "Estimated time value less AI fees",
       tone(s.value),
+      `Sum each selected task's (no-AI hours − actual hours) × ${money(HOURLY_RATE)}/h, then subtract AI fees.\n(${number(s.baseline, 2)} − ${number(s.actual, 2)}) h × ${money(HOURLY_RATE)} − ${money(s.cost)} = ${signed(s.value)}. Estimated time value, not cash savings.`,
     ) +
     metric(
       "Net hours saved",
       signed(s.saved, (n) => `${number(n, 2)} h`),
       "Without AI estimate − actual hours",
       tone(s.saved),
+      `Sum no-AI estimates minus actual hours, counting each selected task once. Actual hours include preparation, review, and rework.\n${number(s.baseline, 2)} − ${number(s.actual, 2)} = ${number(s.saved, 2)} hours.`,
     ) +
-    metric("AI ROI", percent(s.roi), "Net AI value ÷ AI spend", tone(s.roi)) +
+    metric("AI ROI", percent(s.roi), "Net AI value ÷ AI spend", tone(s.roi),
+      `Total net AI value ÷ total AI spend × 100; individual task percentages are not averaged.\n${s.cost ? `${money(s.value)} ÷ ${money(s.cost)} × 100 ≈ ${percent(s.roi)}.` : "No AI spend in this selection, so ROI is N/A."}`) +
     metric(
       "Total tokens",
       number(s.inputTokens + s.outputTokens),
       `${number(s.inputTokens)} in · ${number(s.outputTokens)} out`,
+      "",
+      `Sum input and output tokens from all unique prompts attached to the selected tasks.\n${number(s.inputTokens)} input + ${number(s.outputTokens)} output = ${number(s.inputTokens + s.outputTokens)} tokens.`,
     ) +
     metric(
       "Employee prompts",
       number(s.prompts),
       `${money(s.costPerPrompt)} average cost per prompt`,
+      "",
+      `Count unique usage records for the selected tasks, including correction prompts.\n${number(s.prompts)} prompts across ${number(s.tasks)} tasks.${s.prompts ? ` Average cost: ${money(s.cost)} ÷ ${number(s.prompts)} ≈ ${money(s.costPerPrompt)} per prompt.` : " Average cost is N/A when no prompts match."}`,
     );
   const groups = groupSummary(selected, "campaign_id").map((g) => ({
     ...g,
@@ -189,8 +204,8 @@ function render() {
       "Other spending",
       "Labor at $50/h",
       "AI spend",
-      "Campaign result",
-      "Full AI ROI",
+      explained("Campaign result", "For each whole campaign: revenue − other spending − (actual hours × $50) − AI spend. Uses every task in the campaign; only the campaign filter applies."),
+      explained("Full AI ROI", "Whole-campaign net AI value ÷ whole-campaign AI spend × 100. Net AI value is (no-AI hours − actual hours) × $50 − AI spend; campaign result is a separate measure."),
     ],
     whole.map((r) => [
       cell(esc(r.campaign_name)),
@@ -336,7 +351,7 @@ function renderWorkflow() {
     [
       "Observation",
       "Tasks",
-      "Rework share",
+      explained("Rework share", "Sum rework hours ÷ sum actual hours × 100 for this group. Rework is already included in actual hours; it is not added a second time."),
       "Corrections / task",
       "Hours saved / task",
       "AI spend / task",

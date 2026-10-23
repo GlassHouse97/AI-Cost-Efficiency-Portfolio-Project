@@ -2,6 +2,22 @@
 
 This folder contains the dashboard application, reproducible analysis scripts, tests, deployment configuration, and developer documentation. Start at the [project overview](../README.md) for the business case, [questions](../QUESTIONS/README.md) for the assignment, [data](../DATA/README.md) for learner files, or [solution](../SOLUTION/README.md) for the answers.
 
+## How it works
+
+The dashboard is a plain **HTML, CSS, and JavaScript** application. JavaScript runs in the visitor's browser, calculates the metrics from a bundled synthetic dataset, and updates the charts and tables when filters change. There is no frontend framework, live database, or AI API call.
+
+| Part | Where it lives | What it does |
+| --- | --- | --- |
+| Page and styling | [dashboard/index.html](dashboard/index.html), [dashboard/styles.css](dashboard/styles.css) | Define the layout and appearance. |
+| Interactions and calculations | [dashboard/app.mjs](dashboard/app.mjs), [dashboard/metrics.mjs](dashboard/metrics.mjs) | Filter the data, calculate results, and render the dashboard in the browser. |
+| Dashboard data | [dashboard/demo-data.json](dashboard/demo-data.json) | Provide the prepared synthetic records derived from the published CSV files. |
+| Web server | [scripts/server.mjs](scripts/server.mjs) | Use Node.js to serve the dashboard files and learner ZIP downloads. |
+| Container | [Dockerfile](Dockerfile) | Package the dashboard and server with Node.js 24 for Cloud Run. |
+
+**GitHub stores the source; Google Cloud Run hosts the live dashboard.** Deployment is a separate manual step from the local repository: `gcloud run deploy --source TECHNICAL` sends the selected source files to Google Cloud Build, which builds the Dockerfile into a container image. Artifact Registry stores that image, and Cloud Run runs it to serve the public URL. See the [deployment guide](docs/DEPLOYMENT.md) for the complete command.
+
+A Git push runs the repository's validation workflow; **it does not automatically deploy to Cloud Run**. Python scripts prepare and check the data before deployment. Python is not needed by the running dashboard. The portfolio website can link to this independent dashboard.
+
 ## Run the dashboard
 
 Use Node.js 22 or newer. The dashboard and server have no npm dependencies to install. Run these commands from the repository root:

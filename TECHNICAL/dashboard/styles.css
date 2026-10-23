@@ -360,7 +360,62 @@ h2 {
   letter-spacing: 1.1px;
   text-transform: uppercase;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.metric-help {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.metric-help-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #607b7e;
+  border-radius: 50%;
+  color: var(--mint);
+  background: transparent;
+  font: 600 12px/1 Georgia, serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.metric-help-button:hover,
+.metric-help-button[aria-expanded="true"] {
+  background: #2d4542;
+  border-color: var(--mint);
+}
+.metric-help-button:focus-visible {
+  outline-offset: 2px;
+}
+.metric-help-popup {
+  position: fixed;
+  z-index: 1000;
   display: block;
+  width: min(340px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 14px 16px;
+  border: 1px solid #6b9589;
+  border-radius: 8px;
+  background: #20312e;
+  color: var(--ink);
+  box-shadow: 0 8px 28px #0008;
+  font: 400 12px/1.65 "DM Sans", system-ui, sans-serif;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: pre-line;
+}
+.metric-help-popup[hidden] {
+  display: none;
+}
+.help-hint {
+  display: block;
+  color: var(--mint);
 }
 .metric strong {
   display: block;

@@ -22,7 +22,8 @@ The analysis separates estimated **net AI value** from **whole-campaign profit o
 | **[DATA](DATA/README.md)** | Complete exercise downloads, Excel workbooks, CSV files, and a data guide |
 | **[SOLUTION](SOLUTION/README.md)** | The executive summary, six detailed answers, dashboard images, and supporting results |
 
-Read QUESTIONS and download a dataset to try the analysis yourself. Open SOLUTION to explore the completed case study.
+- **Portfolio review:** Read this overview → [QUESTIONS](QUESTIONS/README.md) for the assignment → [live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) for the evidence → [executive summary](SOLUTION/EXECUTIVE_SUMMARY.md) and [six detailed answers](SOLUTION/README.md#detailed-answers) for the conclusions. In the dashboard, follow **Company overview → Campaign comparison → Workflow investigation**.
+- **Learner route:** Choose a track in [QUESTIONS](QUESTIONS/README.md), download its complete [DATA package](DATA/README.md), and open **START_HERE.html**. Complete your analysis before opening **SOLUTION**.
 
 ## Three Key Findings
 
@@ -56,6 +57,6 @@ All people, companies, prices, usage, and financial results are **synthetic and 
 
 ## Technical Details
 
-The dashboard runs on Google Cloud Run. Source code, local setup, reproduction steps, tests, and deployment documentation are collected in **[TECHNICAL](TECHNICAL/README.md)**.
+The dashboard uses **HTML, CSS, and JavaScript**, served by a small Node.js container on **Google Cloud Run**. Source code, local setup, reproduction steps, tests, and deployment documentation are collected in **[TECHNICAL](TECHNICAL/README.md)**. You can review the business case without opening that folder.
 
 Prepared with Codex assistance. Code and documentation use the [MIT license](LICENSE); synthetic data use [CC0 1.0](DATA/LICENSE).
