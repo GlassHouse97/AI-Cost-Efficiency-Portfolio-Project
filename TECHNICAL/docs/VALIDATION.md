@@ -14,6 +14,9 @@ Initial release: October 22, 2026. Reader-focused restructuring: October 23, 202
 - Navigation checks passed for 293 Markdown links, 32 repository HTML links, 19 anchors, four canonical GitHub targets, and 17 local targets in the standalone ZIP guides. Local paths were checked against actual directory entries for exact case. The solved-workbook links point to SOLUTION; input-workbook links point to DATA.
 - Completed workbook: 56,978 bytes; SHA-256 `0a1977c1135006eca30354aab47aeebe1a9a1a582ca676d2efaa6161f10f072f`. The four-sheet structure, three frozen identifier columns, and six frozen header rows on Raw and Clean survive export.
 - The answer-free learner ZIP contents remain unchanged. They contain the raw input workbooks and guides, while the completed Excel answer is available only from the separate solution track.
+- Published implementation commit `e430074` passed every GitHub Actions validation step. The public GitHub workbook download matches the local workbook byte-for-byte.
+- Cloud Run revision `ai-cost-efficiency-00006-hhx` is ready with 100% of traffic. Image digest: `sha256:43aa07cdc26a7769d37ab490f61fc8055807491137cd37732ce04263fcb674f6`.
+- The live health endpoint returned HTTP 200. All dashboard assets, the dataset, and both learner downloads match the local release bytes. A live browser check confirmed the Quick Challenge's worked Excel link and the updated deeper-solution link, with no browser console errors.
 
 ## Calculation hints and reader guidance — October 23
 
