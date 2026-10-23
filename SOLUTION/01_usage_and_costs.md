@@ -50,7 +50,7 @@ Every product costs more in Campaign 2. DataFlow has its largest product bill, $
 
 For each prompt, calculate `input tokens × input rate / 1,000,000` and `output tokens × output rate / 1,000,000`, then sum without rounding individual charges. Cost per prompt is total cost divided by prompt count.
 
-Source evidence: [campaign_summary.csv](outputs/campaign_summary.csv), [model_summary.csv](outputs/model_summary.csv), [product_summary.csv](outputs/product_summary.csv), and [scope_summary.csv](outputs/scope_summary.csv). Rebuild with `python scripts/analyze_case_study.py`; compare against [exact controls](outputs/check_totals.json). Rounded product rows can differ from their rounded total by one cent.
+Source evidence: [campaign_summary.csv](outputs/campaign_summary.csv), [model_summary.csv](outputs/model_summary.csv), [product_summary.csv](outputs/product_summary.csv), and [scope_summary.csv](outputs/scope_summary.csv). Rebuild with `python TECHNICAL/scripts/analyze_case_study.py`; compare against [exact controls](outputs/check_totals.json). Rounded product rows can differ from their rounded total by one cent.
 
 **Business implication:** inspect model routing and total human effort together. A cheaper prompt is only useful if it still meets the same quality requirements without increasing review and rework.
 

@@ -15,12 +15,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: python scripts/validate_data.py
+      - run: python TECHNICAL/scripts/validate_data.py
       - name: Verify committed case-study evidence tables
         run: |
-          python scripts/analyze_case_study.py
+          python TECHNICAL/scripts/analyze_case_study.py
           git diff --exit-code -- 'SOLUTION/outputs/*.csv'
-      - run: python -m unittest discover -s tests -p "test_data.py" -v
-      - run: npm test
-      - run: python scripts/package_learners.py --check
-      - run: npm run build
+      - run: python -m unittest discover -s TECHNICAL/tests -p "test_*.py" -v
+      - run: npm --prefix TECHNICAL test
+      - run: python TECHNICAL/scripts/package_learners.py --check
+      - run: npm --prefix TECHNICAL run build

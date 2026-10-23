@@ -6,8 +6,8 @@ This folder collects the finished business analysis: the executive summary, six 
 
 - **Explore:** [Live AI Cost Efficiency dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app).
 - **Read:** [Executive summary](EXECUTIVE_SUMMARY.md) for the business problem, findings, and recommendations.
-- **Review the scope:** [Case-study questions and guidelines](../CASE_STUDY_QUESTIONS.md).
-- **Try it yourself first:** [Quick Challenge](../learners/quick-challenge/README.md) or [Portfolio Project](../learners/portfolio-project/README.md).
+- **Review the scope:** [Case-study questions and guidelines](../QUESTIONS/README.md).
+- **Try it yourself first:** [Quick Challenge](../QUESTIONS/tracks/quick-challenge/README.md) or [Portfolio Project](../QUESTIONS/tracks/portfolio-project/README.md).
 
 ## Detailed Answers
 
@@ -28,16 +28,16 @@ The main six questions use Campaigns 1 and 2, matching the 120-task Quick Challe
 - [visualizations/](visualizations/) contains actual dashboard screenshots; each written caption states the filter scope.
 - [ANALYSIS.md](ANALYSIS.md) describes calculation grain, filter behavior, and the complete methodology.
 - [CALIBRATION.md](CALIBRATION.md) discloses the synthetic scenario design and exact control totals.
-- [../scripts/analyze_case_study.py](../scripts/analyze_case_study.py) independently prices and summarizes the published CSVs with decimal arithmetic.
-- [../dashboard/metrics.mjs](../dashboard/metrics.mjs) implements the dashboard calculations using integer microdollar charges.
+- [../TECHNICAL/scripts/analyze_case_study.py](../TECHNICAL/scripts/analyze_case_study.py) independently prices and summarizes the published CSVs with decimal arithmetic.
+- [../TECHNICAL/dashboard/metrics.mjs](../TECHNICAL/dashboard/metrics.mjs) implements the dashboard calculations using integer microdollar charges.
 
 ## Regenerate the Evidence
 
 From the repository root, with Python 3.10+:
 
 ```sh
-python scripts/validate_data.py --write-checks
-python scripts/analyze_case_study.py
+python TECHNICAL/scripts/validate_data.py --write-checks
+python TECHNICAL/scripts/analyze_case_study.py
 ```
 
 The analysis command writes `scope_summary.csv`, `campaign_summary.csv`, `department_summary.csv`, `issue_summary.csv`, `model_summary.csv`, `product_summary.csv`, `workflow_summary.csv`, and `sensitivity_summary.csv`. Monetary values retain six decimal places in these tables; written analysis rounds only presentation values. Screenshots are captured from the running dashboard and are not generated charts or mockups.

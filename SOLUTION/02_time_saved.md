@@ -44,7 +44,7 @@ Whole-campaign financial results use actual costs and do not change with the est
 
 `Hours saved = baseline hours − actual hours`. `Scenario net AI value = (baseline hours × scenario factor − actual hours) × $50 − AI cost`, where the factors are 0.8, 1.0, and 1.2.
 
-The [campaign evidence](outputs/campaign_summary.csv), [scope totals](outputs/scope_summary.csv), and [sensitivity table](outputs/sensitivity_summary.csv) are reproducible with `python scripts/analyze_case_study.py`. Each of the 240 unique task records contributes its hours once after prompt aggregation. The raw repeated task exports do not contribute again.
+The [campaign evidence](outputs/campaign_summary.csv), [scope totals](outputs/scope_summary.csv), and [sensitivity table](outputs/sensitivity_summary.csv) are reproducible with `python TECHNICAL/scripts/analyze_case_study.py`. Each of the 240 unique task records contributes its hours once after prompt aggregation. The raw repeated task exports do not contribute again.
 
 **Business implication:** verify no-AI estimates against comparable completed work before treating measured time value as a dependable benefit. Preserve successful tasks while testing workflow changes where actual effort is higher.
 

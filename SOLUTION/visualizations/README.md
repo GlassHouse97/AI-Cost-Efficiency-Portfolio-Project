@@ -4,11 +4,11 @@ These images are direct captures of the working dashboard, taken on October 22, 
 
 ## Capture provenance
 
-- Source: `dashboard/index.html`, `dashboard/app.mjs`, `dashboard/metrics.mjs`, and `dashboard/demo-data.json` in this repository.
-- Local preview: `node scripts/serve.mjs --port 4331`, using the same dashboard files packaged for deployment.
+- Source: `TECHNICAL/dashboard/index.html`, `TECHNICAL/dashboard/app.mjs`, `TECHNICAL/dashboard/metrics.mjs`, and `TECHNICAL/dashboard/demo-data.json` in this repository.
+- Local preview: `node TECHNICAL/scripts/serve.mjs --port 4331`, using the same dashboard files packaged for deployment.
 - Browser: Chromium in the Codex in-app browser, tested at a desktop viewport of 1600 × 1000 pixels. The campaign comparison table fit without horizontal overflow at that viewport.
 - Format: original JPEG screenshots returned by the browser. Panel crops use browser screenshot clipping; the images contain no composited panels, substituted values, or AI-generated visuals.
-- Data fingerprint: SHA-256 of `dashboard/demo-data.json` was `d0f2b641b8d8634c9c81a48b029d80172ce290d0682adee4227dd2257ada5176`.
+- Data fingerprint: SHA-256 of `TECHNICAL/dashboard/demo-data.json` was `d0f2b641b8d8634c9c81a48b029d80172ce290d0682adee4227dd2257ada5176`.
 - Scope: September 2026 full task history. Department, product, and model filters are set to **All** throughout. Prompt date filters are unset. Staff time is valued at the fixed fictional assumption of **$50/hour**.
 
 ## Images and reproducible filter settings

@@ -38,7 +38,7 @@ Department totals are not employee scores or causal measures of department effec
 
 The [department evidence](outputs/department_summary.csv) includes rows for `focal_campaigns_1_2`, `all_four_campaigns`, and each individual campaign. Filter that scope field before summing; these are overlapping breakdowns, not additive populations.
 
-Department labels are trimmed and standardized before grouping. Each clean task is assigned to one department; token costs are aggregated from all its prompts and task hours are counted once. Rebuild with `python scripts/analyze_case_study.py`. The four focal rows reconcile to −$400 net value, and the four company rows reconcile to +$2,820. Independently rounded rows may differ from a displayed total by one cent.
+Department labels are trimmed and standardized before grouping. Each clean task is assigned to one department; token costs are aggregated from all its prompts and task hours are counted once. Rebuild with `python TECHNICAL/scripts/analyze_case_study.py`. The four focal rows reconcile to −$400 net value, and the four company rows reconcile to +$2,820. Independently rounded rows may differ from a displayed total by one cent.
 
 **Business implication:** compare spending with value and task context. Neither a high AI bill nor a low AI bill alone identifies the best workflow.
 
