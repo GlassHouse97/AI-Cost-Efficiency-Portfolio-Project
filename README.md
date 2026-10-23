@@ -2,17 +2,19 @@
 
 **Does the value of staff time saved justify the AI bill?** A business analytics case study by Chris Delgado.
 
+## The Business Problem
+
+AI can help teams draft content, explore ideas, and complete routine work faster. It also adds usage fees and time spent preparing prompts, checking results, and correcting mistakes. The business question is whether those benefits outweigh the costs and extra work involved.
+
+Marketing-R-Us, a fictional marketing company, uses AI to support campaign work. Leadership needs to know whether the time saved covers token fees after preparation, review, and corrections—and which workflows deserve improvement.
+
+The analysis separates estimated **net AI value** from **whole-campaign profit or loss**. Staff time is valued at $50 per hour; this estimates useful capacity, not payroll cash savings.
+
 ## Explore the Dashboard
 
 **[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** · [Read the executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md)
 
 Explore AI spending, human effort, campaign results, and rework. Filter the analysis, test baseline assumptions, and inspect the evidence behind each finding.
-
-## The Business Problem
-
-Marketing-R-Us, a fictional marketing company, uses AI to support campaign work. Leadership needs to know whether the time saved covers token fees after preparation, review, and corrections—and which workflows deserve improvement.
-
-The analysis separates estimated **net AI value** from **whole-campaign profit or loss**. Staff time is valued at $50 per hour; this estimates useful capacity, not payroll cash savings.
 
 ## Start Here
 
