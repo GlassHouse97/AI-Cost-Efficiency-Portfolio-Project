@@ -14,22 +14,6 @@ The analysis compares estimated task hours without AI against actual hours with 
 
 Staff time is valued at $50 per hour to estimate the value of capacity gained or lost. After subtracting AI fees, this becomes **net AI value**. It does not represent a change in payroll expenses. **Overall campaign profit or loss** is calculated separately because it also includes revenue and other campaign spending.
 
-## Three Key Findings
-
-1. **Results vary by campaign.** The four campaigns produce a combined estimated net AI value of $2,820. Campaign 1 contributes $4,500 in positive value, while Campaign 2 has negative net AI value of $4,900.
-2. **Staff time explains most of the difference.** Of the $9,400 gap between Campaigns 1 and 2, $8,500 comes from estimated time value and $900 comes from AI fees.
-3. **Campaign 2 requires more rework.** It records 87.82 rework hours and 482 correction prompts, compared with Campaign 1's 10.74 hours and 68 corrections. Further investigation would be needed to establish the causes.
-
-![Campaign comparison showing AI spend, time saved, and net AI value](SOLUTION/TRACKS/portfolio-project/visualizations/02_campaign_comparison.jpg)
-
-*The dashboard image shows Campaigns 1 and 2 across all departments, products, and models, using the original baseline estimates. These 120 tasks have a combined net AI value of negative $400. The company total of positive $2,820 also includes Campaigns 3 and 4.*
-
-The dashboard presents AI spending, staff time, campaign results, and rework. Readers can compare results and adjust the baseline estimates to assess how the findings change.
-
-**[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)**
-
-[Read the executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md)
-
 ## Start Here
 
 | Folder | What you will find |
@@ -50,6 +34,22 @@ The dashboard presents AI spending, staff time, campaign results, and rework. Re
 | **[Portfolio Project](SOLUTION/TRACKS/portfolio-project/README.md)** | **[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** and read the detailed analysis with supporting images. |
 
 The completed Excel workbook contains answers and is separate from the learner download. Open it in Excel to view the worksheets, as GitHub does not display them. The **`DATA/TRACKS/`**, **`QUESTIONS/TRACKS/`**, and **`SOLUTION/TRACKS/`** folders each contain the same two tracks, `quick-challenge` and `portfolio-project`.
+
+## Three Key Findings
+
+1. **Results vary by campaign.** The four campaigns produce a combined estimated net AI value of $2,820. Campaign 1 contributes $4,500 in positive value, while Campaign 2 has negative net AI value of $4,900.
+2. **Staff time explains most of the difference.** Of the $9,400 gap between Campaigns 1 and 2, $8,500 comes from estimated time value and $900 comes from AI fees.
+3. **Campaign 2 requires more rework.** It records 87.82 rework hours and 482 correction prompts, compared with Campaign 1's 10.74 hours and 68 corrections. Further investigation would be needed to establish the causes.
+
+![Campaign comparison showing AI spend, time saved, and net AI value](SOLUTION/TRACKS/portfolio-project/visualizations/02_campaign_comparison.jpg)
+
+*The dashboard image shows Campaigns 1 and 2 across all departments, products, and models, using the original baseline estimates. These 120 tasks have a combined net AI value of negative $400. The company total of positive $2,820 also includes Campaigns 3 and 4.*
+
+The dashboard presents AI spending, staff time, campaign results, and rework. Readers can compare results and adjust the baseline estimates to assess how the findings change.
+
+**[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)**
+
+[Read the executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md)
 
 ## Try the Analysis Yourself
 
