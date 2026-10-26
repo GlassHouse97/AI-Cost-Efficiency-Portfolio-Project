@@ -2,7 +2,7 @@
 
 Date: October 22, 2026.
 
-This is the historical walkthrough of the original CSV-only packages. File paths below use their current repository locations. The later Excel-workbook addition is checked by the current learner-file tests; original byte counts, archive entry counts, and SHA-256 values in this record describe the October 22 packages.
+This is the historical walkthrough of the original CSV-only packages. File paths below use their current repository locations. The later Excel workbook addition and October 26 Quick Challenge simplification are checked by the current learner-file tests. The current Quick Challenge contains a question page and raw data, with its calculation method in the separate solution. The instructions, byte counts, archive entry counts, and SHA-256 values below describe the original October 22 packages.
 
 This was a timed **automated author walkthrough with browser inspection**, not a beginner pilot and not a timed learner submission in Excel. It checks that the written preparation and arithmetic can be followed with the supplied files. It does not establish that a beginner can complete the assignment in four hours.
 

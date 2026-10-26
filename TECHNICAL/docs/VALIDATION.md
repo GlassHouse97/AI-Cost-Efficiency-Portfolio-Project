@@ -2,6 +2,16 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Quick Challenge reader flow, October 26, 2026
+
+* The question landing page now offers the two tracks directly. The Quick Challenge brief retains all six original questions and one GitHub download link. Cleaning instructions, calculation columns, worked examples, and answer interpretation are in the separate Quick Challenge solution.
+* The Quick Challenge ZIP contains exactly five files: `START_HERE.html`, the original Excel workbook, its matching CSV, and the two licenses. The HTML opens both data formats locally. All raw source data and the main README are unchanged. The deeper exercise only removes an obsolete reference to the former Quick Challenge time rule.
+* The completed Excel workbook now cites the question README for the hourly value assumption. Comparing all 20 workbook package parts, with generated relationship identifiers normalized, found only that citation text changed. All four worksheets, inputs, formulas, charts, cached chart points, and formatting are preserved. The changed Raw view was visually checked, and workbook recalculation checks passed.
+* All 30 regression tests passed: 20 Python and 10 JavaScript. Source validation, package freshness, static build, and whitespace checks passed. Navigation review covered 242 Markdown references and 30 HTML targets with no broken destinations. The original six quick questions match exactly, and the learner archive contains no worked solution or calculation guide.
+* Browser review confirmed the HTML question page and its six questions. Downloading the Excel source through its data link produced an exact copy of the canonical input workbook.
+* Cloud Run revision `ai-cost-efficiency-00008-sn5` receives 100 percent of traffic. The health endpoint returned HTTP 200, and all nine dashboard assets and downloads matched the local release bytes. Dashboard calculations and interface are unchanged.
+* Quick ZIP SHA-256: `0d2f9827fdc22adac4b626b151878dc7a75393a6ad817890a400c3840f64c40c`. Deeper ZIP SHA-256: `9414001cd73e6d75486a2dc36858da5eb93180bc2bb091565463552b2448096e`. Completed workbook SHA-256: `80cc7cd11019582afb82db1c14d15435a850bf76f7dce02a0143f897502783a4`.
+
 ## Download links and question access, October 26, 2026
 
 * Repository download links now point directly to files on `raw.githubusercontent.com`, avoiding the intermediate GitHub file page and raw redirect. The reported 404 was not reproduced by direct HTTP checks, so its original browser or network cause remains unconfirmed.

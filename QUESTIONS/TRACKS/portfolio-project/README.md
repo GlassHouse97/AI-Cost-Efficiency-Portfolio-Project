@@ -88,6 +88,6 @@ Allow extra time for publishing. These are planning estimates, not a timed learn
 
 ## Scope and responsible interpretation
 
-Do not add vendor breakdowns, invoices, subscription allocation, credits conversion, cached token pricing, a training ledger, a prediction model, causal claims, or employee rankings. Fixed fictional rates are supplied so the focus remains on the analysis. Disclose any outside AI help and be able to explain your preparation, formulas, charts, and recommendations. The Quick Challenge's 20 minute guideline does not apply to this deeper track.
+Do not add vendor breakdowns, invoices, subscription allocation, credits conversion, cached token pricing, a training ledger, a prediction model, causal claims, or employee rankings. Fixed fictional rates are supplied so the focus remains on the analysis. Disclose any outside AI help and be able to explain your preparation, formulas, charts, and recommendations.
 
 Code and educational text are under the included MIT license. Synthetic Excel and CSV data is dedicated under the included CC0 1.0 license.

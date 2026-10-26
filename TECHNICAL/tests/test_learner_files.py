@@ -26,7 +26,10 @@ TRACKS = {
         "model_pricing": "model_pricing.csv",
     },
 }
-GUIDES = {"README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md", "START_HERE.html", "LICENSE", "DATA_LICENSE"}
+GUIDES = {
+    "quick-challenge": {"START_HERE.html", "LICENSE", "DATA_LICENSE"},
+    "portfolio-project": {"README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md", "START_HERE.html", "LICENSE", "DATA_LICENSE"},
+}
 NUMERIC_FIELDS = {
     "prompt_count", "input_tokens", "output_tokens", "input_rate_usd_per_million",
     "output_rate_usd_per_million", "baseline_hours", "actual_hours", "rework_hours",
@@ -102,17 +105,21 @@ def read_workbook(path):
 
 
 class LearnerFileTests(unittest.TestCase):
-    def test_question_briefs_and_repository_guides_link_every_download(self):
+    def test_question_briefs_and_repository_guides_link_the_track_downloads(self):
         for slug, mapping in TRACKS.items():
             with self.subTest(track=slug):
                 source_names = set(mapping.values()) | {f"mru-{slug}.xlsx"}
-                expected = {f"{DOWNLOAD_BASE}/{slug}/{name}" for name in source_names}
-                expected.add(f"{DOWNLOAD_BASE}/{slug}/mru-{slug}.zip")
-                expected.add(f"{SOURCE_BASE}/{slug}")
+                expected = {f"{DOWNLOAD_BASE}/{slug}/mru-{slug}.zip"}
+                if slug == "portfolio-project":
+                    expected.update(f"{DOWNLOAD_BASE}/{slug}/{name}" for name in source_names)
+                    expected.add(f"{SOURCE_BASE}/{slug}")
                 folder = ROOT / "QUESTIONS" / "TRACKS" / slug
                 brief = (folder / "README.md").read_text(encoding="utf-8")
                 markdown_links = set(re.findall(r"\[[^\]]+\]\(([^)]+)\)", brief))
-                self.assertTrue(expected <= markdown_links, expected - markdown_links)
+                if slug == "quick-challenge":
+                    self.assertEqual(markdown_links, expected)
+                else:
+                    self.assertTrue(expected <= markdown_links, expected - markdown_links)
                 guide = GuideLinks()
                 guide.feed((folder / "START_HERE.html").read_text(encoding="utf-8"))
                 file_links = {target for target in guide.targets if not target.startswith("#")}
@@ -134,11 +141,25 @@ class LearnerFileTests(unittest.TestCase):
                         else:
                             self.assertFalse(urlsplit(target).scheme)
                             self.assertIn(target, archive.namelist())
-                    for filename in GUIDES:
+                    for filename in GUIDES[slug]:
                         if filename.endswith((".md", ".html")):
                             text = archive.read(filename).decode("utf-8")
                             self.assertNotIn("ONLINE_DOWNLOADS_", text)
                             self.assertNotIn(DOWNLOAD_BASE, text)
+
+    def test_quick_question_document_excludes_the_worked_solution(self):
+        folder = ROOT / "QUESTIONS" / "TRACKS" / "quick-challenge"
+        brief = (folder / "README.md").read_text(encoding="utf-8")
+        self.assertEqual(len(re.findall(r"^\d+\. ", brief, re.MULTILINE)), 6)
+        with ZipFile(ROOT / "DATA" / "TRACKS" / "quick-challenge" / "mru-quick-challenge.zip") as archive:
+            documents = (brief, archive.read("START_HERE.html").decode("utf-8"))
+        for document in documents:
+            for worked_step in (
+                "SUMIFS(", "COUNTIFS(", "PROPER(", "TRIM(", "Remove Duplicates",
+                "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md",
+                "Excel walkthrough", "total_tokens", "net_ai_value_usd",
+            ):
+                self.assertNotIn(worked_step.casefold(), document.casefold())
 
     def test_excel_workbooks_match_every_raw_source_cell(self):
         for slug, mapping in TRACKS.items():
@@ -175,7 +196,7 @@ class LearnerFileTests(unittest.TestCase):
                 release = ROOT / "DATA" / "TRACKS" / slug / f"mru-{slug}.zip"
                 self.assertEqual(release.read_bytes(), (ROOT / "TECHNICAL" / "dashboard" / "downloads" / release.name).read_bytes())
                 with ZipFile(release) as archive:
-                    self.assertEqual(set(archive.namelist()), source_names | GUIDES)
+                    self.assertEqual(set(archive.namelist()), source_names | GUIDES[slug])
                     self.assertIsNone(archive.testzip())
                     for filename in source_names:
                         source = ROOT / "DATA" / "TRACKS" / slug / filename

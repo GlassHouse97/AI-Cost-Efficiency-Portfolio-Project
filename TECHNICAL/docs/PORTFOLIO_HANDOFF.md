@@ -9,9 +9,9 @@ The completed project is ready to be linked from the owner's separate portfolio 
 | Primary action: live dashboard | [Open dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) |
 | Source and project overview | [GitHub repository](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project) |
 | Completed case study | [Executive summary](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md) |
-| Quick learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-quick-challenge.zip) |
+| Quick learner exercise | [Questions and data](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/QUESTIONS/TRACKS/quick-challenge) |
 | Quick completed solution | [Excel solution guide](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/quick-challenge/README.md) |
-| Deeper learner exercise | [Download ZIP](https://ai-cost-efficiency-860922042669.us-east1.run.app/downloads/mru-portfolio-project.zip) |
+| Deeper learner exercise | [Questions and data](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/QUESTIONS/TRACKS/portfolio-project) |
 
 **Suggested title:** AI Cost Efficiency & Workflow Value
 

@@ -3,7 +3,7 @@
 Usage: python TECHNICAL/scripts/package_learners.py [--check]
 Only the standard library is required. Author code and completed-demo outputs
 are deliberately excluded from every archive. HTML guides are generated from
-the same Markdown shipped in each archive, without network dependencies.
+the repository question documents, without network dependencies.
 ZIP entries are stored without compression and text uses UTF-8/LF so archive
 bytes do not depend on the operating system, Git newline settings, or zlib.
 """
@@ -28,15 +28,24 @@ ONLINE_START = "<!-- ONLINE_DOWNLOADS_START -->"
 ONLINE_END = "<!-- ONLINE_DOWNLOADS_END -->"
 GUIDES = ("README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md")
 COMMON_FILES = (*GUIDES, "START_HERE.html")
+SECTIONS = (
+    ("README.md", "brief", "Brief and steps"),
+    ("COLUMN_GUIDE.md", "columns", "Column guide"),
+    ("FORMULAS.md", "formulas", "Formulas and example"),
+    ("SUBMISSION_CHECKLIST.md", "checklist", "Submission checklist"),
+)
 PACKAGES = {
     "quick-challenge": {
         "title": "MRU AI value Quick Challenge",
-        "subtitle": "Beginner to early intermediate · Four hour target · Excel or basic BI",
-        "files": ("mru-quick-challenge.xlsx", "mru_quick_challenge.csv", *COMMON_FILES),
+        "subtitle": "Explore the data and make a recommendation.",
+        "layout": "questions",
+        "sections": (("README.md", "questions", "Questions"),),
+        "files": ("mru-quick-challenge.xlsx", "mru_quick_challenge.csv", "START_HERE.html"),
     },
     "portfolio-project": {
         "title": "MRU AI value Portfolio Project",
         "subtitle": "Intermediate · 12 to 16 hour target · Your choice of analysis tools",
+        "sections": SECTIONS,
         "files": (
             "mru-portfolio-project.xlsx", "work_log.csv", "ai_usage.csv", "model_pricing.csv", "campaigns.csv", *COMMON_FILES
         ),
@@ -49,12 +58,6 @@ SCHEMAS = {
     "model_pricing.csv": "model,input_rate_usd_per_million,output_rate_usd_per_million",
     "campaigns.csv": "campaign_id,campaign_name,campaign_revenue_usd,other_campaign_cost_usd",
 }
-SECTIONS = (
-    ("README.md", "brief", "Brief and steps"),
-    ("COLUMN_GUIDE.md", "columns", "Column guide"),
-    ("FORMULAS.md", "formulas", "Formulas and example"),
-    ("SUBMISSION_CHECKLIST.md", "checklist", "Submission checklist"),
-)
 
 
 def offline_text(source: str) -> str:
@@ -84,7 +87,7 @@ def inline(value: str) -> str:
     return "".join(rendered)
 
 
-def render_markdown(source: str) -> str:
+def render_markdown(source: str, heading_offset: int = 1) -> str:
     """Render the controlled headings, paragraphs, lists, and tables we author."""
     lines = source.splitlines()
     output: list[str] = []
@@ -97,7 +100,7 @@ def render_markdown(source: str) -> str:
         heading = re.match(r"^(#{1,5}) (.+)$", line)
         if heading:
             # Each source document sits inside a section below the page's h1.
-            level = len(heading.group(1)) + 1
+            level = len(heading.group(1)) + heading_offset
             output.append(f"<h{level}>{inline(heading.group(2))}</h{level}>")
             index += 1
             continue
@@ -160,8 +163,48 @@ main{min-width:0}section{background:var(--paper);border:1px solid var(--edge);bo
 """
 
 
+def quick_html_guide(folder: Path, package: dict, online: bool) -> bytes:
+    """Give the short exercise one question document and one data area."""
+    filename, _, _ = package["sections"][0]
+    source = offline_text((folder / filename).read_text(encoding="utf-8"))
+    # The page header already supplies the document title.
+    source = re.sub(r"\A# [^\n]+\n+", "", source, count=1)
+    if online:
+        data = (
+            f'<p><a class="primary" href="{DOWNLOAD_BASE}/{folder.name}/mru-{folder.name}.zip" download>'
+            'Download the questions and data</a></p>'
+            '<p>Extract the ZIP and open <strong>START_HERE.html</strong>. '
+            'It contains this question page and the raw data, with no worked answers. '
+            'The Excel workbook and CSV contain the same data.</p>'
+        )
+    else:
+        data = (
+            '<p><a class="primary" href="mru-quick-challenge.xlsx" download>Open the Excel data</a></p>'
+            '<p>Prefer another tool? <a href="mru_quick_challenge.csv" download>Use the CSV data</a>. '
+            'Both files contain the same raw data. Choose one format.</p>'
+            '<p class="small">Keep the extracted files together. This page and its data work offline.</p>'
+        )
+    document = f'''<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A short case study with six business questions and raw data about AI cost and staff time.">
+<title>{html.escape(package["title"])} | Questions</title><style>{STYLE}
+.shell{{display:block;max-width:940px;padding-top:1.8rem}}header{{padding:3rem max(1.4rem,calc((100vw - 896px)/2)) 2.6rem}}h1{{font-size:clamp(2rem,4vw,2.8rem)}}.data{{background:#edf7f3;padding:1.15rem 1.4rem;border:1px solid #c7dfd5;border-radius:10px;margin-bottom:2rem}}.data h2{{font-size:1.15rem;margin:0}}.primary{{display:inline-block;background:#006a62;color:white;padding:.6rem 1rem;border-radius:6px;font-weight:650;text-decoration:none}}.primary:hover{{background:#00564f}}.small{{font-size:.88rem;color:var(--muted)}}main>section>h2{{margin-top:2rem}}li{{margin:1rem 0}}@media print{{.data{{background:white;padding:0;border:0}}.primary{{background:white;color:inherit;padding:0}}}}
+</style></head>
+<body><a class="skip" href="#main">Skip to the questions</a>
+<header><p class="eyebrow">Marketing R Us (MRU)</p><h1>{html.escape(package["title"])}</h1><p class="subtitle">{html.escape(package["subtitle"])}</p></header>
+<div class="shell"><main id="main"><section><div class="data"><h2>Your data</h2>{data}</div>
+{render_markdown(source, heading_offset=0)}
+</section><footer>Synthetic data for learning. Documentation: MIT. Data: CC0 1.0. Full licenses are included in the download.</footer></main></div>
+</body></html>
+'''
+    return document.encode("utf-8")
+
+
 def html_guide(folder: Path, package: dict, online: bool = False) -> bytes:
-    navigation = "".join(f'<a href="#{anchor}">{label}</a>' for _, anchor, label in SECTIONS)
+    if package.get("layout") == "questions":
+        return quick_html_guide(folder, package, online)
+    navigation = "".join(f'<a href="#{anchor}">{label}</a>' for _, anchor, label in package["sections"])
     sections = []
     if online:
         navigation = '<a href="#downloads">Download the data</a>' + navigation
@@ -175,7 +218,7 @@ def html_guide(folder: Path, package: dict, online: bool = False) -> bytes:
             '<p>Your browser may display CSV text. Save the page as a CSV file or use the complete ZIP. '
             f'<a href="{SOURCE_BASE}/{folder.name}">Browse the source files on GitHub</a>.</p></section>'
         )
-    for filename, anchor, _ in SECTIONS:
+    for filename, anchor, _ in package["sections"]:
         source = offline_text((folder / filename).read_text(encoding="utf-8"))
         sections.append(f'<section id="{anchor}">\n{render_markdown(source)}\n</section>')
     csv_prefix = f"{DOWNLOAD_BASE}/{folder.name}/" if online else ""

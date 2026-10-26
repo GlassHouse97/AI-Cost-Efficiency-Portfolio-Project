@@ -117,7 +117,7 @@ for (const [sheet, rows, columns, tableName] of [[raw, rawRows, headers, 'RawTas
 title(raw, 'A2', 'Original Quick Challenge records');
 raw.getRange('A3').values = [['Source: https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/DATA/TRACKS/quick-challenge/mru_quick_challenge.csv']];
 raw.getRange('A4').values = [['122 original records, including two exact duplicate tasks. Original labels and whitespace are preserved.']];
-raw.getRange('A5').values = [['Hourly value source: https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/QUESTIONS/TRACKS/quick-challenge/FORMULAS.md']];
+raw.getRange('A5').values = [['Hourly value source: https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/QUESTIONS/TRACKS/quick-challenge/README.md']];
 raw.getRange('A3:A5').format.font.color = palette.muted;
 title(clean, 'A2', 'Clean tasks and calculations');
 clean.getRange('A3:B3').values = [['USD / staff hour', 50]];
