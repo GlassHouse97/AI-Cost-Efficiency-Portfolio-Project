@@ -9,13 +9,14 @@ The completed project is ready to be linked from the owner's separate portfolio 
 | Primary action: live dashboard | [Open dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app) |
 | Source and project overview | [GitHub repository](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project) |
 | Completed case study | [Executive summary](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md) |
+| Full prepared data and Excel solution | [Portfolio Project workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/portfolio-project/mru-portfolio-project-solution.xlsx) |
 | Quick learner exercise | [Questions and data](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/QUESTIONS/TRACKS/quick-challenge) |
 | Quick completed solution | [Excel solution guide](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/blob/main/SOLUTION/TRACKS/quick-challenge/README.md) |
 | Deeper learner exercise | [Questions and data](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/QUESTIONS/TRACKS/portfolio-project) |
 
 **Suggested title:** AI Cost Efficiency & Workflow Value
 
-**Suggested description:** An interactive business case tracing AI token spending through staff effort, rework, and campaign profitability. Explore four synthetic campaigns, test baseline assumptions, and inspect a reproducible analysis with two standalone learner exercises and a self-contained worked Excel answer for the quick track.
+**Suggested description:** An interactive business case tracing AI token spending through staff effort, rework, and campaign profitability. Explore four synthetic campaigns, test baseline assumptions, and inspect the complete prepared data and calculations in Excel. Two learner exercises include separate worked Excel solutions.
 
 **Suggested image:** [Company overview](../../SOLUTION/TRACKS/portfolio-project/visualizations/01_company_overview.jpg). Additional evidence panels are in [SOLUTION/TRACKS/portfolio-project/visualizations/](../../SOLUTION/TRACKS/portfolio-project/visualizations/), with their filter settings and capture provenance.
 

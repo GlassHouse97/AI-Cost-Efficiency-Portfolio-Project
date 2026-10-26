@@ -1,16 +1,14 @@
 # Completed Solutions
 
-Choose the solution that matches your exercise. **Both contain answers.** The Quick Challenge is a compact Excel analysis; the Portfolio Project is the full dashboard case study.
+Choose the solution that matches your exercise. **Both tracks contain answers and a completed Excel workbook.** The Portfolio Project also has an interactive dashboard for exploring the full case study.
 
 | Track | Scope | Open the solution |
 | --- | --- | --- |
-| **Quick Challenge** | Campaigns 1 and 2; 120 tasks; six business questions | **[Quick solution guide](TRACKS/quick-challenge/README.md)** · **[Download solved Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx)** |
-| **Portfolio Project** | Four campaigns; 240 tasks and 3,360 prompts; deeper workflow and financial analysis | **[Dashboard case study](TRACKS/portfolio-project/README.md)** · **[Live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** |
+| **Quick Challenge** | Campaigns 1 and 2, 120 tasks, and six business questions | [Solution guide](TRACKS/quick-challenge/README.md) or [download the Excel solution](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx) |
+| **Portfolio Project** | Four campaigns, 240 tasks, and 3,360 prompts, including workflow and campaign financial analysis | [Open the dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app), [download the Excel solution](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/portfolio-project/mru-portfolio-project-solution.xlsx), or read the [solution guide](TRACKS/portfolio-project/README.md) |
 
-The Excel solution is self-contained: answers, small charts, grouped calculations, cleaned tasks, and the original raw data are all in the workbook. Download it and open it in Excel. No dashboard, coding setup, or external data connection is needed.
+Each Excel solution includes answers, charts, cleaned data, calculations, and the original inputs. The Portfolio Project workbook also contains every priced prompt, a preparation log, a data dictionary, and checks against the dashboard results. Open **Solution** first, then **Tasks** to inspect the prepared portfolio data.
 
-The deeper solution includes an [executive summary](TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md), [six detailed answers](TRACKS/portfolio-project/README.md#detailed-answers), actual dashboard images, reproducible result tables, and methodology.
+The focal Campaigns 1 and 2 have **negative $400** estimated net AI value. Across all four campaigns, the company has **$2,820**. These are different populations of the same fictional case. Time value estimates staff capacity, not cash payroll savings.
 
-The quick population has **−$400** estimated net AI value; the full company has **+$2,820**. These are different populations of the same fictional case. Time value estimates staff capacity, not cash payroll savings.
-
-**Start without answers:** [Questions and track briefs](../QUESTIONS/README.md) · [Raw data and complete learner packages](../DATA/README.md) · [Project overview](../README.md)
+To attempt an exercise before reviewing its answers, start with the [questions](../QUESTIONS/README.md) and [raw data](../DATA/README.md).

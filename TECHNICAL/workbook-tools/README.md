@@ -34,7 +34,25 @@ Its sheets are **Solution**, **Summaries**, **Clean**, and **Raw**, in that orde
 
 The cleaned rows are a snapshot, not a refreshable import pipeline. Formula results update when their input cells change; adding or changing raw records requires repeating the cleaning step and extending relevant formula ranges. This completed workbook contains answers and is excluded from the learner ZIPs.
 
-### Native Chart Export Compatibility
+## Completed Portfolio Project Workbook
+
+[`build-portfolio-solution.mjs`](build-portfolio-solution.mjs) creates `SOLUTION/TRACKS/portfolio-project/mru-portfolio-project-solution.xlsx` from the four canonical CSV files in `DATA/TRACKS/portfolio-project/`. Use the same bundled Node executable, `WORKBOOK_ARTIFACT_RUNTIME`, and `WORKBOOK_PYTHON` setup as the Quick Challenge builder, then run:
+
+```sh
+node --max-old-space-size=8192 TECHNICAL/workbook-tools/build-portfolio-solution.mjs
+```
+
+The authoring process needs the larger Node memory limit above because it calculates and checks thousands of linked formulas. Opening the finished workbook requires no authoring runtime.
+
+The workbook has 14 worksheets. **Solution** presents the six Portfolio Project answers and editable charts. **Campaigns**, **Mix**, **Workflow**, and **Daily Usage** provide summaries. **Tasks**, **Prompt Totals**, and **Priced Usage** expose the prepared data and Excel formulas. **Raw Work Log**, **Raw AI Usage**, **Model Pricing**, and **Campaign Inputs** retain the source records. **Preparation** records all ten preparation steps from START_HERE, and **Data Dictionary** defines source and calculated fields.
+
+The builder preserves 242 raw work log rows, removes the two exact duplicate task records, normalizes department names, and validates keys, types, prices, and task relationships. It prices each of 3,360 prompts before aggregating them to 240 tasks, so task hours and campaign financial inputs are counted once. Prompt costs retain six decimal places; displayed currency is rounded only for presentation. The saved default case uses $50 per hour and reconciles with the dashboard.
+
+Existing input changes recalculate through Excel formulas. Raw imports and cleaned task membership are snapshots, so changes to source records require rebuilding. The written answers describe the saved default case and do not rewrite themselves after edits. The workbook has no macros or external data connections and is excluded from learner ZIPs.
+
+`TECHNICAL/tests/test_portfolio_solution.py` independently reads the saved workbook and source CSVs. It checks source preservation, every priced prompt and prepared task, summary and sensitivity values, native chart caches, and parity with the dashboard calculation module.
+
+## Native Chart Export Compatibility
 
 [`cache_chart_values.py`](cache_chart_values.py) repairs missing chart display caches after XLSX export. It reads each chart's declared worksheet references and copies the already-calculated saved cell values into the matching native chart cache. It preserves formulas, chart references, and source inputs, rejects missing or error-valued sources, and leaves all non-chart ZIP parts unchanged. The solution builder invokes this helper after export.
 

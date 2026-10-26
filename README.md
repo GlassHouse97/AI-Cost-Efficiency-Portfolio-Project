@@ -20,7 +20,7 @@ Staff time is valued at $50 per hour to estimate the value of capacity gained or
 | --- | --- |
 | **[QUESTIONS](QUESTIONS/README.md)** | The business questions, analysis guidelines, and two learner tracks |
 | **[DATA](DATA/README.md)** | Complete exercise downloads, Excel workbooks, CSV files, and a data guide |
-| **[SOLUTION](SOLUTION/README.md)** | A complete Excel solution for the Quick Challenge and a detailed dashboard case study for the Portfolio Project |
+| **[SOLUTION](SOLUTION/README.md)** | Completed Excel solutions for both tracks and a detailed dashboard case study for the Portfolio Project |
 
 **To review the project**, begin with the [assignment](QUESTIONS/README.md), then examine the [dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app). Start with Company overview, followed by Campaign comparison and Workflow investigation. The [executive summary](SOLUTION/TRACKS/portfolio-project/EXECUTIVE_SUMMARY.md) and [six detailed answers](SOLUTION/TRACKS/portfolio-project/README.md#detailed-answers) explain the conclusions.
 
@@ -31,9 +31,9 @@ Staff time is valued at $50 per hour to estimate the value of capacity gained or
 | Track | Finished answer |
 | --- | --- |
 | **[Quick Challenge](SOLUTION/TRACKS/quick-challenge/README.md)** | **[Download the completed Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx)**. It contains six answers, charts, summaries, formulas, and the original data. |
-| **[Portfolio Project](SOLUTION/TRACKS/portfolio-project/README.md)** | **[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** and read the detailed analysis with supporting images. |
+| **[Portfolio Project](SOLUTION/TRACKS/portfolio-project/README.md)** | **[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** or **[download the completed Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/portfolio-project/mru-portfolio-project-solution.xlsx)**. The workbook includes all prepared data, formulas, six answers, charts, and a record of the preparation steps. |
 
-The completed Excel workbook contains answers and is separate from the learner download. Open it in Excel to view the worksheets, as GitHub does not display them. The **`DATA/TRACKS/`**, **`QUESTIONS/TRACKS/`**, and **`SOLUTION/TRACKS/`** folders each contain the same two tracks, `quick-challenge` and `portfolio-project`.
+The completed Excel workbooks contain answers and are separate from the learner downloads. Open them in Excel to view the worksheets, as GitHub does not display them. The **`DATA/TRACKS/`**, **`QUESTIONS/TRACKS/`**, and **`SOLUTION/TRACKS/`** folders each contain the same two tracks, `quick-challenge` and `portfolio-project`.
 
 ## Three Key Findings
 

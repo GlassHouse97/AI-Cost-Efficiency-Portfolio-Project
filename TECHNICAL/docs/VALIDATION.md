@@ -2,6 +2,17 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Portfolio Project Excel solution, October 26, 2026
+
+* Added a separate completed workbook under `SOLUTION/TRACKS/portfolio-project/`. Its 14 worksheets contain the six deeper answers, two native editable charts, campaign and workflow summaries, all 240 cleaned tasks, all 3,360 priced prompts, task aggregates, original sources, a preparation record, and field definitions.
+* All ten preparation steps in START_HERE are documented and performed. The 242 raw work log rows are preserved, with the exact repeated W0018 and W0087 records removed from the prepared table. Ten unique task department labels are normalized. Types, unique keys, prices, campaign links, and one product and model per task are checked before calculations.
+* Prompt costs are calculated before task aggregation. Task hours and campaign financial inputs are counted once. The default workbook reconciles to $3,180 AI spending, 120 hours saved, $2,820 net AI value, and $12,820 whole company campaign result. The focal C001 and C002 selection has $1,900 AI spending and negative $400 net AI value.
+* Twelve independent workbook tests compare saved Excel values and formulas with Decimal calculations from the original CSVs. They cover every prompt and task, all campaign and mix groups, 180 workflow cohorts, 84 date and campaign groups, the presentation tables, source preservation, dictionary coverage, preparation checks, and both native chart caches. A separate comparison executes the actual dashboard calculation module and verifies costs, hours, ratios, campaign results, daily spending, and baseline sensitivity.
+* All 43 regression tests pass, comprising 33 Python and 10 JavaScript tests. Source validation, unchanged evidence regeneration, learner package freshness, static build, and whitespace checks pass. Navigation review covers 247 Markdown references and 31 HTML targets with no broken local destinations. The Quick Challenge questions and both learner packages remain unchanged.
+* Live formula checks raised the hourly value to $60, changed the final task's actual hours, changed a model input price, and set all model prices to zero to check N/A ROI. Inputs were restored and the saved reference case rechecked. All 14 worksheets were visually reviewed, including the final chart legends and preparation checks. Terminal reconciliation differences are rounded to six decimals to suppress floating point residue; business cost calculations retain their precision. No formula errors, macros, external workbook links, or data connections were found. Native Microsoft Excel application testing was not performed.
+* Completed workbook: 789,855 bytes. SHA-256: `70ab29f9b6f06ea5e86f7a113b525994d9da9826df027f14fe3064f675b921f7`.
+* The main README and solution pages provide the completed workbook through a direct GitHub download. The dashboard's Workflow investigation view adds the same link beside the task export and states that the Excel file includes all campaigns regardless of active dashboard filters.
+
 ## Learner data dictionaries, October 26, 2026
 
 * Both DATA tracks now include a standalone `DATA_DICTIONARY.md`, linked from their data pages and included in the learner ZIPs. The documents define source columns, types, units, and relationships without worked calculations. They cover all 17 Quick Challenge columns and all 28 Portfolio Project columns.
