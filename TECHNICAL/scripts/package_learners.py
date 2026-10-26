@@ -22,6 +22,10 @@ from zipfile import ZIP_STORED, ZipFile, ZipInfo
 
 
 ROOT = Path(__file__).resolve().parents[2]
+DOWNLOAD_BASE = "https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS"
+SOURCE_BASE = "https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/DATA/TRACKS"
+ONLINE_START = "<!-- ONLINE_DOWNLOADS_START -->"
+ONLINE_END = "<!-- ONLINE_DOWNLOADS_END -->"
 GUIDES = ("README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md")
 COMMON_FILES = (*GUIDES, "START_HERE.html")
 PACKAGES = {
@@ -51,6 +55,18 @@ SECTIONS = (
     ("FORMULAS.md", "formulas", "Formulas and example"),
     ("SUBMISSION_CHECKLIST.md", "checklist", "Submission checklist"),
 )
+
+
+def offline_text(source: str) -> str:
+    """Remove the repository download block from the self-contained guide."""
+    if ONLINE_START not in source and ONLINE_END not in source:
+        return source
+    if source.count(ONLINE_START) != 1 or source.count(ONLINE_END) != 1:
+        raise ValueError("The online download block must have exactly one start and end marker")
+    start, end = source.index(ONLINE_START), source.index(ONLINE_END)
+    if end < start:
+        raise ValueError("The online download block markers are out of order")
+    return source[:start].rstrip() + "\n\n" + source[end + len(ONLINE_END):].lstrip()
 
 
 def inline(value: str) -> str:
@@ -144,15 +160,33 @@ main{min-width:0}section{background:var(--paper);border:1px solid var(--edge);bo
 """
 
 
-def html_guide(folder: Path, package: dict, csv_prefix: str = "") -> bytes:
+def html_guide(folder: Path, package: dict, online: bool = False) -> bytes:
     navigation = "".join(f'<a href="#{anchor}">{label}</a>' for _, anchor, label in SECTIONS)
     sections = []
+    if online:
+        navigation = '<a href="#downloads">Download the data</a>' + navigation
+        sections.append(
+            '<section id="downloads"><h2>Download the Data</h2>'
+            f'<p><a href="{DOWNLOAD_BASE}/{folder.name}/mru-{folder.name}.zip" download>Download the complete learner ZIP</a> '
+            'for the Excel workbook, CSV files, and instructions.</p>'
+            '<p>Extract the entire ZIP, then open <strong>START_HERE.html</strong> from the extracted folder. '
+            'Keep all extracted files together so the data links work offline. '
+            'The individual files are also available under <strong>Source data</strong>.</p>'
+            '<p>Your browser may display CSV text. Save the page as a CSV file or use the complete ZIP. '
+            f'<a href="{SOURCE_BASE}/{folder.name}">Browse the source files on GitHub</a>.</p></section>'
+        )
     for filename, anchor, _ in SECTIONS:
-        source = (folder / filename).read_text(encoding="utf-8")
+        source = offline_text((folder / filename).read_text(encoding="utf-8"))
         sections.append(f'<section id="{anchor}">\n{render_markdown(source)}\n</section>')
+    csv_prefix = f"{DOWNLOAD_BASE}/{folder.name}/" if online else ""
     csv_links = "".join(
         f'<a href="{csv_prefix}{filename}" download>{filename}</a>'
         for filename in package["files"] if filename.endswith((".xlsx", ".csv"))
+    )
+    access_note = (
+        "These download links require an internet connection. Download and extract the complete ZIP for offline use."
+        if online else
+        "Works offline. No accounts, API keys, or external links are needed to complete the exercise."
     )
     document = f'''<!doctype html>
 <html lang="en">
@@ -161,7 +195,7 @@ def html_guide(folder: Path, package: dict, csv_prefix: str = "") -> bytes:
 <title>{html.escape(package["title"])} | Learner guide</title><style>{STYLE}</style></head>
 <body><a class="skip" href="#main">Skip to the learner guide</a>
 <header><p class="eyebrow">Marketing-R-Us · Standalone learner guide</p><h1>{html.escape(package["title"])}</h1><p class="subtitle">{html.escape(package["subtitle"])}</p></header>
-<div class="shell"><aside><nav aria-label="Guide sections">{navigation}</nav><p class="small">Works offline. No accounts, API keys, or external links are needed to complete the exercise.</p><div class="files"><p>Source data</p>{csv_links}</div></aside>
+<div class="shell"><aside><nav aria-label="Guide sections">{navigation}</nav><p class="small">{access_note}</p><div class="files"><p>Source data</p>{csv_links}</div></aside>
 <main id="main">{"".join(sections)}<footer>Synthetic data for learning. Documentation: MIT. Data: CC0 1.0. Full licenses are included in the download.</footer></main></div>
 </body></html>
 '''
@@ -189,9 +223,14 @@ def archive_bytes(folder: Path, package: dict, guide: bytes) -> bytes:
         path = (ROOT / "DATA" / "TRACKS" / folder.name / filename) if filename.endswith((".csv", ".xlsx")) else folder / filename
         if path.suffix == ".csv":
             validate_raw_schema(path)
-        payloads[filename] = guide if filename == "START_HERE.html" else (
-            path.read_bytes() if path.suffix == ".xlsx" else canonical_text(path)
-        )
+        if filename == "START_HERE.html":
+            payloads[filename] = guide
+        elif path.suffix == ".xlsx":
+            payloads[filename] = path.read_bytes()
+        elif path.suffix == ".md":
+            payloads[filename] = offline_text(path.read_text(encoding="utf-8-sig")).encode("utf-8")
+        else:
+            payloads[filename] = canonical_text(path)
     payloads["LICENSE"] = canonical_text(ROOT / "LICENSE")
     payloads["DATA_LICENSE"] = canonical_text(ROOT / "DATA" / "LICENSE")
     output = io.BytesIO()
@@ -215,7 +254,7 @@ def archive_bytes(folder: Path, package: dict, guide: bytes) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="Verify generated HTML and ZIPs are current without writing")
+    parser.add_argument("--check", action="store_true", help="Verify generated guides and ZIPs without writing")
     args = parser.parse_args()
     stale = []
     for slug, package in PACKAGES.items():
@@ -223,7 +262,7 @@ def main() -> int:
         guide = html_guide(folder, package)
         archive = archive_bytes(folder, package, guide)
         outputs = {
-            folder / "START_HERE.html": html_guide(folder, package, csv_prefix=f"../../../DATA/TRACKS/{slug}/"),
+            folder / "START_HERE.html": html_guide(folder, package, online=True),
             ROOT / "DATA" / "TRACKS" / slug / f"mru-{slug}.zip": archive,
             ROOT / "TECHNICAL" / "dashboard" / "downloads" / f"mru-{slug}.zip": archive,
         }
@@ -239,7 +278,7 @@ def main() -> int:
     if stale:
         print("Stale or missing generated output:\n" + "\n".join(stale), file=sys.stderr)
         return 1
-    print("Learner HTML and ZIPs verified." if args.check else "Learner HTML and ZIPs built; hosting copies match.")
+    print("Learner guides and ZIPs verified." if args.check else "Learner guides and ZIPs built; hosting copies match.")
     return 0
 
 

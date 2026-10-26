@@ -30,7 +30,7 @@ Staff time is valued at $50 per hour to estimate the value of capacity gained or
 
 | Track | Finished answer |
 | --- | --- |
-| **[Quick Challenge](SOLUTION/TRACKS/quick-challenge/README.md)** | **[Download the completed Excel workbook](SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx?raw=true)**. It contains six answers, charts, summaries, formulas, and the original data. |
+| **[Quick Challenge](SOLUTION/TRACKS/quick-challenge/README.md)** | **[Download the completed Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx)**. It contains six answers, charts, summaries, formulas, and the original data. |
 | **[Portfolio Project](SOLUTION/TRACKS/portfolio-project/README.md)** | **[Open the live dashboard](https://ai-cost-efficiency-860922042669.us-east1.run.app)** and read the detailed analysis with supporting images. |
 
 The completed Excel workbook contains answers and is separate from the learner download. Open it in Excel to view the worksheets, as GitHub does not display them. The **`DATA/TRACKS/`**, **`QUESTIONS/TRACKS/`**, and **`SOLUTION/TRACKS/`** folders each contain the same two tracks, `quick-challenge` and `portfolio-project`.
@@ -55,8 +55,8 @@ The dashboard presents AI spending, staff time, campaign results, and rework. Re
 
 | Track | Scope and planning target | Complete download |
 | --- | --- | --- |
-| **[Quick Challenge](QUESTIONS/TRACKS/quick-challenge/README.md)** | 120 tasks. Beginner to early intermediate. About four hours using Excel or basic BI. | **[Download Quick Challenge ZIP](DATA/TRACKS/quick-challenge/mru-quick-challenge.zip?raw=true)** |
-| **[Portfolio Project](QUESTIONS/TRACKS/portfolio-project/README.md)** | 240 tasks with data for individual prompts. Intermediate. About 12 to 16 hours using Excel, SQL, BI, or code. | **[Download Portfolio Project ZIP](DATA/TRACKS/portfolio-project/mru-portfolio-project.zip?raw=true)** |
+| **[Quick Challenge](QUESTIONS/TRACKS/quick-challenge/README.md)** | 120 tasks. Beginner to early intermediate. About four hours using Excel or basic BI. | **[Download Quick Challenge ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip)** |
+| **[Portfolio Project](QUESTIONS/TRACKS/portfolio-project/README.md)** | 240 tasks with data for individual prompts. Intermediate. About 12 to 16 hours using Excel, SQL, BI, or code. | **[Download Portfolio Project ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip)** |
 
 Each ZIP includes an **Excel workbook, all CSV source files, and complete instructions**. Extract the files and open **START_HERE.html**. The exercises contain source data and guidance without completed answers.
 

@@ -8,8 +8,8 @@ Both tracks are grouped under **[TRACKS](TRACKS/README.md)**. Each track folder 
 
 | Track | Included data | Download | Instructions on GitHub |
 | --- | --- | --- | --- |
-| **Quick Challenge** | One Excel workbook with one raw data sheet, plus the matching task CSV | **[Quick Challenge ZIP](TRACKS/quick-challenge/mru-quick-challenge.zip?raw=true)** | [Quick brief](../QUESTIONS/TRACKS/quick-challenge/README.md) |
-| **Portfolio Project** | One Excel workbook with four raw data sheets, plus all four matching CSVs | **[Portfolio Project ZIP](TRACKS/portfolio-project/mru-portfolio-project.zip?raw=true)** | [Deeper brief](../QUESTIONS/TRACKS/portfolio-project/README.md) |
+| **Quick Challenge** | One Excel workbook with one raw data sheet, plus the matching task CSV | **[Quick Challenge ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip)** | [Quick brief](../QUESTIONS/TRACKS/quick-challenge/README.md) |
+| **Portfolio Project** | One Excel workbook with four raw data sheets, plus all four matching CSVs | **[Portfolio Project ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip)** | [Deeper brief](../QUESTIONS/TRACKS/portfolio-project/README.md) |
 
 Each ZIP also contains **START_HERE.html**, the README, column guide, formulas, submission checklist, and licenses. Unzip it, open **START_HERE.html**, and choose your data format. The guide works offline; no account, API key, or connection to the hosted dashboard is required.
 
@@ -26,20 +26,20 @@ The Quick Challenge and Portfolio Project also overlap: the quick file summarize
 
 ### Quick Challenge
 
-**[Download Excel workbook](TRACKS/quick-challenge/mru-quick-challenge.xlsx?raw=true)** · **[Download CSV](TRACKS/quick-challenge/mru_quick_challenge.csv?raw=true)**
+**[Download Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.xlsx)** · **[Download CSV](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru_quick_challenge.csv)**
 
 One row represents one completed task, with its prompts, tokens, and applicable model rates already attached. The raw file contains **122 rows representing 120 tasks** across Campaigns 1 and 2. No joins or programming are required.
 
 ### Portfolio Project
 
-**[Download Excel workbook](TRACKS/portfolio-project/mru-portfolio-project.xlsx?raw=true)** — four sheets corresponding to the four CSV files below.
+**[Download Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx)** — four sheets corresponding to the four CSV files below.
 
 | CSV file / workbook sheet | One row represents | Raw rows | Purpose |
 | --- | --- | ---: | --- |
-| [work_log.csv](TRACKS/portfolio-project/work_log.csv) / `work_log` | One completed task | 242 | Baseline, actual, and rework hours; workflow observations; 240 unique tasks after cleaning |
-| [ai_usage.csv](TRACKS/portfolio-project/ai_usage.csv) / `ai_usage` | One prompt | 3,360 | Tokens, model, product, prompt reason, and usage date |
-| [model_pricing.csv](TRACKS/portfolio-project/model_pricing.csv) / `model_pricing` | One model | 2 | Fixed fictional input/output prices in USD per million tokens |
-| [campaigns.csv](TRACKS/portfolio-project/campaigns.csv) / `campaigns` | One campaign | 4 | Revenue and other spending, counted once per campaign |
+| [work_log.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/work_log.csv) / `work_log` | One completed task | 242 | Baseline, actual, and rework hours; workflow observations; 240 unique tasks after cleaning |
+| [ai_usage.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/ai_usage.csv) / `ai_usage` | One prompt | 3,360 | Tokens, model, product, prompt reason, and usage date |
+| [model_pricing.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/model_pricing.csv) / `model_pricing` | One model | 2 | Fixed fictional input/output prices in USD per million tokens |
+| [campaigns.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/campaigns.csv) / `campaigns` | One campaign | 4 | Revenue and other spending, counted once per campaign |
 
 Read the [Quick Challenge column guide](../QUESTIONS/TRACKS/quick-challenge/COLUMN_GUIDE.md) or [Portfolio Project column guide](../QUESTIONS/TRACKS/portfolio-project/COLUMN_GUIDE.md) for field meanings. The [case-study questions](../QUESTIONS/README.md) describe the investigation.
 

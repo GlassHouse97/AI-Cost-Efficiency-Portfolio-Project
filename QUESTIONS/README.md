@@ -6,8 +6,8 @@ This document defines the business problem, analysis rules, and evidence expecte
 
 | Track | Scope | Start | Complete package |
 | --- | --- | --- | --- |
-| Quick Challenge | 120 focal tasks; about four hours; no joins required | [Brief and instructions](TRACKS/quick-challenge/README.md) | [Excel, CSV, and guidance ZIP](../DATA/TRACKS/quick-challenge/mru-quick-challenge.zip?raw=true) |
-| Portfolio Project | 240 tasks and 3,360 prompts; about 12–16 hours | [Brief and instructions](TRACKS/portfolio-project/README.md) | [Excel, CSVs, and guidance ZIP](../DATA/TRACKS/portfolio-project/mru-portfolio-project.zip?raw=true) |
+| Quick Challenge | 120 focal tasks; about four hours; no joins required | [Brief and instructions](TRACKS/quick-challenge/README.md) | [Excel, CSV, and guidance ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip) |
+| Portfolio Project | 240 tasks and 3,360 prompts; about 12–16 hours | [Brief and instructions](TRACKS/portfolio-project/README.md) | [Excel, CSVs, and guidance ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip) |
 
 Use either the Excel workbook or its matching CSV files; both contain the same raw inputs. Open `START_HERE.html` inside either downloaded ZIP for the offline guide. The [data guide](../DATA/README.md) describes each source. Completed answers are linked below, so learners who want to work independently can stay within their track brief first.
 
@@ -32,7 +32,7 @@ Everything in this September 2026 scenario is synthetic. Campaigns 1 and 2 form 
 
 ## What Each Answer Includes
 
-The **Quick Challenge** answers all six questions in the [solved Excel workbook](../SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx?raw=true). Its **Solution** sheet presents answers and compact charts; **Summaries**, **Clean**, and **Raw** trace the formulas back to the original records.
+The **Quick Challenge** answers all six questions in the [solved Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx). Its **Solution** sheet presents answers and compact charts; **Summaries**, **Clean**, and **Raw** trace the formulas back to the original records.
 
 The **Portfolio Project** expands those questions in written sections, each with:
 

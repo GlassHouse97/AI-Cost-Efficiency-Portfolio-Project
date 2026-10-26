@@ -2,6 +2,14 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Download links and question access, October 26, 2026
+
+* Repository download links now point directly to files on `raw.githubusercontent.com`, avoiding the intermediate GitHub file page and raw redirect. The reported 404 was not reproduced by direct HTTP checks, so its original browser or network cause remains unconfirmed.
+* Both question briefs now provide the complete ZIP, the Excel workbook, each CSV, and a link to browse the source folder on GitHub. Repository HTML guides use the same direct file URLs. The guides inside the ZIP retain local file links and work offline after extraction.
+* All ten unique public downloads returned HTTP 200 without redirects and matched the local file bytes. ZIP and Excel archive integrity checks passed. The two learner ZIPs, source workbooks, CSV records, and completed solution workbook are unchanged.
+* All 29 regression tests passed, including two new checks for question download coverage and local links inside extracted packages. Package freshness, static build, and whitespace checks passed.
+* The temporary Cloud Run download approach was withdrawn. Traffic was returned to the existing `ai-cost-efficiency-00006-hhx` revision. The dashboard source, server, and hosted learner ZIPs are unchanged in this release.
+
 ## Aligned tracks and Quick Challenge Excel solution — October 23
 
 - `DATA/TRACKS/`, `QUESTIONS/TRACKS/`, and `SOLUTION/TRACKS/` now use the same `quick-challenge` and `portfolio-project` subfolders. Each data track keeps its raw Excel workbook, CSV files, and complete learner ZIP together. Root navigation distinguishes the completed quick workbook from the deeper dashboard case study.

@@ -2,6 +2,16 @@
 
 **Beginner to early intermediate · Four hour target · Excel or a basic BI tool**
 
+<!-- ONLINE_DOWNLOADS_START -->
+## Download the Data
+
+[Download the complete Quick Challenge ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip) for the workbook, CSV, and all instructions. Extract the entire ZIP, then open **START_HERE.html** from the extracted folder. Keep the extracted files together so the guide can open the data offline.
+
+For individual files, download the [Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.xlsx) or the [CSV source](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru_quick_challenge.csv). Both contain the same raw records. Choose one format.
+
+Your browser may display CSV text. Save the page as a CSV file or use the complete ZIP. [Browse the source files on GitHub](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/DATA/TRACKS/quick-challenge).
+<!-- ONLINE_DOWNLOADS_END -->
+
 Marketing-R-Us (MRU) is a fictional marketing company that used the fictional ChatABC AI platform for Campaign 1 and Campaign 2. Your job is to determine whether the estimated value of staff time saved justifies AI fees. All employees, clients, prices, and results are synthetic. The dataset is an exercise, not evidence about any real AI provider.
 
 Start with the raw sheet in `mru-quick-challenge.xlsx` **or** `mru_quick_challenge.csv`. These are two formats of the same source records; use one, not both. One row represents one completed task, with its prompts and tokens already summed. The two campaigns were completed during one month. Every task belongs to one employee, department, product, and model. There are eight fictional employees across Content, Creative, Marketing Operations, and Analytics.

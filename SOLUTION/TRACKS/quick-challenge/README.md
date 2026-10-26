@@ -1,6 +1,6 @@
 # Quick Challenge — Excel Solution
 
-**[Download the completed Excel workbook](mru-quick-challenge-solution.xlsx?raw=true)**
+**[Download the completed Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/SOLUTION/TRACKS/quick-challenge/mru-quick-challenge-solution.xlsx)**
 
 This is the worked answer to the six Quick Challenge questions. It covers **Campaigns 1 and 2 only: 120 unique tasks from September 2026**. The entire solution is in one Excel file, including the source data; no dashboard, macros, code, or external data connection is required.
 
@@ -31,7 +31,7 @@ All data, prices, and results are fictional teaching inputs. Time value estimate
 
 ## Try It Before Viewing the Answer
 
-The solved workbook is intentionally **separate from the answer-free learner ZIP**. To attempt the exercise first, use the [Quick Challenge brief](../../../QUESTIONS/TRACKS/quick-challenge/README.md) and [complete learner package](../../../DATA/TRACKS/quick-challenge/mru-quick-challenge.zip?raw=true). The input workbook and this solved workbook are different files.
+The solved workbook is intentionally **separate from the answer-free learner ZIP**. To attempt the exercise first, use the [Quick Challenge brief](../../../QUESTIONS/TRACKS/quick-challenge/README.md) and [complete learner package](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip). The input workbook and this solved workbook are different files.
 
 For the broader four-campaign investigation, open the [Portfolio Project solution](../portfolio-project/README.md). Its +$2,820 company total includes Campaigns 3 and 4 and should not be compared directly with the quick scope's −$400.
 

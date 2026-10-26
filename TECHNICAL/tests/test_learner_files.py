@@ -3,13 +3,18 @@
 import csv
 from datetime import datetime, timedelta
 from decimal import Decimal
+from html.parser import HTMLParser
 from pathlib import Path
 import posixpath
+import re
 import unittest
+from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[2]
+DOWNLOAD_BASE = "https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS"
+SOURCE_BASE = "https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/DATA/TRACKS"
 NS = {"s": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 REL = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
 TRACKS = {
@@ -27,6 +32,20 @@ NUMERIC_FIELDS = {
     "output_rate_usd_per_million", "baseline_hours", "actual_hours", "rework_hours",
     "campaign_revenue_usd", "other_campaign_cost_usd", "completion_date", "usage_date",
 }
+
+
+class GuideLinks(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.targets = []
+        self.anchors = set()
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name in ("href", "src"):
+                self.targets.append(value)
+            elif name == "id":
+                self.anchors.add(value)
 
 
 def column_number(address):
@@ -83,6 +102,44 @@ def read_workbook(path):
 
 
 class LearnerFileTests(unittest.TestCase):
+    def test_question_briefs_and_repository_guides_link_every_download(self):
+        for slug, mapping in TRACKS.items():
+            with self.subTest(track=slug):
+                source_names = set(mapping.values()) | {f"mru-{slug}.xlsx"}
+                expected = {f"{DOWNLOAD_BASE}/{slug}/{name}" for name in source_names}
+                expected.add(f"{DOWNLOAD_BASE}/{slug}/mru-{slug}.zip")
+                expected.add(f"{SOURCE_BASE}/{slug}")
+                folder = ROOT / "QUESTIONS" / "TRACKS" / slug
+                brief = (folder / "README.md").read_text(encoding="utf-8")
+                markdown_links = set(re.findall(r"\[[^\]]+\]\(([^)]+)\)", brief))
+                self.assertTrue(expected <= markdown_links, expected - markdown_links)
+                guide = GuideLinks()
+                guide.feed((folder / "START_HERE.html").read_text(encoding="utf-8"))
+                file_links = {target for target in guide.targets if not target.startswith("#")}
+                self.assertEqual(file_links, expected)
+                self.assertTrue(all(urlsplit(target).scheme == "https" for target in file_links))
+
+    def test_extracted_guides_need_only_files_inside_the_learner_zip(self):
+        for slug, mapping in TRACKS.items():
+            with self.subTest(track=slug):
+                release = ROOT / "DATA" / "TRACKS" / slug / f"mru-{slug}.zip"
+                with ZipFile(release) as archive:
+                    guide = GuideLinks()
+                    guide.feed(archive.read("START_HERE.html").decode("utf-8"))
+                    source_names = set(mapping.values()) | {f"mru-{slug}.xlsx"}
+                    self.assertEqual({target for target in guide.targets if not target.startswith("#")}, source_names)
+                    for target in guide.targets:
+                        if target.startswith("#"):
+                            self.assertIn(target[1:], guide.anchors)
+                        else:
+                            self.assertFalse(urlsplit(target).scheme)
+                            self.assertIn(target, archive.namelist())
+                    for filename in GUIDES:
+                        if filename.endswith((".md", ".html")):
+                            text = archive.read(filename).decode("utf-8")
+                            self.assertNotIn("ONLINE_DOWNLOADS_", text)
+                            self.assertNotIn(DOWNLOAD_BASE, text)
+
     def test_excel_workbooks_match_every_raw_source_cell(self):
         for slug, mapping in TRACKS.items():
             with self.subTest(track=slug):

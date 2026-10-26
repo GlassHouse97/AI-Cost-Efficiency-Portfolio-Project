@@ -2,6 +2,23 @@
 
 **Intermediate · About 12 to 16 hours for core analysis and dashboard · Excel, Power Query, SQL, BI, or code**
 
+<!-- ONLINE_DOWNLOADS_START -->
+## Download the Data
+
+[Download the complete Portfolio Project ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip) for the workbook, four CSVs, and all instructions. Extract the entire ZIP, then open **START_HERE.html** from the extracted folder. Keep the extracted files together so the guide can open the data offline.
+
+For individual files, download the [Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx), or download all four CSVs below. The workbook and CSVs contain the same raw records. Choose one format.
+
+| CSV | Contents |
+| --- | --- |
+| [work_log.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/work_log.csv) | Completed tasks and staff hours |
+| [ai_usage.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/ai_usage.csv) | Prompt records and token usage |
+| [model_pricing.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/model_pricing.csv) | Input and output token prices |
+| [campaigns.csv](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/campaigns.csv) | Campaign revenue and other spending |
+
+Your browser may display CSV text. Save the page as a CSV file or use the complete ZIP. [Browse the source files on GitHub](https://github.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/tree/main/DATA/TRACKS/portfolio-project).
+<!-- ONLINE_DOWNLOADS_END -->
+
 Marketing-R-Us (MRU) is a fictional marketing company using the fictional ChatABC AI platform. Evaluate whether the estimated value of staff time saved justifies AI spending, then explain how prompt volume, model prices, rework, and campaign economics relate. All people, clients, prices, and results are synthetic. This dataset is an analytical exercise, not evidence about a real provider or a causal experiment.
 
 This standalone package contains `mru-portfolio-project.xlsx` with four raw data sheets, all four matching CSVs, a learner brief, column guide, metric formulas, and a deliverable checklist. Use the workbook **or** the CSV files: their source records are identical, so importing both versions of a table would double-count the data. Neither format contains completed answers. Open `START_HERE.html` for the complete offline guide. You can finish this exercise without visiting a hosted dashboard or any author files. The completed portfolio demo and public generator, if viewed separately, contain spoilers.
