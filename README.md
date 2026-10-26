@@ -6,7 +6,7 @@ A business analytics case study by Chris Delgado.
 
 AI can reduce the time needed to prepare content and complete routine tasks. It also involves usage fees and staff time spent preparing prompts, reviewing results, and correcting mistakes. These costs need to be included when evaluating its value to a business.
 
-MRU is a fictional marketing company that uses AI for campaign planning, content writing, data preparation, and reporting. The case study covers 240 completed tasks across four campaigns during September 2026. These tasks involve the Content, Creative, Marketing Operations, and Analytics departments.
+Marketing R Us (MRU) is a fictional marketing agency that develops and manages campaigns for clients. Its Content, Creative, Marketing Operations, and Analytics teams create campaign materials, organize campaign activity, and report on performance. Staff use AI to support planning, writing, data preparation, and reporting, with time still required to review and complete the work. The case study covers 240 completed tasks across four campaigns during September 2026.
 
 Management needs to understand which uses of AI justify their cost and which workflows need improvement. Faster drafting may be offset by additional review or repeated corrections. Higher AI spending may be worthwhile when it saves enough staff time. The challenge is to account for both AI fees and the work required to produce an acceptable result.
 
