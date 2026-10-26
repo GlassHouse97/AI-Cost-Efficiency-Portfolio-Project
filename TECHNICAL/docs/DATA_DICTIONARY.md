@@ -1,5 +1,7 @@
 # Data dictionary
 
+Learner reference documents are available in DATA for the [Quick Challenge](../../DATA/TRACKS/quick-challenge/DATA_DICTIONARY.md) and [Portfolio Project](../../DATA/TRACKS/portfolio-project/DATA_DICTIONARY.md). Those documents define source columns without worked calculations and also appear in the input workbooks. This technical reference includes preparation constraints and derived measures for implementation.
+
 The canonical [data folder](../../DATA/README.md) contains UTF-8 CSV files with headers. Dates use `YYYY-MM-DD`, currency uses USD, token counts are nonnegative integers, and hours are decimal values. All values are synthetic. Fixed model prices apply throughout September 2026; they are teaching assumptions rather than current provider prices.
 
 ## Relationships and grain

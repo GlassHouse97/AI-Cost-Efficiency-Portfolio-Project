@@ -1,6 +1,6 @@
 # Rebuild the Excel files
 
-The two `.xlsx` files under `DATA/` are raw learner inputs. Each worksheet has the same headers, record order, and source values as its matching CSV. Duplicate IDs and department whitespace are intentional exercise data and remain intact. The CSV files are canonical.
+The two `.xlsx` files under `DATA/` contain raw learner inputs and a Data Dictionary worksheet. Each source worksheet has the same headers, record order, and values as its matching CSV. Duplicate IDs and department whitespace are intentional exercise data and remain intact. The CSV files are canonical for source records. Each track's `DATA_DICTIONARY.md` is canonical for its field definitions.
 
 `build-learner-workbooks.mjs` uses the Codex workspace's bundled `@oai/artifact-tool` package. It does not add a repository dependency. Opening the Excel files requires no authoring runtime.
 
@@ -9,16 +9,18 @@ To rebuild in Codex:
 1. Use `load_workspace_dependencies` to locate the bundled Node and Python executables and the `node_modules` directory.
 2. Create a `node_modules` junction in a writable temporary or `.qa/` runtime directory, pointing at that bundled directory. Set `WORKBOOK_ARTIFACT_RUNTIME` to the parent of this junction.
 3. Follow the Spreadsheets skill's operation marker requirement, then run the builder with the bundled Node executable.
-4. Run the repository's workbook-to-CSV parity check. Review the rendered worksheet samples in `.qa/workbook-previews/` before committing regenerated workbooks.
+4. Run the repository's workbook-to-CSV parity and dictionary checks. Review the rendered dictionary sheets in `.qa/workbook-previews/` before committing regenerated workbooks. Use `--render-raw` when source data or source sheet formatting changes and needs visual review.
 
 The builder writes only the two named workbooks and ignored `.qa/` inspection/preview files. It uses `Workbook.fromCSV` to read source fields and explicitly types dates and numeric columns. Dates display as `yyyy-mm-dd`; strings are not trimmed. There are no formulas, answer columns, calculated totals, charts, or solution tabs in the learner files. Table filter buttons and frozen header rows support exploration.
 
 | Workbook | Worksheets in order |
 |---|---|
-| `DATA/TRACKS/quick-challenge/mru-quick-challenge.xlsx` | `Raw` |
-| `DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx` | `campaigns`, `work_log`, `ai_usage`, `model_pricing` |
+| `DATA/TRACKS/quick-challenge/mru-quick-challenge.xlsx` | `Raw`, `Data Dictionary` |
+| `DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx` | `campaigns`, `work_log`, `ai_usage`, `model_pricing`, `Data Dictionary` |
 
 The `Raw` worksheet uses `mru_quick_challenge.csv`; portfolio source filenames are the worksheet names plus `.csv`. Text fields retain exact spelling, spaces, and IDs. Columns named `completion_date` or `usage_date` contain native Excel dates. Token/prompt counts, model rates, campaign dollar values, and hour measurements contain numbers. Source provenance is documented here rather than inserted into the raw worksheets.
+
+The Data Dictionary worksheet is generated from the four-column table in the track's `DATA_DICTIONARY.md`. It lists each source field, its worksheet, type and units, and meaning. These are source definitions only. Calculation methods and worked answers remain separate from the raw workbooks. Tests compare the dictionary with both the Markdown definitions and every CSV header.
 
 ## Completed Quick Challenge Workbook
 

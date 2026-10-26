@@ -2,6 +2,15 @@
 
 Initial release: October 22, 2026. Reader-focused restructuring: October 23, 2026.
 
+## Learner data dictionaries, October 26, 2026
+
+* Both DATA tracks now include a standalone `DATA_DICTIONARY.md`, linked from their data pages and included in the learner ZIPs. The documents define source columns, types, units, and relationships without worked calculations. They cover all 17 Quick Challenge columns and all 28 Portfolio Project columns.
+* Both raw input workbooks now append a Data Dictionary worksheet. Its table is generated from the same Markdown definitions. Existing source worksheets retain their values, types, styles, dimensions, frozen panes, and tables. All five dictionary preview sections were visually reviewed, including column separators and wrapped definitions.
+* All 31 regression tests passed: 21 Python and 10 JavaScript. These verify dictionary coverage against every CSV header, agreement between the documents and workbook tabs, unchanged source cells, archive contents, and offline file links. Source validation, package freshness, static build, and whitespace checks passed. The Quick Challenge questions, underlying CSVs, main README, and completed solution workbook are unchanged.
+* The Quick Challenge package contains six files, and the Portfolio Project package contains thirteen. Both contain the updated input workbook and its standalone dictionary.
+* Cloud Run revision `ai-cost-efficiency-00009-9jr` receives 100 percent of traffic. The health endpoint returned HTTP 200, and all nine dashboard assets and learner downloads matched the local release bytes. Dashboard calculations and interface are unchanged.
+* Quick ZIP SHA-256: `24183856dd9ddc5d7b68ee0551d58e18930c19f04c004c2f02fa2a98243490d2`. Deeper ZIP SHA-256: `e4eaedbd010573f8f78816f2f4d6349a367a27598581b649e95fa55050b89ae5`.
+
 ## Quick Challenge reader flow, October 26, 2026
 
 * The question landing page now offers the two tracks directly. The Quick Challenge brief retains all six original questions and one GitHub download link. Cleaning instructions, calculation columns, worked examples, and answer interpretation are in the separate Quick Challenge solution.

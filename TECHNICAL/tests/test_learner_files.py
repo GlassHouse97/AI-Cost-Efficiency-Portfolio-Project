@@ -1,5 +1,6 @@
-"""Independent OOXML checks: learner workbooks must preserve the raw CSV inputs."""
+"""Independent checks for raw inputs, field definitions, and learner downloads."""
 
+from collections import Counter
 import csv
 from datetime import datetime, timedelta
 from decimal import Decimal
@@ -27,9 +28,10 @@ TRACKS = {
     },
 }
 GUIDES = {
-    "quick-challenge": {"START_HERE.html", "LICENSE", "DATA_LICENSE"},
-    "portfolio-project": {"README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md", "START_HERE.html", "LICENSE", "DATA_LICENSE"},
+    "quick-challenge": {"START_HERE.html", "DATA_DICTIONARY.md", "LICENSE", "DATA_LICENSE"},
+    "portfolio-project": {"README.md", "COLUMN_GUIDE.md", "FORMULAS.md", "SUBMISSION_CHECKLIST.md", "START_HERE.html", "DATA_DICTIONARY.md", "LICENSE", "DATA_LICENSE"},
 }
+DICTIONARY_HEADERS = ["Worksheet", "Column", "Type and units", "Meaning"]
 NUMERIC_FIELDS = {
     "prompt_count", "input_tokens", "output_tokens", "input_rate_usd_per_million",
     "output_rate_usd_per_million", "baseline_hours", "actual_hours", "rework_hours",
@@ -104,6 +106,21 @@ def read_workbook(path):
         return sheets, epoch
 
 
+def read_dictionary(path):
+    """Read the public definition table independently of the workbook builder."""
+    rows = []
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        if not line.strip().startswith("|"):
+            continue
+        cells = [cell.strip().replace("`", "") for cell in line.strip().strip("|").split("|")]
+        if all(re.fullmatch(r":?-+:?", cell) for cell in cells):
+            continue
+        rows.append(cells)
+    if not rows or rows[0] != DICTIONARY_HEADERS:
+        raise AssertionError("Data dictionary must begin with the four field definition headers")
+    return rows[1:]
+
+
 class LearnerFileTests(unittest.TestCase):
     def test_question_briefs_and_repository_guides_link_the_track_downloads(self):
         for slug, mapping in TRACKS.items():
@@ -166,7 +183,7 @@ class LearnerFileTests(unittest.TestCase):
             with self.subTest(track=slug):
                 folder = ROOT / "DATA" / "TRACKS" / slug
                 sheets, epoch = read_workbook(folder / f"mru-{slug}.xlsx")
-                self.assertEqual(set(sheets), set(mapping))
+                self.assertEqual(list(sheets), [*mapping, "Data Dictionary"])
                 for sheet, filename in mapping.items():
                     with (folder / filename).open(encoding="utf-8-sig", newline="") as handle:
                         expected = list(csv.reader(handle))
@@ -188,6 +205,32 @@ class LearnerFileTests(unittest.TestCase):
                             else:
                                 self.assertEqual(actual, text, (slug, sheet, r, c))
 
+    def test_data_dictionaries_define_every_source_field_and_match_the_workbooks(self):
+        for slug, mapping in TRACKS.items():
+            with self.subTest(track=slug):
+                folder = ROOT / "DATA" / "TRACKS" / slug
+                definitions = read_dictionary(folder / "DATA_DICTIONARY.md")
+                expected_fields = []
+                for sheet, filename in mapping.items():
+                    with (folder / filename).open(encoding="utf-8-sig", newline="") as handle:
+                        expected_fields.extend((sheet, field) for field in next(csv.reader(handle)))
+                for row in definitions:
+                    self.assertEqual(len(row), 4)
+                    self.assertTrue(all(isinstance(value, str) and value.strip() for value in row))
+                self.assertEqual(Counter((row[0], row[1]) for row in definitions), Counter(expected_fields))
+
+                sheets, _ = read_workbook(folder / f"mru-{slug}.xlsx")
+                dictionary = sheets["Data Dictionary"]
+                header_rows = [number for number, row in dictionary.items() if list(row.values()) == DICTIONARY_HEADERS]
+                self.assertEqual(len(header_rows), 1, "Workbook must have one clear dictionary table")
+                header_row = header_rows[0]
+                workbook_definitions = []
+                for number, row in dictionary.items():
+                    if number > header_row:
+                        self.assertEqual(set(row), {1, 2, 3, 4}, (slug, number))
+                        workbook_definitions.append(tuple(row[column] for column in range(1, 5)))
+                self.assertEqual(Counter(workbook_definitions), Counter(tuple(row) for row in definitions))
+
     def test_complete_downloads_contain_exact_inputs_and_no_solutions(self):
         for slug, mapping in TRACKS.items():
             with self.subTest(track=slug):
@@ -198,7 +241,7 @@ class LearnerFileTests(unittest.TestCase):
                 with ZipFile(release) as archive:
                     self.assertEqual(set(archive.namelist()), source_names | GUIDES[slug])
                     self.assertIsNone(archive.testzip())
-                    for filename in source_names:
+                    for filename in source_names | {"DATA_DICTIONARY.md"}:
                         source = ROOT / "DATA" / "TRACKS" / slug / filename
                         expected = source.read_bytes() if filename.endswith(".xlsx") else source.read_text(encoding="utf-8-sig").encode("utf-8")
                         self.assertEqual(archive.read(filename), expected)

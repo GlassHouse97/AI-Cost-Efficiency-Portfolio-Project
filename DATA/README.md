@@ -8,8 +8,8 @@ Choose the package for your track, extract it, and open **START_HERE.html**. Eac
 
 | Track | Package contents | Download |
 | --- | --- | --- |
-| **Quick Challenge** | The questions in one HTML document, one raw Excel workbook, the matching CSV, and licenses | **[Download Quick Challenge ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip)** |
-| **Portfolio Project** | The HTML guide, question brief, column guide, formulas, checklist, one raw Excel workbook, four matching CSVs, and licenses | **[Download Portfolio Project ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip)** |
+| **Quick Challenge** | The questions in one HTML document, one raw Excel workbook, the matching CSV, a data dictionary, and licenses | **[Download Quick Challenge ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.zip)** |
+| **Portfolio Project** | The HTML guide, question brief, column guide, formulas, checklist, one raw Excel workbook, four matching CSVs, a data dictionary, and licenses | **[Download Portfolio Project ZIP](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.zip)** |
 
 Excel and CSV contain the same records. Choose whichever format suits your analysis. The Quick Challenge covers Campaigns 1 and 2 from the larger Portfolio Project dataset, so the tracks overlap.
 
@@ -21,11 +21,11 @@ The files below are also included in the complete packages.
 
 **[Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru-quick-challenge.xlsx)** or **[CSV file](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/quick-challenge/mru_quick_challenge.csv)**
 
-Each record describes a completed task, including its department, campaign, hours, prompt usage, token usage, and model rates. The workbook has one **Raw** worksheet.
+Each record describes a completed task, including its department, campaign, hours, prompt usage, token usage, and model rates. The workbook has one **Raw** source worksheet and a **Data Dictionary** worksheet. The [Quick Challenge data dictionary](TRACKS/quick-challenge/DATA_DICTIONARY.md) is also available here as a document defining every source column.
 
 ### Portfolio Project
 
-**[Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx)** with four worksheets corresponding to the CSV files below.
+**[Excel workbook](https://raw.githubusercontent.com/GlassHouse97/AI-Cost-Efficiency-Portfolio-Project/main/DATA/TRACKS/portfolio-project/mru-portfolio-project.xlsx)** with four source worksheets corresponding to the CSV files below and a **Data Dictionary** worksheet. The [Portfolio Project data dictionary](TRACKS/portfolio-project/DATA_DICTIONARY.md) defines every source column and explains how the tables relate to each other.
 
 | CSV file and worksheet | Record type | Source fields |
 | --- | --- | --- |

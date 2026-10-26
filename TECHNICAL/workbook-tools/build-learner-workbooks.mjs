@@ -12,6 +12,7 @@ const require = createRequire(path.join(path.resolve(runtime), 'package.json'));
 const { Workbook, SpreadsheetFile } = await import(pathToFileURL(require.resolve('@oai/artifact-tool')).href);
 const previewDir = path.join(root, '.qa/workbook-previews');
 await fs.mkdir(previewDir, { recursive: true });
+const renderRaw = process.argv.includes('--render-raw');
 
 const numeric = new Set([
   'campaign_revenue_usd', 'other_campaign_cost_usd', 'prompt_count',
@@ -54,6 +55,62 @@ function convert(value, header) {
   }
   // Deliberately preserve leading/trailing spaces and duplicate IDs.
   return value;
+}
+
+async function addDataDictionary(workbook, output, metadata) {
+  const dictionaryPath = path.join(root, 'DATA', 'TRACKS', output.directory, 'DATA_DICTIONARY.md');
+  const markdown = await fs.readFile(dictionaryPath, 'utf8');
+  const rows = markdown.split(/\r?\n/).filter(line => line.startsWith('|'))
+    .map(line => line.split('|').slice(1, -1).map(cell => cell.trim().replace(/`/g, '')))
+    .filter(cells => !cells.every(cell => /^:?-+:?$/.test(cell)));
+  const header = ['Worksheet', 'Column', 'Type and units', 'Meaning'];
+  if (JSON.stringify(rows[0]) !== JSON.stringify(header) || rows.some(row => row.length !== 4 || row.some(cell => !cell)))
+    throw new Error(`Unexpected dictionary table: ${dictionaryPath}`);
+  const expected = metadata.flatMap(info => info.headers.map(column => [info.sheet, column]));
+  if (JSON.stringify(rows.slice(1).map(row => row.slice(0, 2))) !== JSON.stringify(expected))
+    throw new Error(`Dictionary fields do not match the raw worksheets: ${dictionaryPath}`);
+
+  const sheet = workbook.worksheets.add('Data Dictionary');
+  const lastRow = rows.length + 4;
+  const full = sheet.getRange(`A1:D${lastRow}`);
+  full.format.font = { name: 'Arial', size: 11, color: '#1E293B' };
+  full.format.verticalAlignment = 'center';
+  full.format.horizontalAlignment = 'left';
+  full.setNumberFormat('@');
+  for (const [column, width] of [['A', 19], ['B', 38], ['C', 35], ['D', 85]])
+    sheet.getRange(`${column}1:${column}${lastRow}`).format.columnWidth = width;
+  sheet.getRange('A1:D1').format.rowHeight = 10;
+  sheet.getRange('A2').values = [['Data Dictionary']];
+  sheet.getRange('A2:D2').format.font = { name: 'Arial', size: 17, bold: true, color: '#16324F' };
+  sheet.getRange('A2:D2').format.rowHeight = 28;
+  sheet.getRange('A3').values = [[output.directory === 'quick-challenge' ? 'Quick Challenge' : 'Portfolio Project']];
+  sheet.getRange('A3:D3').format.rowHeight = 22;
+  sheet.getRange('A3:D3').format.borders = { bottom: { style: 'thin', color: '#16324F' } };
+  sheet.getRange('A4:D4').format.rowHeight = 10;
+  const tableRange = sheet.getRange(`A5:D${lastRow}`);
+  tableRange.values = rows;
+  const table = sheet.tables.add(`A5:D${lastRow}`, true, 'DataDictionary');
+  table.style = 'TableStyleMedium2';
+  table.showFilterButton = true;
+  table.showTotals = false;
+  tableRange.format.wrapText = true;
+  const headerRange = sheet.getRange('A5:D5');
+  headerRange.format.fill = '#16324F';
+  headerRange.format.font = { name: 'Arial', size: 11, bold: true, color: '#FFFFFF' };
+  headerRange.format.horizontalAlignment = 'center';
+  headerRange.format.rowHeight = 30;
+  headerRange.format.borders = { insideVertical: { style: 'thin', color: '#FFFFFF' } };
+  sheet.getRange(`A6:D${lastRow}`).format.rowHeight = 48;
+  sheet.getRange(`A6:D${lastRow}`).format.borders = { insideVertical: { style: 'thin', color: '#A8BDCA' } };
+  sheet.getRange(`D6:D${lastRow}`).format.verticalAlignment = 'center';
+  sheet.showGridLines = false;
+  sheet.freezePanes.freezeRows(5);
+  sheet.tabColor = '#6B7E8F';
+  const previewRanges = [];
+  for (let firstRow = 1; firstRow <= lastRow; firstRow += 12)
+    previewRanges.push(`A${firstRow}:D${Math.min(lastRow, firstRow + 11)}`);
+  metadata.push({ sheet: 'Data Dictionary', source: path.relative(root, dictionaryPath),
+    rows: rows.length - 1, columns: 4, headers: header, previewRanges });
 }
 
 for (const output of outputs) {
@@ -103,13 +160,18 @@ for (const output of outputs) {
     metadata.push({ sheet: name, source: path.relative(root, csvPath), rows: matrix.length - 1, columns: headers.length,
       headers, numericColumns: headers.filter(h => numeric.has(h)), dateColumns: headers.filter(h => dates.has(h)), previewRanges });
   }
+  await addDataDictionary(workbook, output, metadata);
   workbook.recalculate();
   const inspect = await workbook.inspect({ kind: 'workbook,sheet,table', maxChars: 3000, tableMaxRows: 2, tableMaxCols: 4 });
   await fs.writeFile(path.join(previewDir, `${output.directory}-inspection.ndjson`), inspect.ndjson);
+  const dictionaryInspect = await workbook.inspect({ kind: 'table', range: `'Data Dictionary'!A5:D${metadata.at(-1).rows + 5}`,
+    include: 'values,formulas', maxChars: 20000, tableMaxRows: 34, tableMaxCols: 4, tableMaxCellChars: 250 });
+  await fs.writeFile(path.join(previewDir, `${output.directory}-dictionary.ndjson`), dictionaryInspect.ndjson);
   const errors = await workbook.inspect({ kind: 'match', searchTerm: '#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!',
     options: { useRegex: true, maxResults: 20 }, maxChars: 1500, summary: 'Raw workbook error scan' });
   await fs.writeFile(path.join(previewDir, `${output.directory}-errors.ndjson`), errors.ndjson);
   for (const info of metadata) {
+    if (info.sheet !== 'Data Dictionary' && !renderRaw) continue;
     for (let part = 0; part < info.previewRanges.length; part++) {
       const preview = await workbook.render({ sheetName: info.sheet, range: info.previewRanges[part], scale: 1.5, format: 'png' });
       await fs.writeFile(path.join(previewDir, `${output.directory}-${info.sheet}-${part + 1}.png`), new Uint8Array(await preview.arrayBuffer()));

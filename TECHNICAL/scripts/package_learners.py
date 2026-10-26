@@ -40,14 +40,14 @@ PACKAGES = {
         "subtitle": "Explore the data and make a recommendation.",
         "layout": "questions",
         "sections": (("README.md", "questions", "Questions"),),
-        "files": ("mru-quick-challenge.xlsx", "mru_quick_challenge.csv", "START_HERE.html"),
+        "files": ("mru-quick-challenge.xlsx", "mru_quick_challenge.csv", "DATA_DICTIONARY.md", "START_HERE.html"),
     },
     "portfolio-project": {
         "title": "MRU AI value Portfolio Project",
         "subtitle": "Intermediate · 12 to 16 hour target · Your choice of analysis tools",
         "sections": SECTIONS,
         "files": (
-            "mru-portfolio-project.xlsx", "work_log.csv", "ai_usage.csv", "model_pricing.csv", "campaigns.csv", *COMMON_FILES
+            "mru-portfolio-project.xlsx", "work_log.csv", "ai_usage.csv", "model_pricing.csv", "campaigns.csv", "DATA_DICTIONARY.md", *COMMON_FILES
         ),
     },
 }
@@ -184,6 +184,10 @@ def quick_html_guide(folder: Path, package: dict, online: bool) -> bytes:
             'Both files contain the same raw data. Choose one format.</p>'
             '<p class="small">Keep the extracted files together. This page and its data work offline.</p>'
         )
+    data += (
+        '<p class="small">Column definitions are in the workbook\u2019s <strong>Data Dictionary</strong> tab '
+        'and <strong>DATA_DICTIONARY.md</strong>.</p>'
+    )
     document = f'''<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -238,7 +242,7 @@ def html_guide(folder: Path, package: dict, online: bool = False) -> bytes:
 <title>{html.escape(package["title"])} | Learner guide</title><style>{STYLE}</style></head>
 <body><a class="skip" href="#main">Skip to the learner guide</a>
 <header><p class="eyebrow">Marketing-R-Us · Standalone learner guide</p><h1>{html.escape(package["title"])}</h1><p class="subtitle">{html.escape(package["subtitle"])}</p></header>
-<div class="shell"><aside><nav aria-label="Guide sections">{navigation}</nav><p class="small">{access_note}</p><div class="files"><p>Source data</p>{csv_links}</div></aside>
+<div class="shell"><aside><nav aria-label="Guide sections">{navigation}</nav><p class="small">{access_note}</p><div class="files"><p>Source data</p>{csv_links}</div><p class="small">Column definitions are in the workbook\u2019s <strong>Data Dictionary</strong> tab and <strong>DATA_DICTIONARY.md</strong>.</p></aside>
 <main id="main">{"".join(sections)}<footer>Synthetic data for learning. Documentation: MIT. Data: CC0 1.0. Full licenses are included in the download.</footer></main></div>
 </body></html>
 '''
@@ -263,7 +267,8 @@ def archive_bytes(folder: Path, package: dict, guide: bytes) -> bytes:
     """Only explicitly named learner files and both licenses can enter the ZIP."""
     payloads: dict[str, bytes] = {}
     for filename in package["files"]:
-        path = (ROOT / "DATA" / "TRACKS" / folder.name / filename) if filename.endswith((".csv", ".xlsx")) else folder / filename
+        is_data_file = filename.endswith((".csv", ".xlsx")) or filename == "DATA_DICTIONARY.md"
+        path = (ROOT / "DATA" / "TRACKS" / folder.name / filename) if is_data_file else folder / filename
         if path.suffix == ".csv":
             validate_raw_schema(path)
         if filename == "START_HERE.html":
